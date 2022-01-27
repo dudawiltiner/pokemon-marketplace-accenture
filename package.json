@@ -43,7 +43,6 @@
     ]
   },
   "devDependencies": {
-    "autoprefixer": "^10.4.2",
     "eslint-config-trybe-frontend": "^1.2.2",
     "postcss": "^8.4.5",
     "tailwind-styled-components": "^2.1.2",

@@ -1,5 +1,9 @@
 import React from 'react';
+import { Container } from '../styles/AppCSS';
 
 export default function Home() {
-  return <div></div>;
+  return (
+    <Container>
+      Hello world!
+    </Container>);
 }
