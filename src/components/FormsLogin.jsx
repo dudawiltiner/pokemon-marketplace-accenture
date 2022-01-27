@@ -1,5 +1,10 @@
 import React from 'react';
+import { Login } from '../styles/LoginCSS';
 
 export default function FormsLogin() {
-  return <div />;
+  return (
+    <Login>
+      <form />
+    </Login>
+  );
 }
