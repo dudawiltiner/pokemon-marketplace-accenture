@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyledApp } from './css/AppCSS';
+import { StyledApp } from './styles/AppCSS';
 
 export default function App() {
   return (
