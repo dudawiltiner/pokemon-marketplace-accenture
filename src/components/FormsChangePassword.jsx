@@ -1,11 +1,12 @@
 import React from 'react';
 import { Input, Label, Subtitle } from '../styles/FormsGeralCSS';
 import * as S from '../styles/LoginCSS';
+import { ButtonLo } from '../styles/RegisterCSS';
 import MainPartForms from './MainPartForms';
 
-export default function FormsLogin() {
+export default function FormsChangePassword() {
   return (
-    <MainPartForms title="Faça o login" space="space-y-14">
+    <MainPartForms title="Mude a senha" space="space-y-14">
       <Label htmlFor="email">
         <Subtitle>E-mail</Subtitle>
         <Input
@@ -26,13 +27,21 @@ export default function FormsLogin() {
         />
       </Label>
 
-      <S.ChangePassword to="/changepassword" type="button">
-        Esqueceu a senha?
-      </S.ChangePassword>
+      <Label htmlFor="password">
+        <Subtitle>Confirmar Senha</Subtitle>
+        <Input
+          id="password"
+          name="password"
+          type="password"
+          placeholder="Digite novamente a sua senha"
+        />
+      </Label>
 
       <S.ButtonIn type="button">GO!</S.ButtonIn>
 
-      <S.Register marginT="mt-32">
+      <ButtonLo to="/login">Voltar para login</ButtonLo>
+
+      <S.Register marginT="mt-10">
         <S.QuestionRe>Ainda não é um treinador de Pokémon?</S.QuestionRe>
         <S.ButtonRe to="/register">Cadastre-se agora</S.ButtonRe>
       </S.Register>
