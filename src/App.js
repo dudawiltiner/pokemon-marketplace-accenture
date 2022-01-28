@@ -8,6 +8,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={ <P.Home /> } />
         <Route path="/login" element={ <P.Login /> } />
+        <Route path="/changepassword" element={ <P.ChangePassword /> } />
         <Route path="/profile" element={ <P.Profile /> } />
         <Route path="/shoppin" element={ <P.ShoppingCart /> } />
       </Routes>
