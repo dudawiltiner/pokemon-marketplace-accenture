@@ -1,3 +1,4 @@
 src/styles/*
 tailwind.config.js
 src/index.js
+src/data/countries.js

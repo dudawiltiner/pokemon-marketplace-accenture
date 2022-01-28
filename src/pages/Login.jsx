@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
 import FormsLogin from '../components/FormsLogin';
-import { Bg, Main } from '../styles/LoginCSS';
+import { Bg, Main } from '../styles/FormsGeralCSS';
 
 export default function Login() {
   useEffect(() => {
@@ -11,11 +11,7 @@ export default function Login() {
 
   return (
     <Main>
-      <FormsLogin
-        routeButton="/changepassword"
-        textButton="Esqueceu sua senha?"
-        title="Faça o login"
-      />
+      <FormsLogin />
       <Bg
         data-aos="fade-left"
         src="./bg-pikachu.png"
