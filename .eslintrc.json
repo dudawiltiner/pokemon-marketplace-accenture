@@ -1,9 +1,0 @@
-{
-    "extends": "eslint-config-trybe-frontend",
-    "parserOptions": {
-        "ecmaVersion": 12,
-        "sourceType": "module"
-    },
-    "rules": {
-    }
-}

@@ -1,5 +1,5 @@
 import React from 'react';
 
 export default function ModalPokemon() {
-  return <div />;
+  return <div></div>;
 }
