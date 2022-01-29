@@ -12,8 +12,17 @@ export default function FormsRegister() {
   const dispatch = useDispatch();
 
   async function saveUser() {
-    dispatch({ type: 'CALL_SAGA' });
-    console.log(storage.registerUser.items);
+    dispatch({ type: 'CALL_SAGA_REGISTER',
+      body: {
+        email: 'string@email',
+        fullName: 'string',
+        image: 'string',
+        origin: 'string',
+        password: 'string',
+        position: 'string',
+        sex: 'string',
+      } });
+    console.log(storage.registerUser.res);
   }
   return (
     <MainPartForms title="Faça o cadastro" space="space-x-6">
@@ -83,7 +92,7 @@ export default function FormsRegister() {
           id="position"
           name="position"
           type="text"
-          placeHolder="Digite a sua função"
+          placeholder="Digite a sua função"
         />
       </Label>
 
