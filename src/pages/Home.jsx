@@ -1,9 +1,13 @@
 import React from 'react';
-import { Container } from '../styles/AppCSS';
+import * as S from '../styles/HomeCSS';
+import NavBar from '../components/NavBar';
+import MenuPokemons from '../components/MenuPokemons';
 
 export default function Home() {
   return (
-    <Container>
-      Hello world!
-    </Container>);
+    <S.Container>
+      <NavBar />
+      <MenuPokemons />
+    </S.Container>
+  );
 }
