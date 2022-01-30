@@ -24,7 +24,7 @@ export const ButtonIn = tw.button`
 
 export const Register = tw.div`
   text-center
-  ${props => props.marginT}
+  ${props => props.margint}
 `;
 
 export const QuestionRe = tw.p`

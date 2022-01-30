@@ -1,5 +1,4 @@
 import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
 import { countryList } from '../data/countries';
 // import { fetchRegisterUser } from '../service/authAPi';
 import { Input, Label, Subtitle } from '../styles/FormsGeralCSS';
@@ -8,22 +7,6 @@ import { ButtonLo, Choose, Select } from '../styles/RegisterCSS';
 import MainPartForms from './MainPartForms';
 
 export default function FormsRegister() {
-  const storage = useSelector((state) => state);
-  const dispatch = useDispatch();
-
-  async function saveUser() {
-    dispatch({ type: 'CALL_SAGA_REGISTER',
-      body: {
-        email: 'string@email',
-        fullName: 'string',
-        image: 'string',
-        origin: 'string',
-        password: 'string',
-        position: 'string',
-        sex: 'string',
-      } });
-    console.log(storage.registerUser.res);
-  }
   return (
     <MainPartForms title="Faça o cadastro" space="space-x-6">
       <Label htmlFor="name">
@@ -96,7 +79,7 @@ export default function FormsRegister() {
         />
       </Label>
 
-      <S.ButtonIn onClick={ () => saveUser() } type="button">GO!</S.ButtonIn>
+      <S.ButtonIn type="button">GO!</S.ButtonIn>
 
       <ButtonLo to="/login">Voltar para login</ButtonLo>
 

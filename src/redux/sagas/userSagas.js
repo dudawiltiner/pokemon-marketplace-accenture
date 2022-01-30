@@ -1,37 +1,19 @@
 import { put, takeEvery, call } from 'redux-saga/effects';
-import { fetchRegisterUser } from '../../service/authAPi';
-import { registerUserAction } from '../actions';
+import { fetchAUthUser } from '../../service/authAPi';
+import { authUserAction } from '../actions';
 
-// const registerFetch = async () => {
-//   try {
-//     const res = await fetchRegisterUser({
-//       email: 'string@email',
-//       fullName: 'string',
-//       image: 'string',
-//       origin: 'string',
-//       password: 'string',
-//       position: 'string',
-//       sex: 'string',
-//     });
-
-//     return res;
-//   } catch (e) {
-//     return e;
-//   }
-// };
-
-function* registerNewUser(action) {
+function* authUser(action) {
   try {
-    const res = yield call(fetchRegisterUser(action.body));
-    yield put(registerUserAction(res));
+    const res = yield call(fetchAUthUser, action.body);
+    yield put(authUserAction(res));
   } catch (e) {
-    yield put(registerUserAction(e));
+    yield put(authUserAction(e));
   }
 }
 
 export function* funcTake() {
   console.log('funcTake');
-  yield takeEvery('CALL_SAGA_REGISTER', registerNewUser);
+  yield takeEvery('CALL_SAGA_AUTH', authUser);
 }
 
 export default { funcTake };

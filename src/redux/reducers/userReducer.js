@@ -4,7 +4,7 @@ const INITIAL_STATE = {
 
 const UserReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
-  case 'RESGISTER_USER':
+  case 'AUTH_USER':
     // console.log('aqui');
     return { res: action.payload };
   default:

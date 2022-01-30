@@ -1,6 +1,6 @@
-export const registerUserAction = (payload) => ({
-  type: 'RESGISTER_USER',
+export const authUserAction = (payload) => ({
+  type: 'AUTH_USER',
   payload,
 });
 
-export default { registerUserAction };
+export default { authUserAction };
