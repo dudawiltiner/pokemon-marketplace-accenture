@@ -14,6 +14,8 @@ export const ButtonIn = tw.button`
   w-full
   p-4
   text-lg
+  flex
+  justify-center
   font-semibold
   text-gray-600
   rounded-md

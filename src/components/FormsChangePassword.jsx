@@ -1,14 +1,14 @@
 import React from 'react';
-import { Input, Label, Subtitle } from '../styles/FormsGeralCSS';
+import { Input, Label, LoadingIcon, Subtitle } from '../styles/FormsGeralCSS';
 import * as S from '../styles/LoginCSS';
 import { ButtonLo } from '../styles/RegisterCSS';
 import MainPartForms from './MainPartForms';
-import useChangePassword from '../hooks/useRegister';
+import useChangePassword from '../hooks/useChangePassword';
 import StatusForms from './StatusForms';
 import Alert from './Alert';
 
 export default function FormsChangePassword() {
-  const { show, setShow, formik } = useChangePassword();
+  const { loading, show, setShow, formik } = useChangePassword();
 
   return (
     <MainPartForms
@@ -67,7 +67,10 @@ export default function FormsChangePassword() {
         sucess="A senha confere."
       />
 
-      <S.ButtonIn margint="mt-12" type="submit">GO!</S.ButtonIn>
+      <S.ButtonIn margint="mt-12" type="submit">
+        {loading && <LoadingIcon data-aos="zoom-in" />}
+        <p> GO!</p>
+      </S.ButtonIn>
 
       <ButtonLo to="/login">Voltar para login</ButtonLo>
 

@@ -8,6 +8,7 @@ export default function useLogin() {
   const navigate = useNavigate();
 
   const [show, setShow] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const MIN_LENGTH = 6;
   const MAX_LENGTH = 8;
@@ -27,7 +28,8 @@ export default function useLogin() {
       .required('É necessário confirmar a senha.'),
   });
 
-  async function authUser(values) {
+  async function changePassword(values) {
+    setLoading(true);
     const res = await fetchChangePassword({
       email: values.email,
       password: values.password,
@@ -35,7 +37,7 @@ export default function useLogin() {
 
     const { message } = res;
     console.log(message);
-
+    setLoading(false);
     if (message.includes('error')) {
       console.log('aqui');
       setShow(true);
@@ -53,9 +55,9 @@ export default function useLogin() {
     validationSchema: schema,
     onSubmit: (values) => {
       console.log('SUBMIT', values);
-      authUser(values);
+      changePassword(values);
     },
   });
 
-  return { show, setShow, formik };
+  return { loading, show, setShow, formik };
 }

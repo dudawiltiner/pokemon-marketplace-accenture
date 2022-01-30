@@ -13,8 +13,8 @@ export const Select = tw.select`
 export const Choose = tw.div`
   mt-10
   space-x-14
+  flex
 `;
-
 
 export const ButtonLo = tw(Link)`
   text-gray-500

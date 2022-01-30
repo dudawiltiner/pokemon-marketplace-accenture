@@ -10,6 +10,7 @@ export default function useLogin() {
   const navigate = useNavigate();
 
   const [show, setShow] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const MIN_LENGTH = 6;
   const MAX_LENGTH = 8;
@@ -26,13 +27,14 @@ export default function useLogin() {
   });
 
   function authUser(values) {
+    setLoading(true);
     dispatch({
       type: 'CALL_SAGA_AUTH',
       body: values,
     });
 
     const { message } = storage.reducerUser.res;
-
+    setLoading(false);
     if (message.includes('error')) {
       setShow(true);
     } else {
@@ -52,5 +54,5 @@ export default function useLogin() {
     },
   });
 
-  return { show, setShow, formik };
+  return { loading, show, setShow, formik };
 }

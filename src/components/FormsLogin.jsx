@@ -1,5 +1,5 @@
 import React from 'react';
-import { Input, Label, Subtitle } from '../styles/FormsGeralCSS';
+import { Input, Label, LoadingIcon, Subtitle } from '../styles/FormsGeralCSS';
 import * as S from '../styles/LoginCSS';
 import MainPartForms from './MainPartForms';
 import StatusForms from './StatusForms';
@@ -7,7 +7,7 @@ import Alert from './Alert';
 import useLogin from '../hooks/useLogin';
 
 export default function FormsLogin() {
-  const { show, setShow, formik } = useLogin();
+  const { loading, show, setShow, formik } = useLogin();
   return (
     <MainPartForms
       title="Faça o login"
@@ -52,7 +52,10 @@ export default function FormsLogin() {
         Esqueceu a senha?
       </S.ChangePassword>
 
-      <S.ButtonIn margint="mt-6" type="submit">GO!</S.ButtonIn>
+      <S.ButtonIn margint="mt-6" type="submit">
+        {loading && <LoadingIcon data-aos="zoom-in" />}
+        <p> GO!</p>
+      </S.ButtonIn>
 
       <S.Register margint="mt-32">
         <S.QuestionRe>Ainda não é um treinador de Pokémon?</S.QuestionRe>

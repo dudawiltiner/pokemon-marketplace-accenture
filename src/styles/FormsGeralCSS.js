@@ -1,4 +1,5 @@
 import tw from "tailwind-styled-components"
+import {MdCatchingPokemon} from 'react-icons/md'
 
 export const Main = tw.main`
   flex
@@ -62,4 +63,12 @@ export const Subtitle = tw.p`
   bg-white
   -top-4
   left-6
+`;
+
+export const LoadingIcon = tw(MdCatchingPokemon)`
+  w-6
+  h-6
+  mr-2
+  text-red-600
+  animate-spin
 `;
