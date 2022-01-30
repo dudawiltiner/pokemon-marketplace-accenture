@@ -79,7 +79,7 @@ export default function FormsRegister() {
         />
       </Label>
 
-      <S.ButtonIn type="button">GO!</S.ButtonIn>
+      <S.ButtonIn margint="mt-6" type="button">GO!</S.ButtonIn>
 
       <ButtonLo to="/login">Voltar para login</ButtonLo>
 

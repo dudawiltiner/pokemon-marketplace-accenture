@@ -27,7 +27,7 @@ export const fetchAUthUser = (emailPassword) => (
 );
 
 export const fetchChangePassword = (emailPassword) => (
-  fetch(`${URL}passsword`, {
+  fetch(`${URL}password`, {
     method: 'PUT',
     headers: HEADER,
     body: JSON.stringify(emailPassword),

@@ -2,13 +2,13 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import * as S from '../styles/FormsGeralCSS';
 
-export default function MainPartForms({ space, title, children, funcSubmit, funcReset }) {
+export default function MainPartForms({ space, title, children, funcSubmit }) {
   return (
     <S.Container data-aos="fade-right">
       <S.Content space={ space }>
         <S.Logo src="./logo.png" alt="logo" />
         <S.Title>{title}</S.Title>
-        <S.Forms onSubmit={ funcSubmit } onReset={ funcReset }>
+        <S.Forms onSubmit={ funcSubmit }>
           {children}
         </S.Forms>
       </S.Content>

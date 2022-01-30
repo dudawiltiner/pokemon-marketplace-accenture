@@ -17,7 +17,7 @@ export const ButtonIn = tw.button`
   font-semibold
   text-gray-600
   rounded-md
-  mt-6
+  ${props => props.margint}
   bg-gray-300
 `;
 
