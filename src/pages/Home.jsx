@@ -1,9 +1,9 @@
 import React from 'react';
-import { Container } from '../styles/AppCSS';
+import ModalPokemon from '../components/ModalPokemon';
+// import { Container } from '../styles/AppCSS';
 
 export default function Home() {
   return (
-    <Container>
-      Hello world!
-    </Container>);
+    <ModalPokemon />
+  );
 }
