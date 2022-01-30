@@ -11,7 +11,7 @@ export const ContainerPokemon = styled.div`
   margin-top: 250px;
 `;
 
-export const CardPokemon = styled.div`
+export const CardPokemon = styled.li`
   display: table;
   justify-content: center;
   float: left;

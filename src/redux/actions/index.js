@@ -3,4 +3,9 @@ export const authUserAction = (payload) => ({
   payload,
 });
 
-export default { authUserAction };
+export const pokemonsAction = (payload) => ({
+  type: 'ADD_POKEMONS',
+  payload,
+});
+
+export default { authUserAction, pokemonsAction };
