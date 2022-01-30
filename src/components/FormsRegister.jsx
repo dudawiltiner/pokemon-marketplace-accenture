@@ -1,5 +1,6 @@
 import React from 'react';
 import { countryList } from '../data/countries';
+// import { fetchRegisterUser } from '../service/authAPi';
 import { Input, Label, Subtitle } from '../styles/FormsGeralCSS';
 import * as S from '../styles/LoginCSS';
 import { ButtonLo, Choose, Select } from '../styles/RegisterCSS';
@@ -57,9 +58,9 @@ export default function FormsRegister() {
         >
           Sexo
           <Select
-            id="country"
-            name="country"
-            autoComplete="country"
+            id="sex"
+            name="sex"
+            autoComplete="sex"
           >
             <option>Feminino</option>
             <option>Masculino</option>
@@ -74,7 +75,7 @@ export default function FormsRegister() {
           id="position"
           name="position"
           type="text"
-          placeHolder="Digite a sua função"
+          placeholder="Digite a sua função"
         />
       </Label>
 

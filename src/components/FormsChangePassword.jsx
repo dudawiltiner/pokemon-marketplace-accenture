@@ -41,7 +41,7 @@ export default function FormsChangePassword() {
 
       <ButtonLo to="/login">Voltar para login</ButtonLo>
 
-      <S.Register marginT="mt-10">
+      <S.Register margint="mt-10">
         <S.QuestionRe>Ainda não é um treinador de Pokémon?</S.QuestionRe>
         <S.ButtonRe to="/register">Cadastre-se agora</S.ButtonRe>
       </S.Register>
