@@ -5,7 +5,6 @@ function* getAllPokemons() {
   try {
     console.log('getAllPokemons');
     const pokemons = yield call(fetchPokemons);
-    console.log(pokemons);
     yield put({ type: 'ADD_POKEMONS', payload: pokemons.results });
   } catch (e) {
     console.log(e);

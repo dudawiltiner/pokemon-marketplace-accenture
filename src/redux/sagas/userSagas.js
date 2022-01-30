@@ -12,7 +12,7 @@ function* authUser(action) {
 }
 
 export function* funcTake() {
-  console.log('funcTake');
+  // console.log('funcTake');
   yield takeEvery('CALL_SAGA_AUTH', authUser);
 }
 

@@ -6,15 +6,17 @@ export const NavBar = styled.div`
   justify-content: right;
   align-items: center;
   width: 1350px;
-  height: 70px;
+  height: 90px;
   background: white;
   margin: 100px;
   border-radius: 5px;
   padding: 30px;
 `;
 
-export const IconPoke = styled.div`
-  color: #717171;
+export const LogoPoke = styled.img`
+  position: relative;
+  width: 100px;
+  height: 50px;
   margin: 10px 1050px 10px 20px;
 `;
 

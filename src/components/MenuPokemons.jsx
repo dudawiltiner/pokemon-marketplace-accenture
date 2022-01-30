@@ -9,8 +9,7 @@ export default function MenuPokemon() {
 
   function loadingPokemons() {
     dispatch({ type: 'CALL_SAGA_POKEMONS' });
-    console.log('aqui');
-    console.log(storage.pokemons.items);
+    // console.log(storage.pokemons.items);
     setPokemons(storage.pokemons.items);
   }
 
