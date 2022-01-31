@@ -2,8 +2,8 @@
 /* eslint-disable react/jsx-no-bind */
 /* eslint-disable react/button-has-type */
 import React, { useState } from 'react';
-import { GrClose } from 'react-icons/gr';
 import Modal from 'react-modal';
+import * as S from '../styles/ModalPokemon';
 
 Modal.setAppElement('#root');
 
@@ -18,38 +18,32 @@ export default function ModalPokemon() {
     setIsOpen(false);
   }
 
-  const customStyles = {
-    content: {
-      top: '50%',
-      left: '50%',
-      right: 'auto',
-      bottom: 'auto',
-      marginRight: '-50%',
-      transform: 'translate(-50%, -50%)',
-    },
-  };
-
   const name = 'Pikachu';
   const description = 'pokemon elétrico';
   const price = '20000';
 
   return (
-    <div className="container">
+    <S.Container>
       <button className="modal-button" onClick={ handleOpenModal }>
         Modal
       </button>
-      <Modal
+      <S.ModalContainer
         isOpen={ modalIsOpen }
         onRequestClose={ handleCloseModal }
-        style={ customStyles }
       >
-        <h1>{name}</h1>
+        <S.Photo>
+          <img src="./pikachu.png" alt={ name } />
+        </S.Photo>
 
-        <button onClick={ handleCloseModal }><GrClose /></button>
-        <div>{description}</div>
-        <p>{price}</p>
-        <button className="addCart">Adicionar ao carrinho</button>
-      </Modal>
-    </div>
+        <S.Text>
+          <p>{name}</p>
+
+          <S.CloseButton onClick={ handleCloseModal }><S.CloseIcon /></S.CloseButton>
+          <p>{description}</p>
+          <p>{price}</p>
+          <button className="addCart">Adicionar ao carrinho</button>
+        </S.Text>
+      </S.ModalContainer>
+    </S.Container>
   );
 }
