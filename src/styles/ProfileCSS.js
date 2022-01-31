@@ -84,14 +84,18 @@ export const Select = tw.select`
 export const Buttons = tw.div`
   space-x-6
   mt-8
+  flex
 `;
 
 export const Button = tw.button`
   text-xl
   font-semibold
+  flex
+  justify-center
   ${props => props.text}
   ${props => props.bg}
   ${props => props.bd}
+  ${props => props.hover}
   border-2
   p-4
   w-36

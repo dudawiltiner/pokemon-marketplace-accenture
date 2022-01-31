@@ -1,11 +1,13 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useFormik } from 'formik';
 import * as yup from 'yup';
 import { useNavigate } from 'react-router';
+import { useSelector } from 'react-redux';
 import { fetchRegisterUser } from '../service/authAPi';
 
 export default function useLogin() {
   const navigate = useNavigate();
+  const storage = useSelector((state) => state);
 
   const [show, setShow] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -18,15 +20,13 @@ export default function useLogin() {
       .required('O nome completo é obrigatório.')
       .min(MIN_LENGTH, 'O nome deve ter no mínimo 6 caracteres!'),
     sex: yup
-      .string()
-      .required('O sexo é obrigatório'),
+      .string(),
     email: yup
       .string()
       .email('O email deve ser válido.')
       .required('O email é obrigatório.'),
     origin: yup
-      .string()
-      .required('A origem é obrigatória.'),
+      .string(),
     position: yup
       .string()
       .required('A função é obrigatória.'),
@@ -37,14 +37,21 @@ export default function useLogin() {
       .max(MAX_LENGTH, 'A senha deve ter no máximo 8 caracteres!'),
   });
 
+  useEffect(() => {
+    const { res } = storage.reducerUser;
+    if (Object.keys(res).length > 0) {
+      navigate('/');
+    }
+  }, [navigate, storage.reducerUser]);
+
   async function saveUser(values) {
     setLoading(true);
     let image = './avatar1.png';
     if (values.sex === 'Feminino') {
-      image = '/avatar.jpg';
+      image = '/avatar2.jpg';
     }
     const res = await fetchRegisterUser({ ...values, image });
-    setLoading(true);
+    setLoading(false);
     const { message } = res;
     console.log(message);
     if (message.includes('error')) {
@@ -57,9 +64,9 @@ export default function useLogin() {
   const formik = useFormik({
     initialValues: {
       fullName: '',
-      sex: '',
+      sex: 'Feminino',
       email: '',
-      origin: '',
+      origin: 'Japão',
       position: '',
       password: '',
     },

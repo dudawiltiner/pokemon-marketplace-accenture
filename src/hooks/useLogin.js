@@ -1,8 +1,9 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useFormik } from 'formik';
 import * as yup from 'yup';
 import { useNavigate } from 'react-router';
+import { changePasswordAction } from '../redux/actions';
 
 export default function useLogin() {
   const storage = useSelector((state) => state);
@@ -26,20 +27,31 @@ export default function useLogin() {
       .max(MAX_LENGTH, 'A senha deve ter no máximo 8 caracteres!'),
   });
 
-  function authUser(values) {
-    setLoading(true);
-    dispatch({
-      type: 'CALL_SAGA_AUTH',
-      body: values,
-    });
-
-    const { message } = storage.reducerUser.res;
-    setLoading(false);
-    if (message.includes('error')) {
-      setShow(true);
-    } else {
-      navigate('/');
+  useEffect(() => {
+    const { res } = storage.reducerUser;
+    console.log(res);
+    if (Object.keys(res).length > 0) {
+      console.log('aqui2');
+      if (res.message) {
+        console.log('aqui1');
+        setShow(true);
+        dispatch(changePasswordAction({}));
+      } else {
+        navigate('/');
+      }
     }
+  }, [dispatch, loading, navigate, storage]);
+
+  async function authUser(values) {
+    const TIME = 1000;
+    setLoading(true);
+    await setTimeout(() => {
+      dispatch({
+        type: 'CALL_SAGA_AUTH',
+        body: values,
+      });
+      setLoading(false);
+    }, TIME);
   }
 
   const formik = useFormik({

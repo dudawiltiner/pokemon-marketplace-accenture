@@ -1,4 +1,4 @@
-const URL = 'http://api-auth-java.herokuapp.com/users/';
+const URL = 'https://api-auth-java.herokuapp.com/users/';
 const HEADER = {
   Accept: 'application/json',
   'Content-Type': 'application/json',

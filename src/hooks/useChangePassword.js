@@ -1,10 +1,14 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { useFormik } from 'formik';
 import * as yup from 'yup';
 import { useNavigate } from 'react-router';
 import { fetchChangePassword } from '../service/authAPi';
+import { changePasswordAction } from '../redux/actions';
 
 export default function useLogin() {
+  const dispatch = useDispatch();
+  const storage = useSelector((state) => state);
   const navigate = useNavigate();
 
   const [show, setShow] = useState(false);
@@ -28,8 +32,16 @@ export default function useLogin() {
       .required('É necessário confirmar a senha.'),
   });
 
+  useEffect(() => {
+    const { res } = storage.reducerUser;
+    if (Object.keys(res).length > 0) {
+      navigate('/');
+    }
+  }, [navigate, storage.reducerUser]);
+
   async function changePassword(values) {
     setLoading(true);
+    dispatch(changePasswordAction({}));
     const res = await fetchChangePassword({
       email: values.email,
       password: values.password,

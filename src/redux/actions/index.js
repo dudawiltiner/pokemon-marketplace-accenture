@@ -3,4 +3,14 @@ export const authUserAction = (payload) => ({
   payload,
 });
 
-export default { authUserAction };
+export const updateUserAction = (payload) => ({
+  type: 'UPDATE_USER',
+  payload,
+});
+
+export const changePasswordAction = (payload) => ({
+  type: 'CHANGE_PASSWORD',
+  payload,
+});
+
+export default { authUserAction, updateUserAction, changePasswordAction };

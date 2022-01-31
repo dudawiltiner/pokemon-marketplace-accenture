@@ -1,4 +1,3 @@
-/* eslint-disable react/jsx-max-depth */
 import React from 'react';
 import { countryList } from '../data/countries';
 import { Input, Label, LoadingIcon, Subtitle } from '../styles/FormsGeralCSS';
@@ -70,55 +69,43 @@ export default function FormsRegister() {
       />
 
       <Choose>
-        <div>
-          <Label
-            htmlFor="origin"
+        <Label
+          htmlFor="origin"
+        >
+          Origem
+          <Select
+            id="origin"
+            name="origin"
+            defaultValue={ formik.values.origin }
+            onChange={ formik.handleChange }
+            autoComplete="origin"
           >
-            Origem
-            <Select
-              id="origin"
-              name="origin"
-              onChange={ formik.handleChange }
-              autoComplete="origin"
-            >
-              {countryList.map((item, idx) => (
-                <option
-                  value={ item }
-                  key={ idx }
-                >
-                  {item}
-                </option>))}
-            </Select>
-          </Label>
-          <StatusForms
-            value={ formik.values.origin }
-            error={ formik.errors.origin }
-            sucess="origem escolhida."
-          />
-        </div>
+            {countryList.map((item, idx) => (
+              <option
+                value={ item }
+                key={ idx }
+              >
+                {item}
+              </option>))}
+          </Select>
+        </Label>
 
-        <div>
-          <Label
-            htmlFor="country"
+        <Label
+          htmlFor="country"
+        >
+          Sexo
+          <Select
+            id="sex"
+            name="sex"
+            defaultValue={ formik.values.sex }
+            onChange={ formik.handleChange }
+            autoComplete="sex"
           >
-            Sexo
-            <Select
-              id="sex"
-              name="sex"
-              onChange={ formik.handleChange }
-              autoComplete="sex"
-            >
-              <option value="Feminino">Feminino</option>
-              <option value="Masculino">Masculino</option>
-              <option value="-">-</option>
-            </Select>
-          </Label>
-          <StatusForms
-            value={ formik.values.sex }
-            error={ formik.errors.sex }
-            sucess="sexo escolhido."
-          />
-        </div>
+            <option value="Feminino">Feminino</option>
+            <option value="Masculino">Masculino</option>
+            <option value="-">-</option>
+          </Select>
+        </Label>
       </Choose>
 
       <Label htmlFor="position">
@@ -139,7 +126,7 @@ export default function FormsRegister() {
       />
 
       <S.ButtonIn margint="mt-12" type="submit">
-        {loading && <LoadingIcon data-aos="zoom-in" />}
+        {loading && <LoadingIcon />}
         <p> GO!</p>
       </S.ButtonIn>
 

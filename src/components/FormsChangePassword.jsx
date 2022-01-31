@@ -68,7 +68,7 @@ export default function FormsChangePassword() {
       />
 
       <S.ButtonIn margint="mt-12" type="submit">
-        {loading && <LoadingIcon data-aos="zoom-in" />}
+        {loading && <LoadingIcon />}
         <p> GO!</p>
       </S.ButtonIn>
 

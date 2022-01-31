@@ -53,7 +53,7 @@ export default function FormsLogin() {
       </S.ChangePassword>
 
       <S.ButtonIn margint="mt-6" type="submit">
-        {loading && <LoadingIcon data-aos="zoom-in" />}
+        {loading && <LoadingIcon />}
         <p> GO!</p>
       </S.ButtonIn>
 

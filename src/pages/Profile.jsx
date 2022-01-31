@@ -1,14 +1,15 @@
-import React, { useEffect } from 'react';
-import Aos from 'aos';
+import React from 'react';
 import FormsProfile from '../components/FormsProfile';
 import 'aos/dist/aos.css';
+import useVerifyAuth from '../hooks/useVerifyAuth';
+import ImageProvider from '../context/ImageContext';
 
 export default function Profile() {
-  useEffect(() => {
-    Aos.init({ duration: 1000, once: true });
-  }, []);
+  useVerifyAuth();
 
   return (
-    <FormsProfile />
+    <ImageProvider>
+      <FormsProfile />
+    </ImageProvider>
   );
 }
