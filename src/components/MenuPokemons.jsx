@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import * as S from '../styles/MenuPokemonsCSS';
+import pricesList from '../data/prices';
 
 export default function MenuPokemon() {
   const storage = useSelector((state) => state);
@@ -13,6 +14,8 @@ export default function MenuPokemon() {
 
   useEffect(() => {
     setPokemons(storage.pokemons.items);
+    console.log(storage.pokemons.items);
+    // setPokemons(pricesList);
   }, [storage]);
 
   useEffect(() => {
@@ -29,7 +32,7 @@ export default function MenuPokemon() {
             <S.Name>{ item.name }</S.Name>
             <S.Type>Pokemon tipo elétrico</S.Type>
             <S.Detail>+ detalhes</S.Detail>
-            <S.Price>R$ 20.000,00</S.Price>
+            <S.Price>{ `R$ ${pricesList[index]}` }</S.Price>
             <S.Button>Adicionar ao carrinho</S.Button>
           </S.CardPokemon>
         ))}
