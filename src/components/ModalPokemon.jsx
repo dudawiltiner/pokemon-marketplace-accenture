@@ -1,15 +1,19 @@
 /* eslint-disable jsx-a11y/control-has-associated-label */
 /* eslint-disable react/jsx-no-bind */
 /* eslint-disable react/button-has-type */
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Modal from 'react-modal';
 import * as S from '../styles/ModalPokemon';
-import { fetchPokemons } from '../../service/pokemonsAPI';
+import { fetchPokemonsDetails } from '../service/pokemonsAPI';
 
 Modal.setAppElement('#root');
 
 export default function ModalPokemon() {
+  const name = 'pikachu';
+  const price = '20000';
+
   const [modalIsOpen, setIsOpen] = useState(false);
+  const [description, setDescription] = useState(false);
 
   function handleOpenModal() {
     setIsOpen(true);
@@ -19,21 +23,19 @@ export default function ModalPokemon() {
     setIsOpen(false);
   }
 
-  // eslint-disable-next-line no-unused-vars
-  function* getAllPokemons() {
+  async function getPokemonDetails(namePokemon) {
     try {
-      console.log('getAllPokemons');
-      const pokemons = yield call(fetchPokemons);
-      console.log(pokemons);
-      yield put({ type: 'ADD_POKEMONS', payload: pokemons.results });
+      const res = await fetchPokemonsDetails(namePokemon);
+      console.log(res);
+      setDescription(res.flavor_text_entries[0].flavor_text);
     } catch (e) {
       console.log(e);
     }
   }
 
-  const name = 'Pikachu';
-  const description = 'pokemon elétrico';
-  const price = '20000';
+  useEffect(() => {
+    getPokemonDetails(name);
+  }, []);
 
   return (
     <S.Container>
