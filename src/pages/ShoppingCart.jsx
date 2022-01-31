@@ -1,11 +1,21 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
 import NavBar from '../components/NavBar';
 import * as S from '../styles/ShoppingCartCSS';
+
 // import useVerifyAuth from '../hooks/useVerifyAuth';
 
 export default function ShoppingCart() {
   // useVerifyAuth();
+  // const dispatch = useDispatch();
+  const [list, setList] = useState([]);
+  const storage = useSelector((state) => state);
 
+  useEffect(() => {
+    setList(storage.shoppingReducer.listCart);
+  }, [storage]);
+
+  console.log(list);
   return (
     <S.Container>
       <NavBar />

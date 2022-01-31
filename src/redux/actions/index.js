@@ -18,4 +18,20 @@ export const pokemonsAction = (payload) => ({
   payload,
 });
 
-export default { authUserAction, updateUserAction, changePasswordAction, pokemonsAction };
+export const addPokemonCartAction = (payload) => ({
+  type: 'ADD_POKEMON_CART',
+  payload,
+});
+
+export const removePokemonCartAction = (payload) => ({
+  type: 'REMOVE_POKEMON_CART',
+  payload,
+});
+
+export default {
+  authUserAction,
+  updateUserAction,
+  changePasswordAction,
+  pokemonsAction,
+  addPokemonCartAction,
+  removePokemonCartAction };

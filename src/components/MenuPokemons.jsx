@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { addPokemonCartAction } from '../redux/actions';
 import * as S from '../styles/MenuPokemonsCSS';
 
 export default function MenuPokemon() {
@@ -9,6 +10,19 @@ export default function MenuPokemon() {
 
   function loadingPokemons() {
     dispatch({ type: 'CALL_SAGA_POKEMONS' });
+  }
+
+  function addPokemonToCart(img, name, price) {
+    const pokemonBought = {
+      img,
+      name,
+      price,
+      count: 1,
+    };
+
+    console.log(pokemonBought);
+
+    dispatch(addPokemonCartAction(pokemonBought));
   }
 
   useEffect(() => {
@@ -29,8 +43,16 @@ export default function MenuPokemon() {
             <S.Name>{ item.name }</S.Name>
             <S.Type>Pokemon tipo elétrico</S.Type>
             <S.Detail>+ detalhes</S.Detail>
-            <S.Price>R$ 20.000,00</S.Price>
-            <S.Button>Adicionar ao carrinho</S.Button>
+            <S.Price>20.000</S.Price>
+            <S.Button
+              onClick={ () => addPokemonToCart(
+                `https://img.pokemondb.net/artwork/large/${item.name}.jpg`,
+                item.name,
+                '20.000',
+              ) }
+            >
+              Adicionar ao carrinho
+            </S.Button>
           </S.CardPokemon>
         ))}
       </ul>
