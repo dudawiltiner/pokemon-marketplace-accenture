@@ -1,16 +1,18 @@
 import React from 'react';
 import { Input, Label, LoadingIcon, Subtitle } from '../styles/FormsGeralCSS';
 import * as S from '../styles/LoginCSS';
+import { ButtonLo } from '../styles/RegisterCSS';
 import MainPartForms from './MainPartForms';
+import useChangePassword from '../hooks/useChangePassword';
 import StatusForms from './StatusForms';
 import Alert from './Alert';
-import useLogin from '../hooks/useLogin';
 
-export default function FormsLogin() {
-  const { loading, show, setShow, formik } = useLogin();
+export default function FormsChangePassword() {
+  const { loading, show, setShow, formik } = useChangePassword();
+
   return (
     <MainPartForms
-      title="Faça o login"
+      title="Mude a senha"
       space="space-y-14"
       funcSubmit={ formik.handleSubmit }
     >
@@ -48,22 +50,37 @@ export default function FormsLogin() {
         sucess="A senha é válida."
       />
 
-      <S.ChangePassword to="/changepassword" type="button">
-        Esqueceu a senha?
-      </S.ChangePassword>
+      <Label htmlFor="confirmPassword">
+        <Subtitle>Confirmar Senha</Subtitle>
+        <Input
+          id="confirmPassword"
+          name="confirmPassword"
+          type="password"
+          value={ formik.values.confirmPassword }
+          onChange={ formik.handleChange }
+          placeholder="Digite novamente a sua senha"
+        />
+      </Label>
+      <StatusForms
+        value={ formik.values.confirmPassword }
+        error={ formik.errors.confirmPassword }
+        sucess="A senha confere."
+      />
 
-      <S.ButtonIn margint="mt-6" type="submit">
+      <S.ButtonIn margint="mt-12" type="submit">
         {loading && <LoadingIcon />}
         <p> GO!</p>
       </S.ButtonIn>
 
-      <S.Register margint="mt-32">
+      <ButtonLo to="/login">Voltar para login</ButtonLo>
+
+      <S.Register margint="mt-10">
         <S.QuestionRe>Ainda não é um treinador de Pokémon?</S.QuestionRe>
         <S.ButtonRe to="/register">Cadastre-se agora</S.ButtonRe>
       </S.Register>
 
       {show && <Alert
-        alertDescription="Senha e/ou email incorretos."
+        alertDescription="Email ainda não cadastrado."
         close={ setShow }
       />}
     </MainPartForms>
