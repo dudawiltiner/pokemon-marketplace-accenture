@@ -9,7 +9,7 @@ export default function App() {
         <Route path="/" element={ <P.Home /> } />
         <Route path="/login" element={ <P.Login /> } />
         <Route path="/profile" element={ <P.Profile /> } />
-        <Route path="/shoppin" element={ <P.ShoppingCart /> } />
+        <Route path="/cart" element={ <P.ShoppingCart /> } />
       </Routes>
     </BrowserRouter>
   );
