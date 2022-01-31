@@ -3,6 +3,7 @@ import createSagaMiddleware from 'redux-saga';
 import { persistReducer, persistStore } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 import DefaultReducers from './reducers';
+import funcTakePokemons from './sagas/pokemonsSagas';
 import { funcTake } from './sagas/userSagas';
 
 const persistConfig = {
@@ -19,4 +20,4 @@ const persistor = persistStore(store);
 
 export { store, persistor };
 
-sagaMiddleware.run(funcTake);
+sagaMiddleware.run(funcTake, funcTakePokemons);

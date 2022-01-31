@@ -13,4 +13,9 @@ export const changePasswordAction = (payload) => ({
   payload,
 });
 
-export default { authUserAction, updateUserAction, changePasswordAction };
+export const pokemonsAction = (payload) => ({
+  type: 'ADD_POKEMONS',
+  payload,
+});
+
+export default { authUserAction, updateUserAction, changePasswordAction, pokemonsAction };
