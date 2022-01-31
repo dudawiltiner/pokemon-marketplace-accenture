@@ -7,10 +7,18 @@ export default function MenuPokemon() {
   const dispatch = useDispatch();
   const [pokemons, setPokemons] = useState([]);
 
-  useEffect(() => {
+  function loadingPokemons() {
     dispatch({ type: 'CALL_SAGA_POKEMONS' });
+  }
+
+  useEffect(() => {
     setPokemons(storage.pokemons.items);
-  }, [dispatch, storage.pokemons.items]);
+  }, [storage]);
+
+  useEffect(() => {
+    loadingPokemons();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <S.ContainerPokemon>

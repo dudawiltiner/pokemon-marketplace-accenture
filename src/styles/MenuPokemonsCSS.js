@@ -1,14 +1,17 @@
 import styled from "styled-components";
 
 export const ContainerPokemon = styled.div`
-  position: absolute;
-  flex-direction: row;
+  display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  background: #e5e5e5;
-  width: 1350px;
+  background-color: #e5e5e5;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1350px;
   height: auto;
-  margin-top: 250px;
+  margin-top: 100px;
 `;
 
 export const CardPokemon = styled.li`
@@ -32,23 +35,22 @@ export const Picture = styled.img`
 
 export const Name = styled.div`
   color: #717171;
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 600;
-  margin: 5px 45px;
+  margin: 5px 45px 14px 45px;
 `;
 
 export const Type = styled.div`
   color: #717171;
-  font-size: 12px;
-  font-weight: 400;
+  font-size: 15px;
   margin: 5px 45px;
 `;
 
 export const Detail = styled.div`
   color: #717171;
-  font-size: 14px;
-  font-weight: 400;
-  margin: 5px 45px;
+  font-size: 15px;
+  font-weight: 600;
+  margin: 5px 45px 14px 45px;
 `;
 
 export const Price = styled.div`
@@ -63,11 +65,12 @@ export const Button = styled.button`
   width: 180px;
   color: white;
   font-weight: 600;
-  font-size: 12px;
+  font-size: 16px;
   background: #717171;
   border: none;
   border-radius: 3px;
   margin-top: 20px;
   margin-left: 35px;
+  margin-bottom: 20px;
   cursor: pointer;
 `;

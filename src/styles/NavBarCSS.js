@@ -1,26 +1,45 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
+import { FiUser } from 'react-icons/fi';
+import { CgShoppingCart } from 'react-icons/cg';
+import { MdInput } from 'react-icons/md';
 
 export const NavBar = styled.div`
-  position: relative;
   display: flex;
-  justify-content: right;
+  justify-content: space-around;
   align-items: center;
-  width: 1350px;
-  height: 90px;
+  width: 100%;
+ 
   background: white;
-  margin: 100px;
   border-radius: 5px;
-  padding: 30px;
+  padding: 10px;
 `;
 
 export const LogoPoke = styled.img`
-  position: relative;
   width: 100px;
   height: 50px;
-  margin: 10px 1050px 10px 20px;
 `;
 
-export const Icon = styled.div`
+const Icon = css`
   color: #717171;
-  margin: 10px 0px 10px 20px;
+  width: 30px;
+  height: 30px;
+  margin-right: 20px;
+`;
+
+export const Icon1 = styled(CgShoppingCart)`
+  ${Icon}
+`;
+
+export const Icon2 = styled(FiUser)`
+  ${Icon}
+`;
+
+export const Icon3 = styled(MdInput)`
+  ${Icon}
+`;
+
+export const ContainerIcons = styled.div`
+  display: flex;
+  padding: 10px;
+  height: 100%;
 `;

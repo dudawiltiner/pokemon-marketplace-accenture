@@ -1,4 +1,4 @@
-import { put, takeEvery, call } from 'redux-saga/effects';
+import { put, takeLatest, call } from 'redux-saga/effects';
 import { fetchPokemons } from '../../service/pokemonsAPI';
 
 function* getAllPokemons() {
@@ -13,7 +13,7 @@ function* getAllPokemons() {
 
 function* funcTakePokemons() {
   console.log('funcTakePokemons');
-  yield takeEvery('CALL_SAGA_POKEMONS', getAllPokemons);
+  yield takeLatest('CALL_SAGA_POKEMONS', getAllPokemons);
 }
 
 export default funcTakePokemons;
