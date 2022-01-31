@@ -30,7 +30,6 @@ export const Picture = styled.img`
   width: 160px;
   height: 160px;
   margin: 30px 45px;
-
 `;
 
 export const Name = styled.div`
