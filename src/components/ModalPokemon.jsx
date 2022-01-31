@@ -4,6 +4,7 @@
 import React, { useState } from 'react';
 import Modal from 'react-modal';
 import * as S from '../styles/ModalPokemon';
+import { fetchPokemons } from '../../service/pokemonsAPI';
 
 Modal.setAppElement('#root');
 
@@ -16,6 +17,18 @@ export default function ModalPokemon() {
 
   function handleCloseModal() {
     setIsOpen(false);
+  }
+
+  // eslint-disable-next-line no-unused-vars
+  function* getAllPokemons() {
+    try {
+      console.log('getAllPokemons');
+      const pokemons = yield call(fetchPokemons);
+      console.log(pokemons);
+      yield put({ type: 'ADD_POKEMONS', payload: pokemons.results });
+    } catch (e) {
+      console.log(e);
+    }
   }
 
   const name = 'Pikachu';
