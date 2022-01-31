@@ -17,14 +17,13 @@ export default function NavBar() {
 
   return (
     <S.NavBar>
-      <S.LogoPoke src="./logo.png" alt="logo" />
+      <Link to="/">
+        <S.LogoPoke src="./logo.png" alt="logo" />
+      </Link>
       <S.ContainerIcons>
-        <button
-          type="button"
-          aria-label="Shopping Cart"
-        >
+        <Link to="/cart">
           <S.Icon1 />
-        </button>
+        </Link>
         <Link to="/profile">
           <S.Icon2 />
         </Link>

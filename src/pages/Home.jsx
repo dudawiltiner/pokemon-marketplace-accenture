@@ -2,10 +2,10 @@ import React from 'react';
 import * as S from '../styles/HomeCSS';
 import NavBar from '../components/NavBar';
 import MenuPokemons from '../components/MenuPokemons';
-import useVerifyAuth from '../hooks/useVerifyAuth';
+// import useVerifyAuth from '../hooks/useVerifyAuth';
 
 export default function Home() {
-  useVerifyAuth();
+  // useVerifyAuth();
 
   return (
     <S.Container>
