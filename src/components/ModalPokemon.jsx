@@ -54,7 +54,22 @@ export default function ModalPokemon() {
           <p>{name}</p>
 
           <S.CloseButton onClick={ handleCloseModal }><S.CloseIcon /></S.CloseButton>
-          <p>{`Is a ${name} pokemon`}</p>
+          {/* <p>
+            {`${name} It is a type ${type} pokemon
+            introduced in the ${gen} generation.`}
+          </p>
+          <p>
+            {`It evolves from ${preEv} when ${preEvCondition}
+            and evolves to ${postEv} when ${postEvCondition}.`}
+          </p>
+          <p>
+            {`In Alola, ${name} will evolve to ${alolaPostEv}
+            when ${alolaPostEvCondition}`}
+          </p>
+          <p>
+            {`{name} has a form ${gigantamax}. ${name}
+            with Gigantamax factor cannot evolve.`}
+          </p> */}
           <p>{price}</p>
           <button className="addCart">Adicionar ao carrinho</button>
         </S.Text>
