@@ -13,7 +13,7 @@ export default function ModalPokemon() {
   const price = '20000';
 
   const [modalIsOpen, setIsOpen] = useState(false);
-  const [description, setDescription] = useState(false);
+  const [setDescription] = useState(false);
 
   function handleOpenModal() {
     setIsOpen(true);
@@ -35,7 +35,7 @@ export default function ModalPokemon() {
 
   useEffect(() => {
     getPokemonDetails(name);
-  }, []);
+  }, [getPokemonDetails]);
 
   return (
     <S.Container>
@@ -54,7 +54,7 @@ export default function ModalPokemon() {
           <p>{name}</p>
 
           <S.CloseButton onClick={ handleCloseModal }><S.CloseIcon /></S.CloseButton>
-          <p>{description}</p>
+          <p>{`Is a ${name} pokemon`}</p>
           <p>{price}</p>
           <button className="addCart">Adicionar ao carrinho</button>
         </S.Text>
