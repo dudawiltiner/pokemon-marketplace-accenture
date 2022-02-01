@@ -3,7 +3,6 @@
 /* eslint-disable react/jsx-no-bind */
 /* eslint-disable react/button-has-type */
 import React, { useState } from 'react';
-import { GrClose } from 'react-icons/gr';
 import Modal from 'react-modal';
 import * as S from '../styles/ModalShopping';
 
@@ -31,9 +30,12 @@ export default function ModalShopping() {
       >
 
         <S.CloseButton onClick={ handleCloseModal }><S.CloseIcon /></S.CloseButton>
-
-        <button onClick={ handleCloseModal }><GrClose /></button>
-        <div>I am a modal</div>
+        <S.CartIcon />
+        <S.Text1>Compra realizada com sucesso!</S.Text1>
+        <S.Text2>Em beve você receberá um e-mail com todos os detalhes</S.Text2>
+        <S.ContentButton>
+          <S.HomeButton to="/">Voltar para home</S.HomeButton>
+        </S.ContentButton>
       </S.ModalContainer>
     </S.Container>
   );
