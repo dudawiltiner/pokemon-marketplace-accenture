@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable jsx-a11y/control-has-associated-label */
 /* eslint-disable react/jsx-no-bind */
 /* eslint-disable react/button-has-type */
@@ -13,7 +14,12 @@ export default function ModalPokemon() {
   const price = '20000';
 
   const [modalIsOpen, setIsOpen] = useState(false);
-  const [setDescription] = useState(false);
+  const [color, setColor] = useState(false);
+  const [region, setRegion] = useState(false);
+  const [shape, setShape] = useState(false);
+  const [type, setType] = useState(false);
+  const [gen, setGen] = useState(false);
+  const [id, setId] = useState(false);
 
   function handleOpenModal() {
     setIsOpen(true);
@@ -27,7 +33,12 @@ export default function ModalPokemon() {
     try {
       const res = await fetchPokemonsDetails(namePokemon);
       console.log(res);
-      setDescription(res.flavor_text_entries[0].flavor_text);
+      setColor(res.color.name);
+      setRegion(res.pokedex.name);
+      setShape(res.shape.name);
+      setType(res.type.name);
+      setGen(res.gen.name);
+      setId(res.id.name);
     } catch (e) {
       console.log(e);
     }
@@ -54,22 +65,18 @@ export default function ModalPokemon() {
           <p>{name}</p>
 
           <S.CloseButton onClick={ handleCloseModal }><S.CloseIcon /></S.CloseButton>
-          {/* <p>
-            {`${name} It is a type ${type} pokemon
-            introduced in the ${gen} generation.`}
+
+          <p>
+            {`Natural from ${region}. 
+          ${name} is a ${color} and ${shape} pokemon, ${type} type.`}
+
           </p>
           <p>
-            {`It evolves from ${preEv} when ${preEvCondition}
-            and evolves to ${postEv} when ${postEvCondition}.`}
+            {`Implemented on ${gen} generation. 
+          That pokémon have the id ${id} in pokedex.`}
+
           </p>
-          <p>
-            {`In Alola, ${name} will evolve to ${alolaPostEv}
-            when ${alolaPostEvCondition}`}
-          </p>
-          <p>
-            {`{name} has a form ${gigantamax}. ${name}
-            with Gigantamax factor cannot evolve.`}
-          </p> */}
+
           <p>{price}</p>
           <button className="addCart">Adicionar ao carrinho</button>
         </S.Text>

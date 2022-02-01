@@ -14,6 +14,7 @@ export const Content = tw.div`
   bg-white
   rounded-3xl
   shadow-md
+  -mt-24
   flex
   w-1/2
   h-1/2

@@ -29,7 +29,7 @@ export default function useLogin() {
 
   useEffect(() => {
     const { res } = storage.reducerUser;
-    console.log(res);
+
     if (Object.keys(res).length > 0) {
       console.log('aqui2');
       if (res.message) {

@@ -3,8 +3,6 @@ import styled from 'styled-components';
 import { IoMdClose } from 'react-icons/io'
 
 export const ModalContainer = styled(Modal)`
-  // top: 50%;
-  // left: 50%;
   display: flex;
   background-color: white;
   margin: 10% 30%;
