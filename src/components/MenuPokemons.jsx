@@ -112,7 +112,7 @@ export default function MenuPokemon() {
             <S.Button
               bgcolor="#717171"
               onClick={ () => addPokemonToCart(
-                `https://img.pokemondb.net/artwork/large/${item.name}.jpg`,
+                `https://img.pokemondb.net/artwork/large/${item.namePokemon}.jpg`,
                 item.namePokemon,
                 pricesList[index],
               ) }

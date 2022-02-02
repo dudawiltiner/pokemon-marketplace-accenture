@@ -22,16 +22,12 @@ export default function CartCounter({ pokemonBought }) {
 
   const [newPrice, setNewPrice] = useState(pokemonBought.price);
 
-  const handlePrice = async () => {
+  const handlePrice = () => {
     const mult = 1000;
     const initialPrice = parseFloat(pokemonBought.price) * mult;
     const subPrice = initialPrice * pokemonBought.count;
-    // const totalAmount = total + subPrice;
-    // console.log(totalAmount);
-    // await setTotal(totalAmount);
+
     setNewPrice(subPrice.toLocaleString('en-US').replace(',', '.'));
-    // eslint-disable-next-line max-len
-    // console.log((parseFloat(pokemonBought.price) * mult).toLocaleString('en-US').replace(',', '.'));
   };
 
   useEffect(() => {

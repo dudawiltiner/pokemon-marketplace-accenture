@@ -40,7 +40,9 @@ export default function ShoppingCart() {
             />
           ))
         }
-        <CartTotal />
+
+        {list.length > 0
+        && <CartTotal listPokemon={ list } />}
         <BackAndBuyButtonsContainer />
 
       </S.CartMain>

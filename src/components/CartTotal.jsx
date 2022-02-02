@@ -1,18 +1,42 @@
-import React, { useContext } from 'react';
-import { ShoppingCartContext } from '../context/ShoppingCartContext';
+import React, { useEffect, useState } from 'react';
+// import { ShoppingCartContext } from '../context/ShoppingCartContext';
 // import { useDispatch } from 'react-redux';
 import * as S from '../styles/ShoppingCartCSS';
 
-export default function CartTotal() {
-  const context = useContext(ShoppingCartContext);
+// eslint-disable-next-line react/prop-types
+export default function CartTotal({ listPokemon }) {
+  const [sum, setSum] = useState('');
+  console.log(listPokemon);
+  const convertPrice = (price, count) => {
+    const mult = 1000;
+    const initialPrice = parseFloat(price) * mult;
+    const subPrice = initialPrice * count;
 
-  const { listPokemons } = context;
-  console.log(listPokemons);
+    console.log(subPrice);
+    return subPrice;
+  };
+
+  const total = () => {
+    let sumSubPrice = 0;
+    console.log(listPokemon);
+    // eslint-disable-next-line react/prop-types
+    listPokemon.forEach((item) => {
+      sumSubPrice += convertPrice(item.price, item.count);
+    });
+    const ToString = sumSubPrice.toLocaleString('en-US').replace(',', '.');
+    setSum(ToString);
+    console.log(sumSubPrice);
+  };
+
+  useEffect(() => {
+    total();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   return (
     <S.TotalContainer>
       <S.CartTotal>
-        Total:
-        { total }
+        { `R$ ${sum},00` }
       </S.CartTotal>
     </S.TotalContainer>
   );
