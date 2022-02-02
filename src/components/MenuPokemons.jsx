@@ -11,6 +11,7 @@ export default function MenuPokemon() {
 
   function loadingPokemons() {
     dispatch({ type: 'CALL_SAGA_POKEMONS' });
+    detailsPokemons(storage);
   }
 
   function addPokemonToCart(img, name, price) {
@@ -26,10 +27,37 @@ export default function MenuPokemon() {
     dispatch(addPokemonCartAction(pokemonBought));
   }
 
+  async function detailsPokemons(dataStorage) {
+    const namePokemons = dataStorage.pokemons.items;
+    const listPokemons = [];
+    // console.log(namePokemons);
+    for (const poke of namePokemons) {
+      // console.log(poke.name);
+      // export const fetchPokemonsDetails = (name) => (
+      const pokemonsDetails = await fetch('https://pokeapi.co/api/v2/pokemon/' + poke.name)
+        .then((response) => response.json())
+        .then((data) => data)
+        .catch((error) => error);
+      // const pokemonsDetails = yield call(fetchPokemonsDetails());
+      // console.log(pokemonsDetails.types[1].type.name);
+      // const type = pokemonsDetails.types[1].type.name;
+      // console.log('passou do type');
+      listPokemons.push({
+        name: poke.name,
+        typePokemon: pokemonsDetails.types[0].type.name,
+      });
+      // console.log('passou da lista')
+    }
+    console.log(listPokemons);
+    // console.log(listPokemons[1].name);
+    // console.log(listPokemons[0].typePokemon.types[0].type.name);
+    console.log(listPokemons[0].typePokemon);
+    return listPokemons;
+  }
+
   useEffect(() => {
     setPokemons(storage.pokemons.items);
-    console.log(storage.pokemons.items);
-    // setPokemons(pricesList);
+    // console.log(storage.pokemons.items);
   }, [storage]);
 
   useEffect(() => {
@@ -44,23 +72,18 @@ export default function MenuPokemon() {
           <S.CardPokemon key={ index }>
             <S.Picture src={ `https://img.pokemondb.net/artwork/large/${item.name}.jpg` } />
             <S.Name>{ item.name }</S.Name>
-            <S.Type>Pokemon tipo elétrico</S.Type>
+            <S.Type>{ `Pokemon tipo ${item.typePokemon}` }</S.Type>
             <S.Detail>+ detalhes</S.Detail>
-<<<<<<< HEAD
             <S.Price>{ `R$ ${pricesList[index]}` }</S.Price>
-            <S.Button>Adicionar ao carrinho</S.Button>
-=======
-            <S.Price>20.000</S.Price>
             <S.Button
               onClick={ () => addPokemonToCart(
                 `https://img.pokemondb.net/artwork/large/${item.name}.jpg`,
                 item.name,
-                '20.000',
+                pricesList[index],
               ) }
             >
               Adicionar ao carrinho
             </S.Button>
->>>>>>> 28608840a63f73014dcaef3846d4d34926762f0e
           </S.CardPokemon>
         ))}
       </ul>
