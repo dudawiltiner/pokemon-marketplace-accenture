@@ -5,7 +5,11 @@ const INITIAL_STATE = {
 const ShoppingReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
   case 'ADD_POKEMON_CART':
-    return { listCart: [...state.listCart, action.payload] };
+    if (!state.listCart.find((item) => item.name === action.payload.name)) {
+      return { listCart: [action.payload, ...state.listCart] };
+    }
+
+    return state;
   case 'REMOVE_POKEMON_CART':
     // console.log('aqui');
     return { listCart: state.listCart.filter((item) => item !== action.payload) };
