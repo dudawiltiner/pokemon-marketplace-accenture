@@ -1,17 +1,49 @@
+/* eslint-disable no-restricted-syntax */
+/* eslint-disable prefer-template */
+/* eslint-disable no-await-in-loop */
+/* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { addPokemonCartAction } from '../redux/actions';
 import * as S from '../styles/MenuPokemonsCSS';
 import pricesList from '../data/prices';
+import { fetchPokemons } from '../service/pokemonsAPI';
 
 export default function MenuPokemon() {
-  const storage = useSelector((state) => state);
   const dispatch = useDispatch();
   const [pokemons, setPokemons] = useState([]);
+  const [page, setPage] = useState([]);
 
-  function loadingPokemons() {
-    dispatch({ type: 'CALL_SAGA_POKEMONS' });
-    detailsPokemons(storage);
+  async function loadingPokemons(URL) {
+    console.log(URL);
+    if (URL !== null) {
+      try {
+        const list = await fetchPokemons(URL);
+        setPage([list.previous, list.next]);
+        return list.results;
+      } catch (e) {
+        console.log(e);
+      }
+    }
+  }
+
+  async function detailsPokemons(URL) {
+    const pokemonsResult = await loadingPokemons(URL);
+    const listPokemons = [];
+    for (const poke of pokemonsResult) {
+      const pokemonsDetails = await fetch('https://pokeapi.co/api/v2/pokemon/' + poke.name)
+        .then((response) => response.json())
+        .then((data) => data)
+        .catch((error) => error);
+      console.log(poke.name, pokemonsDetails.types[0].type.name);
+      listPokemons.push({
+        namePokemon: poke.name,
+        typePokemon: pokemonsDetails.types[0].type.name,
+      });
+    }
+    console.log(listPokemons);
+    console.log(listPokemons[0].typePokemon);
+    setPokemons(listPokemons);
   }
 
   function addPokemonToCart(img, name, price) {
@@ -22,60 +54,48 @@ export default function MenuPokemon() {
       count: 1,
     };
 
-    console.log(pokemonBought);
-
     dispatch(addPokemonCartAction(pokemonBought));
   }
 
-  async function detailsPokemons(dataStorage) {
-    const namePokemons = dataStorage.pokemons.items;
-    const listPokemons = [];
-    // console.log(namePokemons);
-    for (const poke of namePokemons) {
-      // console.log(poke.name);
-      // export const fetchPokemonsDetails = (name) => (
-      const pokemonsDetails = await fetch('https://pokeapi.co/api/v2/pokemon/' + poke.name)
-        .then((response) => response.json())
-        .then((data) => data)
-        .catch((error) => error);
-      // const pokemonsDetails = yield call(fetchPokemonsDetails());
-      // console.log(pokemonsDetails.types[1].type.name);
-      // const type = pokemonsDetails.types[1].type.name;
-      // console.log('passou do type');
-      listPokemons.push({
-        name: poke.name,
-        typePokemon: pokemonsDetails.types[0].type.name,
-      });
-      // console.log('passou da lista')
-    }
-    console.log(listPokemons);
-    // console.log(listPokemons[1].name);
-    // console.log(listPokemons[0].typePokemon.types[0].type.name);
-    console.log(listPokemons[0].typePokemon);
-    return listPokemons;
-  }
-
   useEffect(() => {
-    setPokemons(storage.pokemons.items);
-    // console.log(storage.pokemons.items);
-  }, [storage]);
-
-  useEffect(() => {
-    loadingPokemons();
+    const URL = 'https://pokeapi.co/api/v2/pokemon';
+    detailsPokemons(URL);
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
     <S.ContainerPokemon>
+      <div className="flex items-center justify-between w-full mb-6 -mt-10">
+        <S.Button
+          color="#717171"
+          font="18px"
+          onClick={ () => detailsPokemons(page[0]) }
+          type="button"
+        >
+          <S.Icon1 />
+          <p>PREVIUS</p>
+        </S.Button>
+        <S.Title>POKEMONS</S.Title>
+        <S.Button
+          color="#717171"
+          font="18px"
+          onClick={ () => detailsPokemons(page[1]) }
+          type="button"
+        >
+          <p>NEXT</p>
+          <S.Icon2 />
+        </S.Button>
+      </div>
       <ul>
         { pokemons.map((item, index) => (
           <S.CardPokemon key={ index }>
-            <S.Picture src={ `https://img.pokemondb.net/artwork/large/${item.name}.jpg` } />
-            <S.Name>{ item.name }</S.Name>
-            <S.Type>{ `Pokemon tipo ${item.typePokemon}` }</S.Type>
+            <S.Picture src={ `https://img.pokemondb.net/artwork/large/${item.namePokemon}.jpg` } />
+            <S.Name>{ item.namePokemon }</S.Name>
+            <S.Type>{`Pokemon Type ${item.typePokemon}`}</S.Type>
             <S.Detail>+ detalhes</S.Detail>
             <S.Price>{ `R$ ${pricesList[index]}` }</S.Price>
             <S.Button
+              bgcolor="#717171"
               onClick={ () => addPokemonToCart(
                 `https://img.pokemondb.net/artwork/large/${item.name}.jpg`,
                 item.name,
