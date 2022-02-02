@@ -1,5 +1,6 @@
 import React from 'react';
 import * as S from '../styles/HomeCSS';
+import 'aos/dist/aos.css';
 import NavBar from '../components/NavBar';
 import MenuPokemons from '../components/MenuPokemons';
 // import ModalPokemon from '../components/ModalPokemon';

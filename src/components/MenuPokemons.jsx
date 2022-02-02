@@ -5,11 +5,14 @@
 import React, { useEffect, useState } from 'react';
 import Modal from 'react-modal/lib/components/Modal';
 import { useDispatch } from 'react-redux';
+import Aos from 'aos';
 import { addPokemonCartAction } from '../redux/actions';
 import * as S from '../styles/MenuPokemonsCSS';
 import pricesList from '../data/prices';
 import { fetchPokemons } from '../service/pokemonsAPI';
 import ModalPokemon from './ModalPokemon';
+
+const AOS_ANIMATION_DELAY = 150;
 
 export default function MenuPokemon() {
   const dispatch = useDispatch();
@@ -24,7 +27,6 @@ export default function MenuPokemon() {
     if (URL !== null) {
       try {
         const list = await fetchPokemons(URL);
-        console.log(list.previous, list.next);
         setPage([list.previous, list.next]);
         return list.results;
       } catch (e) {
@@ -34,6 +36,7 @@ export default function MenuPokemon() {
   }
 
   async function detailsPokemons(URL) {
+    Aos.init({ duration: 1000, once: true });
     const pokemonsResult = await loadingPokemons(URL);
     const listPokemons = [];
     for (const poke of pokemonsResult) {
@@ -41,13 +44,13 @@ export default function MenuPokemon() {
         .then((response) => response.json())
         .then((data) => data)
         .catch((error) => error);
+      console.log(poke.name, pokemonsDetails.types[1]);
       listPokemons.push({
         namePokemon: poke.name,
         typePokemon: pokemonsDetails.types[0].type.name,
       });
     }
-    console.log(listPokemons);
-    console.log(listPokemons[0].typePokemon);
+
     setPokemons(listPokemons);
   }
 
@@ -59,11 +62,10 @@ export default function MenuPokemon() {
       count: 1,
     };
 
-    console.log(pokemonBought);
-
     dispatch(addPokemonCartAction(pokemonBought));
   }
 
+<<<<<<< HEAD
   function showPokemonDetails(name, type, price) {
     const pokemonDetails = {
       name,
@@ -76,6 +78,8 @@ export default function MenuPokemon() {
     // dispatch(showPokemonDetailsAction(pokemonDetails));
   }
 
+=======
+>>>>>>> 856ad3a45d0acf5e233ab1a2607aa353c18899c5
   useEffect(() => {
     const URL = 'https://pokeapi.co/api/v2/pokemon';
     detailsPokemons(URL);
@@ -84,7 +88,7 @@ export default function MenuPokemon() {
 
   return (
     <S.ContainerPokemon>
-      <ModalPokemon modalOpen={ modalOpen } funcModalOpen={ setModalOpen } details= { detailsPokemon } />
+      <ModalPokemon modalOpen={ modalOpen } funcModalOpen={ setModalOpen } details={ detailsPokemon } />
       <div className="flex items-center justify-between w-full mb-6 -mt-10">
         <S.Button
           color="#717171"
@@ -108,7 +112,11 @@ export default function MenuPokemon() {
       </div>
       <ul>
         { pokemons.map((item, index) => (
-          <S.CardPokemon key={ index }>
+          <S.CardPokemon
+            data-aos="fade-up"
+            data-aos-delay={ index * AOS_ANIMATION_DELAY }
+            key={ index }
+          >
             <S.Picture src={ `https://img.pokemondb.net/artwork/large/${item.namePokemon}.jpg` } />
             <S.Name>{ item.namePokemon }</S.Name>
             <S.Type>{`Pokemon Type ${item.typePokemon}`}</S.Type>
