@@ -5,12 +5,12 @@ import { MdInput } from 'react-icons/md';
 import { Link } from 'react-router-dom';
 
 export const NavBar = styled.div`
+  position: fixed;
   display: flex;
   justify-content: space-around;
   align-items: center;
   width: 100%;
   background: white;
-  border-radius: 5px;
   padding: 10px;
 `;
 

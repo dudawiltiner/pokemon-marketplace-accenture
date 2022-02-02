@@ -22,7 +22,7 @@ export default function NavBar() {
   }, [storage]);
 
   return (
-    <S.NavBar>
+    <S.NavBar className="shadow-md">
       <Link to="/">
         <S.LogoPoke src="./logo.png" alt="logo" />
       </Link>
