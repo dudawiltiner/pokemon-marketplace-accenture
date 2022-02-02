@@ -50,6 +50,7 @@ export default function ModalPokemon({ pokemonList,
     <S.ModalContainer
       isOpen={ modalOpen }
       onRequestClose={ handleCloseModal }
+      className="shadow-2xl"
     >
       <S.Photo>
         <img src={ `https://img.pokemondb.net/artwork/large/${pokemonList.name}.jpg` } alt={ pokemonList.name } />
@@ -76,7 +77,7 @@ export default function ModalPokemon({ pokemonList,
               pokemonList.name,
               pokemonList.type) }
           >
-            Adicionar ao carrinho
+            Add to cart
 
           </S.AddCartButton>
         </S.PriceCart>

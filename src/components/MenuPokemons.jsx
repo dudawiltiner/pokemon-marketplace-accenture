@@ -128,7 +128,7 @@ export default function MenuPokemon() {
                 pricesList[index],
               ) }
             >
-              + detalhes
+              + details
             </S.Detail>
             <S.Price>{ `R$ ${pricesList[index]}` }</S.Price>
             <S.Button
@@ -139,7 +139,7 @@ export default function MenuPokemon() {
                 pricesList[index],
               ) }
             >
-              Adicionar ao carrinho
+              Add to cart
             </S.Button>
           </S.CardPokemon>
         ))}
