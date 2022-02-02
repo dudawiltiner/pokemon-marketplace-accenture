@@ -14,8 +14,8 @@ export const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #DDDDDD;
-  border-radius: 20px;
+  background-color: gray;
+  height: 100vh;
 `
 
 export const Text = styled.div`

@@ -10,7 +10,7 @@ import { fetchPokemonsDetails } from '../service/pokemonsAPI';
 Modal.setAppElement('#root');
 
 export default function ModalPokemon() {
-  const name = 'pikachu';
+  const name = 'poochyena';
   const price = '20000';
 
   const [modalIsOpen, setIsOpen] = useState(false);
@@ -20,6 +20,7 @@ export default function ModalPokemon() {
   const [type, setType] = useState(false);
   const [gen, setGen] = useState(false);
   const [id, setId] = useState(false);
+  const [habitat, setHabitat] = useState(false);
 
   function handleOpenModal() {
     setIsOpen(true);
@@ -33,12 +34,16 @@ export default function ModalPokemon() {
     try {
       const res = await fetchPokemonsDetails(namePokemon);
       console.log(res);
+      setHabitat(res.habitat.name);
       setColor(res.color.name);
-      setRegion(res.pokedex.name);
       setShape(res.shape.name);
-      setType(res.type.name);
-      setGen(res.gen.name);
-      setId(res.id.name);
+      setGen(res.generation.name);
+      setId(res.id);
+
+      setRegion(res.pokedex_numbers[1].pokedex.name);// api 2
+      setType(res.type.name);// api 2
+
+      console.log(res.id);
     } catch (e) {
       console.log(e);
     }
@@ -46,7 +51,7 @@ export default function ModalPokemon() {
 
   useEffect(() => {
     getPokemonDetails(name);
-  }, [getPokemonDetails]);
+  }, []);
 
   return (
     <S.Container>
@@ -58,7 +63,7 @@ export default function ModalPokemon() {
         onRequestClose={ handleCloseModal }
       >
         <S.Photo>
-          <img src="./pikachu.png" alt={ name } />
+          <img src={ `https://img.pokemondb.net/artwork/large/${name}.jpg` } alt={ name } />
         </S.Photo>
 
         <S.Text>
@@ -67,14 +72,13 @@ export default function ModalPokemon() {
           <S.CloseButton onClick={ handleCloseModal }><S.CloseIcon /></S.CloseButton>
 
           <p>
-            {`Natural from ${region}. 
+            {`Natural from ${region} (${habitat}). 
           ${name} is a ${color} and ${shape} pokemon, ${type} type.`}
-
           </p>
-          <p>
-            {`Implemented on ${gen} generation. 
-          That pokémon have the id ${id} in pokedex.`}
 
+          <p>
+            {`Implemented on ${gen}.
+          That pokémon have the id ${id} in pokedex.`}
           </p>
 
           <p>{price}</p>
