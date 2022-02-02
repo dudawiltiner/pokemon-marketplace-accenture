@@ -3,7 +3,6 @@
 /* eslint-disable no-await-in-loop */
 /* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from 'react';
-import Modal from 'react-modal/lib/components/Modal';
 import { useDispatch } from 'react-redux';
 import Aos from 'aos';
 import { addPokemonCartAction } from '../redux/actions';
@@ -65,21 +64,6 @@ export default function MenuPokemon() {
     dispatch(addPokemonCartAction(pokemonBought));
   }
 
-<<<<<<< HEAD
-  function showPokemonDetails(name, type, price) {
-    const pokemonDetails = {
-      name,
-      type,
-      price,
-    };
-    console.log(pokemonDetails);
-    setDetailsPokemon(pokemonDetails);
-
-    // dispatch(showPokemonDetailsAction(pokemonDetails));
-  }
-
-=======
->>>>>>> 856ad3a45d0acf5e233ab1a2607aa353c18899c5
   useEffect(() => {
     const URL = 'https://pokeapi.co/api/v2/pokemon';
     detailsPokemons(URL);
@@ -88,7 +72,11 @@ export default function MenuPokemon() {
 
   return (
     <S.ContainerPokemon>
-      <ModalPokemon modalOpen={ modalOpen } funcModalOpen={ setModalOpen } details={ detailsPokemon } />
+      <ModalPokemon
+        modalOpen={ modalOpen }
+        funcModalOpen={ setModalOpen }
+        details={ detailsPokemon }
+      />
       <div className="flex items-center justify-between w-full mb-6 -mt-10">
         <S.Button
           color="#717171"
@@ -124,8 +112,7 @@ export default function MenuPokemon() {
               onClick={ () => {
                 showPokemonDetails(item.namePokemon, item.typePokemon, pricesList[index]);
                 setModalOpen(true);
-              }
-              }
+              } }
             >
               + detalhes
             </S.Detail>
