@@ -92,4 +92,5 @@ export const NamePokemon = styled.p`
   letter-spacing: 0em;
   text-align: left;
   margin-bottom: 25px;
+  text-transform: capitalize;
 `

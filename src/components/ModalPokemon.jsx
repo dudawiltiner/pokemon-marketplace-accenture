@@ -62,7 +62,7 @@ export default function ModalPokemon({ pokemonList,
         <S.CloseButton onClick={ handleCloseModal }><S.CloseIcon /></S.CloseButton>
         <S.Paragraph>
           {`Natural from ${region} (${habitat}).
-          ${pokemonList.name} is a ${color} and ${shape} pokemon,
+          Is a ${color} and ${shape} pokemon,
           ${pokemonList.type} type.`}
         </S.Paragraph>
         <S.Paragraph>
