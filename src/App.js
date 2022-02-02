@@ -19,6 +19,7 @@ export default function App() {
             <Route path="/register" element={ <P.Register /> } />
             <Route path="/profile" element={ <P.Profile /> } />
             <Route path="/cart" element={ <P.ShoppingCart /> } />
+            <Route path="*" element={ <P.Custom404 /> } />
           </Routes>
         </BrowserRouter>
       </PersistGate>
