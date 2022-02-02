@@ -1,3 +1,6 @@
+/* eslint-disable no-await-in-loop */
+/* eslint-disable no-restricted-syntax */
+/* eslint-disable no-use-before-define */
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { addPokemonCartAction } from '../redux/actions';
@@ -34,6 +37,8 @@ export default function MenuPokemon() {
     for (const poke of namePokemons) {
       // console.log(poke.name);
       // export const fetchPokemonsDetails = (name) => (
+      // eslint-disable-next-line no-await-in-loop
+      // eslint-disable-next-line prefer-template
       const pokemonsDetails = await fetch('https://pokeapi.co/api/v2/pokemon/' + poke.name)
         .then((response) => response.json())
         .then((data) => data)

@@ -23,6 +23,16 @@ export const addPokemonCartAction = (payload) => ({
   payload,
 });
 
+export const plusPokemonAction = (payload) => ({
+  type: 'PLUS_POKEMON_CART',
+  payload,
+});
+
+export const subPokemonAction = (payload) => ({
+  type: 'PLUS_POKEMON_CART',
+  payload,
+});
+
 export const removePokemonCartAction = (payload) => ({
   type: 'REMOVE_POKEMON_CART',
   payload,
@@ -34,4 +44,6 @@ export default {
   changePasswordAction,
   pokemonsAction,
   addPokemonCartAction,
-  removePokemonCartAction };
+  removePokemonCartAction,
+  plusPokemonAction,
+  subPokemonAction };
