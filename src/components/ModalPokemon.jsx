@@ -10,8 +10,8 @@ import { fetchPokemonsDetails } from '../service/pokemonsAPI';
 Modal.setAppElement('#root');
 
 export default function ModalPokemon() {
-  const name = 'poochyena';
-  const price = '20000';
+  const name = 'raichu';
+  const price = '20.000,00';
 
   const [modalIsOpen, setIsOpen] = useState(false);
   const [color, setColor] = useState(false);
@@ -67,22 +67,23 @@ export default function ModalPokemon() {
         </S.Photo>
 
         <S.Text>
-          <p>{name}</p>
+          <S.NamePokemon>{name}</S.NamePokemon>
 
           <S.CloseButton onClick={ handleCloseModal }><S.CloseIcon /></S.CloseButton>
-
-          <p>
+          <S.Paragraph>
             {`Natural from ${region} (${habitat}). 
           ${name} is a ${color} and ${shape} pokemon, ${type} type.`}
-          </p>
-
-          <p>
+          </S.Paragraph>
+          <S.Paragraph>
             {`Implemented on ${gen}.
           That pokémon have the id ${id} in pokedex.`}
-          </p>
+          </S.Paragraph>
 
-          <p>{price}</p>
-          <button className="addCart">Adicionar ao carrinho</button>
+          <S.PriceCart>
+            <S.PriceText>{`R$ ${price}`}</S.PriceText>
+            <S.AddCartButton>Adicionar ao carrinho</S.AddCartButton>
+          </S.PriceCart>
+
         </S.Text>
       </S.ModalContainer>
     </S.Container>
