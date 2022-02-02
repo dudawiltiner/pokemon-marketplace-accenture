@@ -23,6 +23,11 @@ export const addPokemonCartAction = (payload) => ({
   payload,
 });
 
+export const showPokemonDetailsAction = (payload) => ({
+  type: 'SHOW_POKEMON_DETAILS',
+  payload,
+});
+
 export const removePokemonCartAction = (payload) => ({
   type: 'REMOVE_POKEMON_CART',
   payload,

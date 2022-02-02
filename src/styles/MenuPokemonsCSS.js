@@ -25,6 +25,7 @@ export const CardPokemon = styled.li`
   background: #FFFFFF;
   box-shadow: 5px 6px 10px rgba(0, 0, 0, 0.1);
   border-radius: 15px;
+  &:hover{top:-10px;box-shadow:2px 2px 2px 2px #666}
 `;
 
 export const Picture = styled.img`
@@ -51,6 +52,7 @@ export const Detail = styled.div`
   font-size: 15px;
   font-weight: 600;
   margin: 5px 45px 14px 45px;
+  cursor: pointer;
 `;
 
 export const Price = styled.div`

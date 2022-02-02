@@ -69,7 +69,7 @@ export default function MenuPokemon() {
     console.log(pokemonDetails);
     // return pokemonDetails;
 
-    dispatch(showPokemonDetailsAction(pokemonDetails));
+    // dispatch(showPokemonDetailsAction(pokemonDetails));
   }
 
   useEffect(() => {
