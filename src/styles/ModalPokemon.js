@@ -5,17 +5,8 @@ import { IoMdClose } from 'react-icons/io'
 export const ModalContainer = styled(Modal)`
   display: flex;
   background-color: white;
-  margin: 10% 30%;
+  margin: 15% 30%;
   border-radius: 20px;
-`;
-
-export const Container = styled.div`
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: gray;
-  height: 100vh;
 `
 
 export const Text = styled.div`

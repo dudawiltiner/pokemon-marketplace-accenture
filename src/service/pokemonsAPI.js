@@ -1,7 +1,6 @@
-const URL = 'https://pokeapi.co/api/v2/pokemon';
 const URLDetails = 'https://pokeapi.co/api/v2/pokemon-species/';
 
-export const fetchPokemons = () => (
+export const fetchPokemons = (URL) => (
   fetch(URL)
     .then((response) => response.json())
     .then((data) => data)

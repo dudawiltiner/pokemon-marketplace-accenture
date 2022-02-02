@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import {MdCatchingPokemon} from "react-icons/md"
 
 export const ContainerPokemon = styled.div`
   display: flex;
@@ -11,7 +12,7 @@ export const ContainerPokemon = styled.div`
   margin-right: auto;
   max-width: 1350px;
   height: auto;
-  margin-top: 100px;
+  padding-top: 150px;
 `;
 
 export const CardPokemon = styled.li`
@@ -24,6 +25,7 @@ export const CardPokemon = styled.li`
   background: #FFFFFF;
   box-shadow: 5px 6px 10px rgba(0, 0, 0, 0.1);
   border-radius: 15px;
+  &:hover{top:-10px;box-shadow:2px 2px 2px 2px #666}
 `;
 
 export const Picture = styled.img`
@@ -50,6 +52,7 @@ export const Detail = styled.div`
   font-size: 15px;
   font-weight: 600;
   margin: 5px 45px 14px 45px;
+  cursor: pointer;
 `;
 
 export const Price = styled.div`
@@ -60,16 +63,36 @@ export const Price = styled.div`
 `;
 
 export const Button = styled.button`
+  display: flex;
+  justify-content: center;
   padding: 10px;
   width: 180px;
-  color: white;
+  color: ${props => !props.color ? "white" : props.color};
   font-weight: 600;
-  font-size: 16px;
-  background: #717171;
+  font-size: ${props => !props.font ? "16px" : props.font};
+  background: ${props => props.bgcolor};
   border: none;
   border-radius: 3px;
   margin-top: 20px;
   margin-left: 35px;
   margin-bottom: 20px;
   cursor: pointer;
+`;
+
+export const Title = styled.p`
+  color: #717171;
+  font-weight: 600;
+  font-size: 18px;
+`;
+
+export const Icon1 = styled(MdCatchingPokemon)`
+  width: 25px;
+  height: 25px;
+  margin-right: 10px;
+`;
+
+export const Icon2 = styled(MdCatchingPokemon)`
+  width: 25px;
+  height: 25px;
+  margin-left: 10px;
 `;

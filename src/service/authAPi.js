@@ -47,5 +47,3 @@ export const fetchUpdateUser = (user) => (
     .then((data) => data)
     .catch((error) => error)
 );
-
-export default { fetchRegisterUser };
