@@ -3,16 +3,21 @@
 /* eslint-disable no-await-in-loop */
 /* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from 'react';
+import Modal from 'react-modal/lib/components/Modal';
 import { useDispatch } from 'react-redux';
 import { addPokemonCartAction } from '../redux/actions';
 import * as S from '../styles/MenuPokemonsCSS';
 import pricesList from '../data/prices';
 import { fetchPokemons } from '../service/pokemonsAPI';
+import ModalPokemon from './ModalPokemon';
 
 export default function MenuPokemon() {
   const dispatch = useDispatch();
   const [pokemons, setPokemons] = useState([]);
   const [page, setPage] = useState([]);
+
+  const [modalOpen, setModalOpen] = useState(false);
+  const [detailsPokemon, setDetailsPokemon] = useState({});
 
   async function loadingPokemons(URL) {
     console.log(URL);
@@ -65,9 +70,8 @@ export default function MenuPokemon() {
       type,
       price,
     };
-
     console.log(pokemonDetails);
-    // return pokemonDetails;
+    setDetailsPokemon(pokemonDetails);
 
     // dispatch(showPokemonDetailsAction(pokemonDetails));
   }
@@ -80,6 +84,7 @@ export default function MenuPokemon() {
 
   return (
     <S.ContainerPokemon>
+      <ModalPokemon modalOpen={ modalOpen } funcModalOpen={ setModalOpen } details= { detailsPokemon } />
       <div className="flex items-center justify-between w-full mb-6 -mt-10">
         <S.Button
           color="#717171"
@@ -108,11 +113,11 @@ export default function MenuPokemon() {
             <S.Name>{ item.namePokemon }</S.Name>
             <S.Type>{`Pokemon Type ${item.typePokemon}`}</S.Type>
             <S.Detail
-              onClick={ () => showPokemonDetails(
-                item.namePokemon,
-                item.typePokemon,
-                pricesList[index],
-              ) }
+              onClick={ () => {
+                showPokemonDetails(item.namePokemon, item.typePokemon, pricesList[index]);
+                setModalOpen(true);
+              }
+              }
             >
               + detalhes
             </S.Detail>
