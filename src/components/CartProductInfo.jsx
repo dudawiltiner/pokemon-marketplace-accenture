@@ -7,7 +7,7 @@ import CartPokemonName from './CartPokemonName';
 import CartCounter from './CartCounter';
 import CartRemovePokemon from './CartRemovePokemon';
 
-export default function CartProductInfo({ pokemonBought, total, valueTotal }) {
+export default function CartProductInfo({ pokemonBought }) {
   return (
     <S.ProductInfo>
 
@@ -15,8 +15,6 @@ export default function CartProductInfo({ pokemonBought, total, valueTotal }) {
       <CartPokemonName name={ pokemonBought.name } />
       <CartCounter
         pokemonBought={ pokemonBought }
-        total={ total }
-        valueTotal={ valueTotal }
       />
       <CartRemovePokemon />
 
