@@ -12,7 +12,7 @@ export const ContainerPokemon = styled.div`
   margin-right: auto;
   max-width: 1350px;
   height: auto;
-  margin-top: 100px;
+  padding-top: 150px;
 `;
 
 export const CardPokemon = styled.li`
