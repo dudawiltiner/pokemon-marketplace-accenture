@@ -75,7 +75,7 @@ export default function ModalPokemon({ pokemonList,
           <S.AddCartButton
             onClick={ () => addPokemon(`https://img.pokemondb.net/artwork/large/${pokemonList.name}.jpg`,
               pokemonList.name,
-              pokemonList.type) }
+              pokemonList.price) }
           >
             Add to cart
           </S.AddCartButton>
