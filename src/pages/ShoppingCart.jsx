@@ -33,20 +33,20 @@ export default function ShoppingCart() {
       <NavBar />
       <S.CartMain>
         <CartInfoBar />
-        {
-          list
+        <S.ListProducts>
+          {
+            list
           && list.map((item, index) => (
             <CartProductInfo
               key={ index }
               pokemonBought={ item }
             />
           ))
-        }
-
+          }
+        </S.ListProducts>
         {list.length > 0
         && <CartTotal listPokemon={ list } />}
         <BackAndBuyButtonsContainer funcModalOpen={ setModalOpen } />
-
       </S.CartMain>
       <ModalShopping
         modalOpen={ modalOpen }
