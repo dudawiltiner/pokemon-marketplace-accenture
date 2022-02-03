@@ -58,7 +58,6 @@ export default function useLogin() {
     },
     validationSchema: schema,
     onSubmit: (values) => {
-      console.log('SUBMIT', values);
       saveUser(values);
     },
   });

@@ -48,10 +48,8 @@ export default function useLogin() {
     });
 
     const { message } = res;
-    console.log(message);
     setLoading(false);
     if (message.includes('error')) {
-      console.log('aqui');
       setShow(true);
     } else {
       navigate('/login');
@@ -66,7 +64,6 @@ export default function useLogin() {
     },
     validationSchema: schema,
     onSubmit: (values) => {
-      console.log('SUBMIT', values);
       changePassword(values);
     },
   });
