@@ -21,10 +21,10 @@ export default function ModalShopping({ modalOpen, funcModalOpen }) {
 
       <S.CloseButton onClick={ handleCloseModal }><S.CloseIcon /></S.CloseButton>
       <S.CartIcon />
-      <S.Text1>Compra realizada com sucesso!</S.Text1>
-      <S.Text2>Em beve você receberá um e-mail com todos os detalhes</S.Text2>
+      <S.Text1>Purchase made successfully!</S.Text1>
+      <S.Text2>Soon you will receive an email with all the details</S.Text2>
       <S.ContentButton>
-        <S.HomeButton to="/">Voltar para home</S.HomeButton>
+        <S.HomeButton to="/">Back to home</S.HomeButton>
       </S.ContentButton>
     </S.ModalContainer>
 

@@ -17,24 +17,24 @@ export default function useLogin() {
   const schema = yup.object({
     fullName: yup
       .string()
-      .required('O nome completo é obrigatório.')
-      .min(MIN_LENGTH, 'O nome deve ter no mínimo 6 caracteres!'),
+      .required('Full name is required.')
+      .min(MIN_LENGTH, 'The name must be at least 6 characters long!'),
     sex: yup
       .string(),
     email: yup
       .string()
-      .email('O email deve ser válido.')
-      .required('O email é obrigatório.'),
+      .email('Email must be valid.')
+      .required('Email is mandatory.'),
     origin: yup
       .string(),
     position: yup
       .string()
-      .required('A função é obrigatória.'),
+      .required('Role is mandatory.'),
     password: yup
       .string()
-      .required('A senha é obrigatória')
-      .min(MIN_LENGTH, 'A senha deve ter no mínimo 6 caracteres!')
-      .max(MAX_LENGTH, 'A senha deve ter no máximo 8 caracteres!'),
+      .required('Password is mandatory')
+      .min(MIN_LENGTH, 'Password must be at least 6 characters long!')
+      .max(MAX_LENGTH, 'Password must be a maximum of 8 characters!'),
   });
 
   useEffect(() => {
@@ -47,7 +47,7 @@ export default function useLogin() {
   async function saveUser(values) {
     setLoading(true);
     let image = './avatar1.png';
-    if (values.sex === 'Feminino') {
+    if (values.sex === 'Female') {
       image = '/avatar2.jpg';
     }
     const res = await fetchRegisterUser({ ...values, image });
@@ -64,9 +64,9 @@ export default function useLogin() {
   const formik = useFormik({
     initialValues: {
       fullName: '',
-      sex: 'Feminino',
+      sex: 'Female',
       email: '',
-      origin: 'Japão',
+      origin: 'Japan',
       position: '',
       password: '',
     },

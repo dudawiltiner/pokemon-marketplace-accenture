@@ -20,7 +20,7 @@ export default function CartTotal({ funcModalOpen }) {
           type="button"
           className="backHomeCartButton"
         >
-          Continuar comprando
+          Keep buying
 
         </S.BackHomeCartButton>
       </Link>
@@ -30,7 +30,7 @@ export default function CartTotal({ funcModalOpen }) {
         type="button"
         className="buyCartButton"
       >
-        Finalizar compra
+        Checkout
       </S.BuyCartButton>
     </S.BackAndBuyButtonsContainer>
   );

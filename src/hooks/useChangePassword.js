@@ -19,17 +19,17 @@ export default function useLogin() {
   const schema = yup.object({
     email: yup
       .string()
-      .email('O email deve ser válido.')
-      .required('O email é obrigatório.'),
+      .email('Email must be valid.')
+      .required('Email is mandatory.'),
     password: yup
       .string()
       .required('A senha é obrigatória')
-      .min(MIN_LENGTH, 'A senha deve ter no mínimo 6 caracteres!')
-      .max(MAX_LENGTH, 'A senha deve ter no máximo 8 caracteres!'),
+      .min(MIN_LENGTH, 'Password must be at least 6 characters long!')
+      .max(MAX_LENGTH, 'Password must be a maximum of 8 characters!'),
     confirmPassword: yup
       .string()
-      .oneOf([yup.ref('password'), null], 'A senha não confere.')
-      .required('É necessário confirmar a senha.'),
+      .oneOf([yup.ref('password'), null], 'The password does not match.')
+      .required('Password must be confirmed.'),
   });
 
   useEffect(() => {

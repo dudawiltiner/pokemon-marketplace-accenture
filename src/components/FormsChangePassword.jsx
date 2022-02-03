@@ -12,7 +12,7 @@ export default function FormsChangePassword() {
 
   return (
     <MainPartForms
-      title="Mude a senha"
+      title="Change password"
       space="space-y-14"
       funcSubmit={ formik.handleSubmit }
     >
@@ -24,47 +24,47 @@ export default function FormsChangePassword() {
           type="email"
           value={ formik.values.email }
           onChange={ formik.handleChange }
-          placeholder="Digite o seu e-mail"
+          placeholder="Enter your email"
         />
       </Label>
       <StatusForms
         value={ formik.values.email }
         error={ formik.errors.email }
-        sucess="O email é válido."
+        sucess="Email is valid."
       />
 
       <Label htmlFor="password">
-        <Subtitle>Senha</Subtitle>
+        <Subtitle>Password</Subtitle>
         <Input
           id="password"
           name="password"
           type="password"
           value={ formik.values.password }
           onChange={ formik.handleChange }
-          placeholder="Digite a sua senha"
+          placeholder="Enter your password"
         />
       </Label>
       <StatusForms
         value={ formik.values.password }
         error={ formik.errors.password }
-        sucess="A senha é válida."
+        sucess="The password is valid."
       />
 
       <Label htmlFor="confirmPassword">
-        <Subtitle>Confirmar Senha</Subtitle>
+        <Subtitle>Confirm password</Subtitle>
         <Input
           id="confirmPassword"
           name="confirmPassword"
           type="password"
           value={ formik.values.confirmPassword }
           onChange={ formik.handleChange }
-          placeholder="Digite novamente a sua senha"
+          placeholder="Re-enter your password"
         />
       </Label>
       <StatusForms
         value={ formik.values.confirmPassword }
         error={ formik.errors.confirmPassword }
-        sucess="A senha confere."
+        sucess="The password matches."
       />
 
       <S.ButtonIn margint="mt-12" type="submit">
@@ -72,15 +72,15 @@ export default function FormsChangePassword() {
         <p> GO!</p>
       </S.ButtonIn>
 
-      <ButtonLo to="/login">Voltar para login</ButtonLo>
+      <ButtonLo to="/login">Back to login</ButtonLo>
 
       <S.Register margint="mt-10">
-        <S.QuestionRe>Ainda não é um treinador de Pokémon?</S.QuestionRe>
-        <S.ButtonRe to="/register">Cadastre-se agora</S.ButtonRe>
+        <S.QuestionRe>Not yet a Pokemon trainer?</S.QuestionRe>
+        <S.ButtonRe to="/register">Register now</S.ButtonRe>
       </S.Register>
 
       {show && <Alert
-        alertDescription="Email ainda não cadastrado."
+        alertDescription="Email not yet registered."
         close={ setShow }
       />}
     </MainPartForms>
