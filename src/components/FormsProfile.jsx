@@ -12,7 +12,7 @@ export default function FormsProfile() {
 
   return (
     <MainFormsProfile>
-      <S.Title>Meu Perfil</S.Title>
+      <S.Title>My profile</S.Title>
       <S.Forms onSubmit={ formik.handleSubmit }>
         <S.Label htmlFor="fullName">
           <S.Subtitle>Full name</S.Subtitle>

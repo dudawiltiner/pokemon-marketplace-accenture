@@ -130,7 +130,7 @@ export default function MenuPokemon() {
             >
               + details
             </S.Detail>
-            <S.Price>{ `R$ ${pricesList[index]}` }</S.Price>
+            <S.Price>{ `US$ ${pricesList[index]}` }</S.Price>
             <S.Button
               bgcolor="#717171"
               onClick={ () => addPokemonToCart(

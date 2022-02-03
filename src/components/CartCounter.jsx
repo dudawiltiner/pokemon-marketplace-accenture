@@ -42,9 +42,9 @@ export default function CartCounter({ pokemonBought }) {
         <S.AddProduct type="submit" onClick={ plusPokemon }>+</S.AddProduct>
 
       </S.CartCounter>
-      <S.ProductPrice>{ `R$ ${pokemonBought.price}` }</S.ProductPrice>
+      <S.ProductPrice>{ `US$ ${pokemonBought.price}` }</S.ProductPrice>
       <S.ProductSubtotal>
-        { `R$ ${newPrice},00` }
+        { `US$ ${newPrice},00` }
       </S.ProductSubtotal>
     </>
 

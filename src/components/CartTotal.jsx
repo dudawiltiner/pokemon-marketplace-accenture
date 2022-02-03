@@ -36,7 +36,7 @@ export default function CartTotal({ listPokemon }) {
   return (
     <S.TotalContainer>
       <S.CartTotal>
-        { `Total: R$ ${sum},00` }
+        { `Total: US$ ${sum},00` }
       </S.CartTotal>
     </S.TotalContainer>
   );
