@@ -7,10 +7,13 @@ import CartPokemonName from './CartPokemonName';
 import CartCounter from './CartCounter';
 import CartRemovePokemon from './CartRemovePokemon';
 
-export default function CartProductInfo({ pokemonBought }) {
+const AOS_ANIMATION_DELAY = 150;
+export default function CartProductInfo({ pokemonBought, number }) {
   return (
-    <S.ProductInfo>
-
+    <S.ProductInfo
+      data-aos="fade-up"
+      data-aos-delay={ number * AOS_ANIMATION_DELAY }
+    >
       <CartImageProduct img={ pokemonBought.img } />
       <CartPokemonName name={ pokemonBought.name } />
       <CartCounter

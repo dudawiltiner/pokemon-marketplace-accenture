@@ -6,7 +6,7 @@ export const Container = styled.div`
   flex-direction: column;
   align-items: center;
   background: #E5E5E5;
-  height: 100vw;
+  height: 100vh;
 `;
 
 export const ListProducts = styled.div`
@@ -44,8 +44,9 @@ export const CartInfo = styled.div`
   background:#FFFFFF ;
   width: 800px;
   height: 19px;
+  padding-left: 6px;
   padding-bottom: 30px;
-  margin: 20px 0 0 40px;
+  margin: 20px 0 0 50px;
 `;
 
 export const Produto = styled.span`
