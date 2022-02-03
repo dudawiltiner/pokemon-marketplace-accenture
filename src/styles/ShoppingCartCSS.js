@@ -44,8 +44,9 @@ export const CartInfo = styled.div`
   background:#FFFFFF ;
   width: 800px;
   height: 19px;
+  padding-left: 6px;
   padding-bottom: 30px;
-  margin: 20px 0 0 40px;
+  margin: 20px 0 0 50px;
 `;
 
 export const Produto = styled.span`
