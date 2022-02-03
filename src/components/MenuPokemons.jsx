@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-bind */
 /* eslint-disable no-restricted-syntax */
 /* eslint-disable prefer-template */
 /* eslint-disable no-await-in-loop */
@@ -9,7 +10,7 @@ import { addPokemonCartAction } from '../redux/actions';
 import * as S from '../styles/MenuPokemonsCSS';
 import pricesList from '../data/prices';
 import { fetchPokemons } from '../service/pokemonsAPI';
-// import ModalPokemon from './ModalPokemon';
+import ModalPokemon from './ModalPokemon';
 
 const AOS_ANIMATION_DELAY = 150;
 
@@ -17,9 +18,8 @@ export default function MenuPokemon() {
   const dispatch = useDispatch();
   const [pokemons, setPokemons] = useState([]);
   const [page, setPage] = useState([]);
-
-  const [setModalOpen] = useState(false);
-  // const [detailsPokemon, setDetailsPokemon] = useState({});
+  const [modalOpen, setModalOpen] = useState(false);
+  const [pokemonList, setPokemonList] = useState([]);
 
   async function loadingPokemons(URL) {
     console.log(URL);
@@ -32,6 +32,17 @@ export default function MenuPokemon() {
         console.log(e);
       }
     }
+  }
+
+  function saveDetailPokemon(name, type, price) {
+    console.log(name, type, price);
+    const pokemonDetail = {
+      name,
+      type,
+      price,
+    };
+    setPokemonList(pokemonDetail);
+    setModalOpen(true);
   }
 
   async function detailsPokemons(URL) {
@@ -72,6 +83,13 @@ export default function MenuPokemon() {
 
   return (
     <S.ContainerPokemon>
+      {modalOpen
+      && <ModalPokemon
+        pokemonList={ pokemonList }
+        modalOpen={ modalOpen }
+        funcModalOpen={ setModalOpen }
+        addPokemon={ addPokemonToCart }
+      />}
       <div className="flex items-center justify-between w-full mb-6 -mt-10">
         <S.Button
           color="#717171"
@@ -104,12 +122,13 @@ export default function MenuPokemon() {
             <S.Name>{ item.namePokemon }</S.Name>
             <S.Type>{`Pokemon Type ${item.typePokemon}`}</S.Type>
             <S.Detail
-              onClick={ () => {
-                showPokemonDetails(item.namePokemon, item.typePokemon, pricesList[index]);
-                setModalOpen(true);
-              } }
+              onClick={ () => saveDetailPokemon(
+                item.namePokemon,
+                item.typePokemon,
+                pricesList[index],
+              ) }
             >
-              + detalhes
+              + details
             </S.Detail>
             <S.Price>{ `R$ ${pricesList[index]}` }</S.Price>
             <S.Button
@@ -120,7 +139,7 @@ export default function MenuPokemon() {
                 pricesList[index],
               ) }
             >
-              Adicionar ao carrinho
+              Add to cart
             </S.Button>
           </S.CardPokemon>
         ))}

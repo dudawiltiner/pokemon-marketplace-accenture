@@ -12,6 +12,7 @@ export const NavBar = styled.div`
   width: 100%;
   background: white;
   padding: 10px;
+  z-index: 999;
 `;
 
 export const LogoPoke = styled.img`
