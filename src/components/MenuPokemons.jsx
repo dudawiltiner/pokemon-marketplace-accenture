@@ -9,7 +9,7 @@ import { addPokemonCartAction } from '../redux/actions';
 import * as S from '../styles/MenuPokemonsCSS';
 import pricesList from '../data/prices';
 import { fetchPokemons } from '../service/pokemonsAPI';
-import ModalPokemon from './ModalPokemon';
+// import ModalPokemon from './ModalPokemon';
 
 const AOS_ANIMATION_DELAY = 150;
 
@@ -18,8 +18,8 @@ export default function MenuPokemon() {
   const [pokemons, setPokemons] = useState([]);
   const [page, setPage] = useState([]);
 
-  const [modalOpen, setModalOpen] = useState(false);
-  const [detailsPokemon, setDetailsPokemon] = useState({});
+  const [setModalOpen] = useState(false);
+  // const [detailsPokemon, setDetailsPokemon] = useState({});
 
   async function loadingPokemons(URL) {
     console.log(URL);
@@ -72,11 +72,6 @@ export default function MenuPokemon() {
 
   return (
     <S.ContainerPokemon>
-      <ModalPokemon
-        modalOpen={ modalOpen }
-        funcModalOpen={ setModalOpen }
-        details={ detailsPokemon }
-      />
       <div className="flex items-center justify-between w-full mb-6 -mt-10">
         <S.Button
           color="#717171"

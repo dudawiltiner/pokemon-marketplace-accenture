@@ -129,6 +129,7 @@ export const CartPokemonName = styled.span`
   font-weight: bold;
   font-size: 18px;
   line-height: 125.2%;
+  text-transform: capitalize;
   /* identical to box height, or 23px */
 
 

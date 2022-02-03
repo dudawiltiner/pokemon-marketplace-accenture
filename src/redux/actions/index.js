@@ -29,7 +29,7 @@ export const plusPokemonAction = (payload) => ({
 });
 
 export const subPokemonAction = (payload) => ({
-  type: 'PLUS_POKEMON_CART',
+  type: 'SUB_POKEMON_CART',
   payload,
 });
 

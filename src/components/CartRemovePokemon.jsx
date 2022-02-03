@@ -4,16 +4,16 @@ import { useDispatch } from 'react-redux';
 import { removePokemonCartAction } from '../redux/actions';
 import * as S from '../styles/ShoppingCartCSS';
 
-export default function CartRemovePokemon() {
+// eslint-disable-next-line react/prop-types
+export default function CartRemovePokemon({ pokemonBought }) {
   const dispatch = useDispatch();
 
   function handleRemove(payload) {
-    dispatch({ type: 'REMOVE_POKEMON_CART' });
     dispatch(removePokemonCartAction(payload));
   }
 
   return (
-    <S.RemoveProduct type="submit" onClick={ () => handleRemove }>
+    <S.RemoveProduct type="submit" onClick={ () => handleRemove(pokemonBought) }>
       <img src="./trash.png" alt="" />
     </S.RemoveProduct>
   );

@@ -7,7 +7,6 @@ import * as S from '../styles/ShoppingCartCSS';
 
 export default function CartCounter({ pokemonBought }) {
   // const context = useContext(ShoppingCartContext);
-
   // const { total, setTotal } = context;
 
   const dispatch = useDispatch();
@@ -33,14 +32,14 @@ export default function CartCounter({ pokemonBought }) {
   useEffect(() => {
     handlePrice();
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [pokemonBought]);
   return (
     <>
       <S.CartCounter>
 
-        <S.SubProduct type="submit" onClick={ () => subPokemon }>-</S.SubProduct>
+        <S.SubProduct type="submit" onClick={ subPokemon }>-</S.SubProduct>
         <S.ProductAmount>{pokemonBought.count}</S.ProductAmount>
-        <S.AddProduct type="submit" onClick={ () => plusPokemon }>+</S.AddProduct>
+        <S.AddProduct type="submit" onClick={ plusPokemon }>+</S.AddProduct>
 
       </S.CartCounter>
       <S.ProductPrice>{ `R$ ${pokemonBought.price}` }</S.ProductPrice>

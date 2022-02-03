@@ -16,7 +16,7 @@ export default function CartProductInfo({ pokemonBought }) {
       <CartCounter
         pokemonBought={ pokemonBought }
       />
-      <CartRemovePokemon />
+      <CartRemovePokemon pokemonBought={ pokemonBought } />
 
       <S.HorizontalRow />
     </S.ProductInfo>

@@ -31,12 +31,12 @@ export default function CartTotal({ listPokemon }) {
   useEffect(() => {
     total();
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [listPokemon]);
 
   return (
     <S.TotalContainer>
       <S.CartTotal>
-        { `R$ ${sum},00` }
+        { `Total: R$ ${sum},00` }
       </S.CartTotal>
     </S.TotalContainer>
   );
