@@ -1,12 +1,22 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import Aos from 'aos';
+import 'aos/dist/aos.css';
 import FormsLogin from '../components/FormsLogin';
-import { BgLogin, MainLogin } from '../styles/LoginCSS';
+import { Bg, Main } from '../styles/FormsGeralCSS';
 
 export default function Login() {
+  useEffect(() => {
+    Aos.init({ duration: 1000, once: true });
+  }, []);
+
   return (
-    <MainLogin>
+    <Main>
       <FormsLogin />
-      <BgLogin src="./bg-pikachu.png" alt="login com pokemon" />
-    </MainLogin>
+      <Bg
+        data-aos="fade-left"
+        src="./bg-pikachu.png"
+        alt="login com pokemon"
+      />
+    </Main>
   );
 }
