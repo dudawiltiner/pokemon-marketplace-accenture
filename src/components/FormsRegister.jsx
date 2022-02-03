@@ -103,7 +103,7 @@ export default function FormsRegister() {
           >
             <option value="Feminino">Feminino</option>
             <option value="Masculino">Masculino</option>
-            <option value="-">-</option>
+            <option value="Outro">Outro</option>
           </Select>
         </Label>
       </Choose>

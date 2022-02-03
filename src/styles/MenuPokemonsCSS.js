@@ -26,7 +26,14 @@ export const CardPokemon = styled.li`
   box-shadow: 5px 6px 10px rgba(0, 0, 0, 0.1);
   border-radius: 15px;
   position: relative;
-  &:hover{top:-10px; left: -10px; box-shadow:2px 2px 2px 2px #666}
+  /* transition: all 1.5s ease; */
+  /* transform: translateZ(-1px) scale(1.5); */
+  &:hover{
+    top:-10px; 
+    left: -10px; 
+    box-shadow:2px 2px 2px 2px #666;
+    /* transform: translateZ(-1px) scale(1.5); */
+  }
 `;
 
 export const Picture = styled.img`
