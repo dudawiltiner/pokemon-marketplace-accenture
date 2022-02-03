@@ -18,26 +18,21 @@ const ShoppingReducer = (state = INITIAL_STATE, action) => {
   case 'PLUS_POKEMON_CART':
 
     list[id] = { ...action.payload, count: action.payload.count + 1 };
-    console.log(list);
     return { listCart: [...list] };
 
   case 'SUB_POKEMON_CART':
     if (action.payload.count !== 1) {
       list[id] = { ...action.payload, count: action.payload.count - 1 };
-      console.log(list);
       return { listCart: [...list] };
     }
     return state;
 
   case 'REMOVE_POKEMON_CART':
-    // console.log('aqui');
     return { listCart: state.listCart.filter((item) => item !== action.payload) };
 
   case 'CLEAR_POKEMON_CART':
-    // console.log('aqui');
     return { listCart: action.payload };
   default:
-    // console.log('aqui2');
     return state;
   }
 };

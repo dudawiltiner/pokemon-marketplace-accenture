@@ -53,7 +53,6 @@ export default function useLogin() {
     const res = await fetchRegisterUser({ ...values, image });
     setLoading(false);
     const { message } = res;
-    console.log(message);
     if (message.includes('error')) {
       setShow(true);
     } else {
@@ -72,7 +71,6 @@ export default function useLogin() {
     },
     validationSchema: schema,
     onSubmit: (values) => {
-      console.log('SUBMIT', values);
       saveUser(values);
     },
   });
