@@ -38,6 +38,7 @@ export const Picture = styled.img`
 export const Name = styled.div`
   color: #717171;
   font-size: 20px;
+  text-transform: capitalize;
   font-weight: 600;
   margin: 5px 45px 14px 45px;
 `;

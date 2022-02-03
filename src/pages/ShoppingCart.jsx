@@ -7,12 +7,14 @@ import CartInfoBar from '../components/CartInfoBar';
 import CartProductInfo from '../components/CartProductInfo';
 import CartTotal from '../components/CartTotal';
 import BackAndBuyButtonsContainer from '../components/BackHomeAndBuyButtons';
+import ModalShopping from '../components/ModalShopping';
 // eslint-disable-next-line max-len
 
-// import useVerifyAuth from '../hooks/useVerifyAuth';
+import useVerifyAuth from '../hooks/useVerifyAuth';
 
 export default function ShoppingCart() {
-  // useVerifyAuth();
+  useVerifyAuth();
+  const [modalOpen, setModalOpen] = useState(false);
 
   const [list, setList] = useState([]);
 
@@ -43,10 +45,13 @@ export default function ShoppingCart() {
 
         {list.length > 0
         && <CartTotal listPokemon={ list } />}
-        <BackAndBuyButtonsContainer />
+        <BackAndBuyButtonsContainer funcModalOpen={ setModalOpen } />
 
       </S.CartMain>
-
+      <ModalShopping
+        modalOpen={ modalOpen }
+        funcModalOpen={ setModalOpen }
+      />
     </S.Container>
 
   );

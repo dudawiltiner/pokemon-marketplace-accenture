@@ -44,7 +44,7 @@ export default function FormsProfile() {
           >
             <option value="Feminino">Feminino</option>
             <option value="Masculino">Masculino</option>
-            <option value="-">-</option>
+            <option value="Outro">Outro</option>
           </S.Select>
         </S.Label>
 

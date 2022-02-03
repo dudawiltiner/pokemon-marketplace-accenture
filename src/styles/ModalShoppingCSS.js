@@ -5,9 +5,8 @@ import { IoMdClose } from 'react-icons/io'
 import { Link } from 'react-router-dom';
 
 export const ModalContainer = styled(Modal)`
-  //display: flex;
   background-color: white;
-  margin: 10% 37%;
+  margin: 15% 37%;
   padding-top: 10px;
   border-radius: 20px;
   position: relative;

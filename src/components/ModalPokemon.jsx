@@ -78,7 +78,6 @@ export default function ModalPokemon({ pokemonList,
               pokemonList.type) }
           >
             Add to cart
-
           </S.AddCartButton>
         </S.PriceCart>
 

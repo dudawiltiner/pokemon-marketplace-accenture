@@ -38,6 +38,11 @@ export const removePokemonCartAction = (payload) => ({
   payload,
 });
 
+export const clearPokemonCartAction = (payload) => ({
+  type: 'CLEAR_POKEMON_CART',
+  payload,
+});
+
 export default {
   authUserAction,
   updateUserAction,

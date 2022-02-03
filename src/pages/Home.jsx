@@ -4,10 +4,10 @@ import 'aos/dist/aos.css';
 import NavBar from '../components/NavBar';
 import MenuPokemons from '../components/MenuPokemons';
 // import ModalPokemon from '../components/ModalPokemon';
-// import useVerifyAuth from '../hooks/useVerifyAuth';
+import useVerifyAuth from '../hooks/useVerifyAuth';
 
 export default function Home() {
-  // useVerifyAuth();
+  useVerifyAuth();
   // const [show, setShow] = useState(false);
   // const pokemonDetails = showPokemonDetails();
   return (

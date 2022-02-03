@@ -32,6 +32,10 @@ const ShoppingReducer = (state = INITIAL_STATE, action) => {
   case 'REMOVE_POKEMON_CART':
     // console.log('aqui');
     return { listCart: state.listCart.filter((item) => item !== action.payload) };
+
+  case 'CLEAR_POKEMON_CART':
+    // console.log('aqui');
+    return { listCart: action.payload };
   default:
     // console.log('aqui2');
     return state;

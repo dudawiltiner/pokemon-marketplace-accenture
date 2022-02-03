@@ -1,13 +1,23 @@
+import PropTypes from 'prop-types';
 import React from 'react';
+import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { clearPokemonCartAction } from '../redux/actions';
 import * as S from '../styles/ShoppingCartCSS';
 
-export default function CartTotal() {
+export default function CartTotal({ funcModalOpen }) {
+  const dispatch = useDispatch();
+
+  function endShopping() {
+    funcModalOpen(true);
+    dispatch(clearPokemonCartAction([]));
+  }
+
   return (
     <S.BackAndBuyButtonsContainer>
       <Link to="/">
         <S.BackHomeCartButton
-          type="submit"
+          type="button"
           className="backHomeCartButton"
         >
           Continuar comprando
@@ -16,12 +26,16 @@ export default function CartTotal() {
       </Link>
 
       <S.BuyCartButton
-        type="submit"
+        onClick={ () => endShopping() }
+        type="button"
         className="buyCartButton"
       >
         Finalizar compra
-
       </S.BuyCartButton>
     </S.BackAndBuyButtonsContainer>
   );
 }
+
+CartTotal.propTypes = {
+  funcModalOpen: PropTypes.func,
+}.isRequired;
