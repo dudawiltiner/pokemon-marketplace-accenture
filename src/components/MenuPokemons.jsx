@@ -1,9 +1,6 @@
-/* eslint-disable react/jsx-no-bind */
 /* eslint-disable no-restricted-syntax */
-/* eslint-disable prefer-template */
 /* eslint-disable no-await-in-loop */
-/* eslint-disable no-unused-vars */
-import PropTypes from 'prop-types';
+/* eslint-disable react/jsx-no-bind */
 import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { addPokemonCartAction } from '../redux/actions';
@@ -15,7 +12,7 @@ import Loading from './Loading';
 
 const AOS_ANIMATION_DELAY = 150;
 
-export default function MenuPokemon({ funcShow }) {
+export default function MenuPokemon() {
   const dispatch = useDispatch();
   const [pokemons, setPokemons] = useState([]);
   const [show, setShow] = useState(true);
@@ -52,11 +49,10 @@ export default function MenuPokemon({ funcShow }) {
     const pokemonsResult = await loadingPokemons(URL);
     const listPokemons = [];
     for (const poke of pokemonsResult) {
-      const pokemonsDetails = await fetch('https://pokeapi.co/api/v2/pokemon/' + poke.name)
+      const pokemonsDetails = await fetch(`https://pokeapi.co/api/v2/pokemon/${poke.name}`)
         .then((response) => response.json())
         .then((data) => data)
         .catch((error) => error);
-      console.log(poke.name, pokemonsDetails.types[1]);
       listPokemons.push({
         namePokemon: poke.name,
         typePokemon: pokemonsDetails.types[0].type.name,
@@ -153,7 +149,3 @@ export default function MenuPokemon({ funcShow }) {
     </S.ContainerPokemon>
   );
 }
-
-MenuPokemon.propTypes = {
-  funcShow: PropTypes.func,
-}.isRequired;

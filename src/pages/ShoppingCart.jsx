@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import Aos from 'aos';
@@ -12,6 +13,7 @@ import ModalShopping from '../components/ModalShopping';
 // eslint-disable-next-line max-len
 
 import useVerifyAuth from '../hooks/useVerifyAuth';
+import NoPokemonsCart from '../components/NoPokemonsCart';
 
 export default function ShoppingCart() {
   useVerifyAuth();
@@ -35,16 +37,15 @@ export default function ShoppingCart() {
       <S.CartMain>
         <CartInfoBar />
         <S.ListProducts>
-          {
-            list
-          && list.map((item, index) => (
-            <CartProductInfo
-              key={ index }
-              number={ index }
-              pokemonBought={ item }
-            />
-          ))
-          }
+          {list.length === 0
+            ? <NoPokemonsCart />
+            : list.map((item, index) => (
+              <CartProductInfo
+                key={ index }
+                number={ index }
+                pokemonBought={ item }
+              />
+            ))}
         </S.ListProducts>
         {list.length > 0
         && <CartTotal listPokemon={ list } />}
