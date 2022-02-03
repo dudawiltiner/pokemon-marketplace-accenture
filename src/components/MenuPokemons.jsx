@@ -6,7 +6,6 @@
 import PropTypes from 'prop-types';
 import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
-import Aos from 'aos';
 import { addPokemonCartAction } from '../redux/actions';
 import * as S from '../styles/MenuPokemonsCSS';
 import pricesList from '../data/prices';

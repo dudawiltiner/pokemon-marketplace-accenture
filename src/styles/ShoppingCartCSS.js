@@ -6,7 +6,7 @@ export const Container = styled.div`
   flex-direction: column;
   align-items: center;
   background: #E5E5E5;
-  height: 100vw;
+  height: 100vh;
 `;
 
 export const ListProducts = styled.div`
