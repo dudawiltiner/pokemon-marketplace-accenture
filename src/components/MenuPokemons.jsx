@@ -3,6 +3,7 @@
 /* eslint-disable prefer-template */
 /* eslint-disable no-await-in-loop */
 /* eslint-disable no-unused-vars */
+import PropTypes from 'prop-types';
 import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import Aos from 'aos';
@@ -11,18 +12,19 @@ import * as S from '../styles/MenuPokemonsCSS';
 import pricesList from '../data/prices';
 import { fetchPokemons } from '../service/pokemonsAPI';
 import ModalPokemon from './ModalPokemon';
+import Loading from './Loading';
 
 const AOS_ANIMATION_DELAY = 150;
 
-export default function MenuPokemon() {
+export default function MenuPokemon({ funcShow }) {
   const dispatch = useDispatch();
   const [pokemons, setPokemons] = useState([]);
+  const [show, setShow] = useState(true);
   const [page, setPage] = useState([]);
   const [modalOpen, setModalOpen] = useState(false);
   const [pokemonList, setPokemonList] = useState([]);
 
   async function loadingPokemons(URL) {
-    console.log(URL);
     if (URL !== null) {
       try {
         const list = await fetchPokemons(URL);
@@ -41,12 +43,13 @@ export default function MenuPokemon() {
       type,
       price,
     };
+
     setPokemonList(pokemonDetail);
     setModalOpen(true);
   }
 
   async function detailsPokemons(URL) {
-    Aos.init({ duration: 1000, once: true });
+    setShow(true);
     const pokemonsResult = await loadingPokemons(URL);
     const listPokemons = [];
     for (const poke of pokemonsResult) {
@@ -62,6 +65,7 @@ export default function MenuPokemon() {
     }
 
     setPokemons(listPokemons);
+    setShow(false);
   }
 
   function addPokemonToCart(img, name, price) {
@@ -111,39 +115,46 @@ export default function MenuPokemon() {
           <S.Icon2 />
         </S.Button>
       </div>
-      <ul>
-        { pokemons.map((item, index) => (
-          <S.CardPokemon
-            data-aos="fade-up"
-            data-aos-delay={ index * AOS_ANIMATION_DELAY }
-            key={ index }
-          >
-            <S.Picture src={ `https://img.pokemondb.net/artwork/large/${item.namePokemon}.jpg` } />
-            <S.Name>{ item.namePokemon }</S.Name>
-            <S.Type>{`Pokemon Type ${item.typePokemon}`}</S.Type>
-            <S.Detail
-              onClick={ () => saveDetailPokemon(
-                item.namePokemon,
-                item.typePokemon,
-                pricesList[index],
-              ) }
-            >
-              + details
-            </S.Detail>
-            <S.Price>{ `R$ ${pricesList[index]}` }</S.Price>
-            <S.Button
-              bgcolor="#717171"
-              onClick={ () => addPokemonToCart(
-                `https://img.pokemondb.net/artwork/large/${item.namePokemon}.jpg`,
-                item.namePokemon,
-                pricesList[index],
-              ) }
-            >
-              Add to cart
-            </S.Button>
-          </S.CardPokemon>
-        ))}
-      </ul>
+      { show
+        ? <Loading />
+        : (
+          <ul>
+            { pokemons.map((item, index) => (
+              <S.CardPokemon
+                data-aos="fade-up"
+                data-aos-delay={ index * AOS_ANIMATION_DELAY }
+                key={ index }
+              >
+                <S.Picture src={ `https://img.pokemondb.net/artwork/large/${item.namePokemon}.jpg` } />
+                <S.Name>{ item.namePokemon }</S.Name>
+                <S.Type>{`Pokemon Type ${item.typePokemon}`}</S.Type>
+                <S.Detail
+                  onClick={ () => saveDetailPokemon(
+                    item.namePokemon,
+                    item.typePokemon,
+                    pricesList[index],
+                  ) }
+                >
+                  + details
+                </S.Detail>
+                <S.Price>{ `R$ ${pricesList[index]}` }</S.Price>
+                <S.Button
+                  bgcolor="#717171"
+                  onClick={ () => addPokemonToCart(
+                    `https://img.pokemondb.net/artwork/large/${item.namePokemon}.jpg`,
+                    item.namePokemon,
+                    pricesList[index],
+                  ) }
+                >
+                  Add to cart
+                </S.Button>
+              </S.CardPokemon>
+            ))}
+          </ul>) }
     </S.ContainerPokemon>
   );
 }
+
+MenuPokemon.propTypes = {
+  funcShow: PropTypes.func,
+}.isRequired;
