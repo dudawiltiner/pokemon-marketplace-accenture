@@ -13,25 +13,25 @@ export default function FormsRegister() {
 
   return (
     <MainPartForms
-      title="Faça o cadastro"
+      title="Register"
       space="space-x-6"
       funcSubmit={ formik.handleSubmit }
     >
       <Label htmlFor="fullName">
-        <Subtitle>Nome</Subtitle>
+        <Subtitle>Name</Subtitle>
         <Input
           id="fullName"
           name="fullName"
           type="text"
           value={ formik.values.fullName }
           onChange={ formik.handleChange }
-          placeholder="Digite o seu nome"
+          placeholder="Enter your name"
         />
       </Label>
       <StatusForms
         value={ formik.values.fullName }
         error={ formik.errors.fullName }
-        sucess="O nome completo é válido."
+        sucess="Full name is valid."
       />
 
       <Label htmlFor="email">
@@ -42,37 +42,37 @@ export default function FormsRegister() {
           type="email"
           value={ formik.values.email }
           onChange={ formik.handleChange }
-          placeholder="Digite o seu e-mail"
+          placeholder="Enter your email"
         />
       </Label>
       <StatusForms
         value={ formik.values.email }
         error={ formik.errors.email }
-        sucess="O email é válido."
+        sucess="The email is valid."
       />
 
       <Label htmlFor="password">
-        <Subtitle>Senha</Subtitle>
+        <Subtitle>Password</Subtitle>
         <Input
           id="password"
           name="password"
           type="password"
           value={ formik.values.password }
           onChange={ formik.handleChange }
-          placeholder="Digite a sua senha"
+          placeholder="Enter your password"
         />
       </Label>
       <StatusForms
         value={ formik.values.password }
         error={ formik.errors.password }
-        sucess="O nome completo é válido."
+        sucess="Full name is valid."
       />
 
       <Choose>
         <Label
           htmlFor="origin"
         >
-          Origem
+          Origin
           <Select
             id="origin"
             name="origin"
@@ -93,7 +93,7 @@ export default function FormsRegister() {
         <Label
           htmlFor="country"
         >
-          Sexo
+          Gender
           <Select
             id="sex"
             name="sex"
@@ -101,28 +101,28 @@ export default function FormsRegister() {
             onChange={ formik.handleChange }
             autoComplete="sex"
           >
-            <option value="Feminino">Feminino</option>
-            <option value="Masculino">Masculino</option>
-            <option value="-">-</option>
+            <option value="Female">Female</option>
+            <option value="Male">Male</option>
+            <option value="-">Other</option>
           </Select>
         </Label>
       </Choose>
 
       <Label htmlFor="position">
-        <Subtitle>Função</Subtitle>
+        <Subtitle>Role</Subtitle>
         <Input
           id="position"
           name="position"
           value={ formik.values.position }
           onChange={ formik.handleChange }
           type="text"
-          placeholder="Digite a sua função"
+          placeholder="Enter your role"
         />
       </Label>
       <StatusForms
         value={ formik.values.position }
         error={ formik.errors.position }
-        sucess="A função é válida."
+        sucess="The role is valid."
       />
 
       <S.ButtonIn margint="mt-12" type="submit">
@@ -130,10 +130,10 @@ export default function FormsRegister() {
         <p> GO!</p>
       </S.ButtonIn>
 
-      <ButtonLo to="/login">Voltar para login</ButtonLo>
+      <ButtonLo to="/login">Back to login</ButtonLo>
 
       {show && <Alert
-        alertDescription="Email já cadastrado."
+        alertDescription="E-mail already registered."
         close={ setShow }
       />}
     </MainPartForms>

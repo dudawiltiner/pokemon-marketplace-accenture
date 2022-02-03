@@ -15,7 +15,7 @@ export default function Login() {
       <Bg
         data-aos="fade-left"
         src="./bg-pikachu.png"
-        alt="login com pokemon"
+        alt="login with pokemon"
       />
     </Main>
   );

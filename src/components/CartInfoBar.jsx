@@ -5,9 +5,9 @@ export default function CartInfoBar() {
   return (
     <S.CartInfo>
 
-      <S.Produto>Produto</S.Produto>
-      <S.Quantidade>Quantidade</S.Quantidade>
-      <S.Preço>Preço</S.Preço>
+      <S.Produto>Product</S.Produto>
+      <S.Quantidade>Amount</S.Quantidade>
+      <S.Preço>Price</S.Preço>
       <S.Subtotal>Subtotal</S.Subtotal>
 
     </S.CartInfo>

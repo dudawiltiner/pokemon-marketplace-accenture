@@ -20,15 +20,15 @@ export default function useLogin() {
   const schema = yup.object({
     fullName: yup
       .string()
-      .required('O nome completo é obrigatório.')
-      .min(MIN_LENGTH, 'O nome deve ter no mínimo 6 caracteres!'),
+      .required('Full name is required.')
+      .min(MIN_LENGTH, 'The name must be at least 6 characters long!'),
     sex: yup
       .string(),
     origin: yup
       .string(),
     position: yup
       .string()
-      .required('A função é obrigatória.'),
+      .required('Role is mandatory.'),
   });
 
   useEffect(() => {

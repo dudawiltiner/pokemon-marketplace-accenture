@@ -9,7 +9,7 @@ export default function Alert({ alertDescription, close }) {
       <S.Alert>
         <S.AlertIcon />
         <div>
-          <S.Title>Erro</S.Title>
+          <S.Title>Error</S.Title>
           <S.Description>{ alertDescription }</S.Description>
         </div>
       </S.Alert>

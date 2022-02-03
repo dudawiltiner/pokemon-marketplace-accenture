@@ -18,22 +18,22 @@ export default function useLogin() {
   const schema = yup.object({
     email: yup
       .string()
-      .email('O email deve ser válido.')
-      .required('O email é obrigatório.'),
+      .email('Email must be valid.')
+      .required('Email is mandatory.'),
     password: yup
       .string()
-      .required('A senha é obrigatória')
-      .min(MIN_LENGTH, 'A senha deve ter no mínimo 6 caracteres!')
-      .max(MAX_LENGTH, 'A senha deve ter no máximo 8 caracteres!'),
+      .required('Password is mandatory.')
+      .min(MIN_LENGTH, 'Password must be at least 6 characters long!')
+      .max(MAX_LENGTH, 'Password must be a maximum of 8 characters!'),
   });
 
   useEffect(() => {
     const { res } = storage.reducerUser;
 
     if (Object.keys(res).length > 0) {
-      console.log('aqui2');
+      console.log('here2');
       if (res.message) {
-        console.log('aqui1');
+        console.log('here1');
         setShow(true);
         dispatch(changePasswordAction({}));
       } else {

@@ -12,7 +12,7 @@ export default function Custom404() {
       <S.Container>
         <S.Images>
           <S.Img1 src="/gotcha.png" alt="Gotcha" />
-          <S.Img2 src="/404.png" alt="Não encontrado" />
+          <S.Img2 src="/404.png" alt="Not found" />
         </S.Images>
         <S.Text>
           <S.Title>

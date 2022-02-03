@@ -15,7 +15,7 @@ export default function ChangePassword() {
       <Bg
         data-aos="fade-left"
         src="./bg-bulbasaur.png"
-        alt="mudar senha com pokemon"
+        alt="change password with pokemon"
       />
     </Main>
   );

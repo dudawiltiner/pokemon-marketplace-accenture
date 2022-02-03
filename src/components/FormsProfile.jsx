@@ -12,29 +12,29 @@ export default function FormsProfile() {
 
   return (
     <MainFormsProfile>
-      <S.Title>Meu Perfil</S.Title>
+      <S.Title>My profile</S.Title>
       <S.Forms onSubmit={ formik.handleSubmit }>
         <S.Label htmlFor="fullName">
-          <S.Subtitle>Nome completo</S.Subtitle>
+          <S.Subtitle>Full name</S.Subtitle>
           <S.Input
             id="fullName"
             name="fullName"
             type="text"
             value={ formik.values.fullName }
             onChange={ formik.handleChange }
-            placeholder="Digite o seu nome"
+            placeholder="Enter your name"
           />
           <StatusForms
             value={ formik.values.fullName }
             error={ formik.errors.fullName }
-            sucess="O nome completo é válido."
+            sucess="Full name is valid."
           />
         </S.Label>
 
         <S.Label
           htmlFor="sex"
         >
-          <S.Subtitle>Sexo</S.Subtitle>
+          <S.Subtitle>Gender</S.Subtitle>
           <S.Select
             id="sex"
             name="sex"
@@ -42,16 +42,16 @@ export default function FormsProfile() {
             onChange={ formik.handleChange }
             autoComplete="sex"
           >
-            <option value="Feminino">Feminino</option>
-            <option value="Masculino">Masculino</option>
-            <option value="Outro">Outro</option>
+            <option value="Female">Female</option>
+            <option value="Male">Male</option>
+            <option value="Other">Other</option>
           </S.Select>
         </S.Label>
 
         <S.Label
           htmlFor="origin"
         >
-          <S.Subtitle>Origem</S.Subtitle>
+          <S.Subtitle>Origin</S.Subtitle>
           <S.Select
             id="origin"
             name="origin"
@@ -70,19 +70,19 @@ export default function FormsProfile() {
         </S.Label>
 
         <S.Label htmlFor="position">
-          <S.Subtitle>Função</S.Subtitle>
+          <S.Subtitle>Role</S.Subtitle>
           <S.Input
             id="position"
             name="position"
             type="text"
             value={ formik.values.position }
             onChange={ formik.handleChange }
-            placeholder="Digite a sua posição"
+            placeholder="Enter your position"
           />
           <StatusForms
             value={ formik.values.position }
             error={ formik.errors.position }
-            sucess="A função é válida."
+            sucess="The function is valid."
           />
         </S.Label>
 
@@ -94,7 +94,7 @@ export default function FormsProfile() {
             hover="hover:bg-blue-700"
           >
             {loading && <LoadingIcon />}
-            <p>Salvar</p>
+            <p>Save</p>
           </S.Button>
 
           <S.Button
@@ -103,12 +103,12 @@ export default function FormsProfile() {
             text="text-gray-400"
             hover="hover:bg-red-600 hover:text-white"
           >
-            Cancelar
+            Cancel
           </S.Button>
         </S.Buttons>
 
         {show && <Alert
-          alertDescription="A modificações não foram salvas."
+          alertDescription="Modifications not saved."
           close={ setShow }
         />}
       </S.Forms>
