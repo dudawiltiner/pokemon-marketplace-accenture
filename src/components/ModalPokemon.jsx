@@ -71,7 +71,7 @@ export default function ModalPokemon({ pokemonList,
         </S.Paragraph>
 
         <S.PriceCart>
-          <S.PriceText>{`R$ ${pokemonList.price}`}</S.PriceText>
+          <S.PriceText>{`US$ ${pokemonList.price}`}</S.PriceText>
           <S.AddCartButton
             onClick={ () => addPokemon(`https://img.pokemondb.net/artwork/large/${pokemonList.name}.jpg`,
               pokemonList.name,
