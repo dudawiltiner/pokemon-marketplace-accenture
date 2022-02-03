@@ -4,14 +4,16 @@ import  styled  from 'styled-components';
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
+  align-items: center;
   background: #E5E5E5;
   height: 100vw;
 `;
 
 export const CartMain = styled.div`
   width:900px;
-  height: 500px;
-  margin-top: 50px;
+  height: 450px;
+  position: fixed;
+  margin-top: 100px;
   margin-left: auto;
   margin-right: auto;
   background: #FFFFFF;
@@ -23,6 +25,7 @@ export const CartMain = styled.div`
 
 export const CartInfo = styled.div`
   display: flex;
+  background:#FFFFFF ;
 
   width: 800px;
   height: 19px;
@@ -49,7 +52,7 @@ export const Produto = styled.span`
 export const Quantidade = styled.span`
   width: 83px;
   height: 19px;
-  margin-left: 285px;
+  margin-left: 250px;
 
   font-family: Lato;
   font-style: normal;
@@ -108,7 +111,7 @@ export const ProductInfo = styled.div`
 
   align-items: center;
 
-  margin: 50px 0 0 40px;  
+  margin: 40px 0 0 40px;  
   
   padding: 0;
 
@@ -116,14 +119,15 @@ export const ProductInfo = styled.div`
 
   export const ImageProduct = styled.img`
   display: flex;
-  width: 87px;
-  height: 87px;
+  width: 70px;
+  height: 70px;
   margin: 0;
 
 `;
 
 export const CartPokemonName = styled.span`
   margin-left: 45px;
+  width: 99px;
   font-family: Lato;
   font-style: normal;
   font-weight: bold;
@@ -262,7 +266,7 @@ export const CartTotal = styled.span`
   font-family: Lato;
   font-style: normal;
   font-weight: bold;
-  font-size: 20px;
+  font-size: 18px;
   line-height: 125.2%;
   /* identical to box height, or 25px */
 
