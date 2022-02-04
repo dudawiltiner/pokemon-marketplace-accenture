@@ -65,7 +65,7 @@ export default function FormsRegister() {
       <StatusForms
         value={ formik.values.password }
         error={ formik.errors.password }
-        sucess="Full name is valid."
+        sucess="Password is valid."
       />
 
       <Choose>

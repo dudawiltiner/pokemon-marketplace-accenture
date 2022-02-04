@@ -22,6 +22,7 @@ export default function MenuPokemon() {
 
   async function loadingPokemons(URL) {
     if (URL !== null) {
+      setShow(true);
       try {
         const list = await fetchPokemons(URL);
         setPage([list.previous, list.next]);
@@ -44,7 +45,6 @@ export default function MenuPokemon() {
   }
 
   async function detailsPokemons(URL) {
-    setShow(true);
     const pokemonsResult = await loadingPokemons(URL);
     const listPokemons = [];
     for (const poke of pokemonsResult) {
