@@ -95,7 +95,7 @@ Após cada um dos passos a seguir, haverá um exemplo do comando a ser digitado 
   npm install
 ```
 
-### 4. Inicie a aplicação
+### 3. Inicie a aplicação
 
 3.1. Abra no ambiente de desenvolvimento de sua preferência. No caso de uso do VSC, digite o comando **code .** na raiz do diretório clonado.
 
