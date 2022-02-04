@@ -29,25 +29,37 @@ Acessando a plataforma, você irá encontrar a tela de Login, onde você deverá
 
 Clicando em "Forgot password" você será redirecionado para a tela de alteração da sua senha.
 
+![parte2](https://user-images.githubusercontent.com/74082153/152455544-b100d5fc-1446-4d0a-8d03-60a41b7b0fec.gif)
+
 ## Realizando o cadastro na plataforma:
 
 Clicando em "Register now" você poderá efetuar seu cadastro preenchendo o formulário.
+
+![parte3](https://user-images.githubusercontent.com/74082153/152455560-360e1ca0-185e-45e0-b2d3-63ae701fb578.gif)
 
 ## Alterando o perfil:
 
 Após você estar devidamente autenticado e logado poderá atualizar os dados do seu perfil nesta página.
 
-## Realizando compras dos Pokemons:
-
-Clicando em "Add to cart" será possível adicionar o Pokémon ao carrinho de compras, e neste visualizar os Pokémons selecionados e modificar as quantidades que deseja adquirir. É mostrado também os preços unitários de cada item e o valor total da compra.
+![parte4](https://user-images.githubusercontent.com/74082153/152455574-7ef0300f-c63f-42da-8568-f34750c2175d.gif)
 
 ## Interação com a Home e seleção de Pokemons:
 
 Nesta página é possível navegar pelos cards de cada Pokémon, visulaizando-se a imagem, o nome, o tipo e o preço unitário de um deles. Clicando-se sobre "Previous" ou "Next" pode-se retornar ou avançar respectivamente entre páginas.
 
+![parte6](https://user-images.githubusercontent.com/74082153/152455606-d7a4da09-44d1-4057-a43e-1e554daeef61.gif)
+
+## Realizando compras dos Pokemons:
+
+Clicando em "Add to cart" será possível adicionar o Pokémon ao carrinho de compras, e neste visualizar os Pokémons selecionados e modificar as quantidades que deseja adquirir. É mostrado também os preços unitários de cada item e o valor total da compra.
+
+![parte5](https://user-images.githubusercontent.com/74082153/152455593-534397ff-3a89-47da-8a3a-5335be1d2087.gif)
+
 ## Realizando logout e gerando erro:
 
 E finalmente, clicando-se sobre o ícone de Logout você encerrará sua navegação sendo redirecionado para a página de Login. Nesta imagem podemos ver também que o acesso através do endpoint não é permitido mostrando uma imagem de erro na aplicação.
+
+![parte7](https://user-images.githubusercontent.com/74082153/152455641-8ba23f3b-b4c6-47c7-9a1c-5d753c6ab320.gif)
 
 # 2. CLONE DO REPOSITÓRIO
 
