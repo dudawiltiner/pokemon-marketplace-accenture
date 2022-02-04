@@ -2,7 +2,7 @@
 
 ## Boas-vidas ao repositório do Pokemon Marketplace Accenture
 
-Esse desafio foi proposto pela Accenture durante sua Academia Front-end realizada em Janeiro/2022 no intuito de melhorarmos nossas habilidades voltadas para desenvolvimento front-end com utilização da ferramenta React. Este repositório armazena o projeto final com o desafio resolvido. A proposta do projeto era criar uma plataforma que sirva de marketplace para treinadores de Pokemon, de forma fictícia, em que tivesse todo o processo de autenticação de um usuário, edição do perfil e compra de Pokemons. O objetivo do case era termos contato e experiência de trabalho na simulação de um entregável na empresa com base nas ferramentas apresentadas durante a capacitação. Foi entregue um [Mock-Up](https://www.figma.com/file/xfU3xbCtLc5ZROkBO8EHXO/Pokemon-Marketplace?node-id=0%3A1) para servir de guia na programação da aplicação. A aplicação Pokemon Marketplace pode ser acessada a partir desse [link](https://pokemon-marketplace-accenture.herokuapp.com/).
+Esse desafio foi proposto pela Accenture durante sua Academia Front-end realizada em Janeiro/2022 no intuito de melhorarmos nossas habilidades voltadas para desenvolvimento front-end com utilização da ferramenta React. Este repositório armazena o projeto final com o desafio resolvido. A proposta do projeto era criar uma plataforma que sirva de marketplace para treinadores de Pokemon, de forma fictícia, em que tivesse todo o processo de autenticação de um usuário, edição do perfil e compra de Pokemons. O objetivo do case era termos contato e experiência de trabalho na simulação de um entregável na empresa com base nas ferramentas apresentadas durante a capacitação. Foi entregue um [Mock-Up](https://www.figma.com/file/xfU3xbCtLc5ZROkBO8EHXO/Pokemon-Marketplace?node-id=0%3A1) para servir de guia na programação da aplicação. A aplicação Pokemon Marketplace pode ser acessada a partir desse [link](https://pokemon-marketplace-accenture.herokuapp.com/). Se desejar ver a aplicação funcionando em um breve vídeo, você pode fazer o download dele [aqui](https://github.com/dudawiltiner/pokemon-marketplace-accenture/blob/main/gifs/video_final.mp4), mas logo abaixo disponibilizamos alguns gifs para mostrar a aplicação rodando.
 
 ### As ferramentas principais utilizadas no front-end foram:
 
@@ -48,10 +48,15 @@ Esse desafio foi proposto pela Accenture durante sua Academia Front-end realizad
 
 ---
 
-
 ## Organização do Projeto:
 
 O projeto foi feito seguindo o Kanban, que pode ser visto como um processo ágil e transparente na organização dos projetos de desenvolvimento e foi muito útil para o time no fluxo de trabalho e na divisão de tarefas. Você pode visualizar o Kanban que a equipe utilizou no Trello neste [link](https://trello.com/b/7hDBdAaz).
+
+<div align="center">
+  <img src="./gifs/trello.png" margin="10px" width="700" alt="trello"/>
+</div>
+
+A componentização inicial descrita nos combinados da imagem acima, pode vista [nesse pdf](https://github.com/dudawiltiner/pokemon-marketplace-accenture/blob/main/gifs/componentiza%C3%A7%C3%A3o.pdf);
 
 ## Desenvolvimento do Back-End:
 
