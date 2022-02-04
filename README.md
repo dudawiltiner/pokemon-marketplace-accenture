@@ -23,6 +23,8 @@ Após cada um dos passos a seguir, haverá um exemplo de como cada página pode 
 
 Acessando a plataforma, você irá encontrar a tela de Login, onde você deverá se autenticar para ter acesso à página Home. Sem a autenticação você não terá acesso a Home.
 
+![parte1](https://user-images.githubusercontent.com/74082153/152455205-ed3ab1d1-2574-421e-93dd-1fa0ebe45da9.gif)
+
 ## Realizando a mudança de senha na plataforma:
 
 Clicando em "Forgot password" você será redirecionado para a tela de alteração da sua senha.
