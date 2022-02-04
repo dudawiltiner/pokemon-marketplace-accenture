@@ -1,9 +1,9 @@
+import PropTypes from 'prop-types';
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { removePokemonCartAction } from '../redux/actions';
 import * as S from '../styles/ShoppingCartCSS';
 
-// eslint-disable-next-line react/prop-types
 export default function CartRemovePokemon({ pokemonBought }) {
   const dispatch = useDispatch();
 
@@ -17,3 +17,7 @@ export default function CartRemovePokemon({ pokemonBought }) {
     </S.RemoveProduct>
   );
 }
+
+CartRemovePokemon.propTypes = {
+  pokemonBought: PropTypes.object,
+}.isRequired;

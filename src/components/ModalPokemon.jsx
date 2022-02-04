@@ -1,52 +1,27 @@
-/* eslint-disable react/prop-types */
-/* eslint-disable react-hooks/exhaustive-deps */
-/* eslint-disable jsx-a11y/control-has-associated-label */
-/* eslint-disable react/jsx-no-bind */
-/* eslint-disable react/button-has-type */
-import React, { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
+import React from 'react';
 import Modal from 'react-modal';
 import * as S from '../styles/ModalPokemonCSS';
-import { fetchPokemonsDetails } from '../service/pokemonsAPI';
+import useModalPokemon from '../hooks/useModalPokemon';
 
 Modal.setAppElement('#root');
 
 export default function ModalPokemon({ pokemonList,
-  modalOpen,
-  funcModalOpen,
-  addPokemon }) {
-  const [color, setColor] = useState('');
-  const [region, setRegion] = useState('');
-  const [shape, setShape] = useState('');
-  const [gen, setGen] = useState('');
-  const [id, setId] = useState('');
-  const [habitat, setHabitat] = useState('');
-
-  function handleCloseModal() {
-    funcModalOpen(false);
-  }
-
-  async function getPokemonDetails() {
-    try {
-      const res = await fetchPokemonsDetails(pokemonList.name);
-      setHabitat(res.habitat.name);
-      setColor(res.color.name);
-      setShape(res.shape.name);
-      setGen(res.generation.name);
-      setId(res.id);
-      setRegion(res.pokedex_numbers[1].pokedex.name);
-    } catch (e) {
-      console.log(e);
-    }
-  }
-
-  useEffect(() => {
-    getPokemonDetails();
-  }, []);
+  modalOpen, funcModalOpen, addPokemon }) {
+  const {
+    color,
+    region,
+    shape,
+    gen,
+    id,
+    habitat,
+    handleCloseModal,
+  } = useModalPokemon(pokemonList, funcModalOpen);
 
   return (
     <S.ModalContainer
       isOpen={ modalOpen }
-      onRequestClose={ handleCloseModal }
+      onRequestClose={ () => handleCloseModal() }
       className="shadow-2xl"
     >
       <S.Photo>
@@ -56,7 +31,11 @@ export default function ModalPokemon({ pokemonList,
       <S.Text>
         <S.NamePokemon>{pokemonList.name}</S.NamePokemon>
 
-        <S.CloseButton onClick={ handleCloseModal }><S.CloseIcon /></S.CloseButton>
+        <S.CloseButton
+          onClick={ () => handleCloseModal() }
+        >
+          <S.CloseIcon />
+        </S.CloseButton>
         <S.Paragraph>
           {`Natural from ${region} (${habitat}).
           Is a ${color} and ${shape} pokemon,
@@ -82,3 +61,14 @@ export default function ModalPokemon({ pokemonList,
     </S.ModalContainer>
   );
 }
+
+ModalPokemon.propTypes = {
+  addPokemon: PropTypes.func,
+  funcModalOpen: PropTypes.func,
+  modalOpen: PropTypes.boolean,
+  pokemonList: PropTypes.shape({
+    name: PropTypes.string,
+    price: PropTypes.string,
+    type: PropTypes.string,
+  }),
+}.isRequired;
