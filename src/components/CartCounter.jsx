@@ -1,14 +1,10 @@
 /* eslint-disable react/prop-types */
 import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
-// import { ShoppingCartContext } from '../context/ShoppingCartContext';
 import { plusPokemonAction, subPokemonAction } from '../redux/actions';
 import * as S from '../styles/ShoppingCartCSS';
 
 export default function CartCounter({ pokemonBought }) {
-  // const context = useContext(ShoppingCartContext);
-  // const { total, setTotal } = context;
-
   const dispatch = useDispatch();
 
   const plusPokemon = () => {

@@ -1,70 +1,75 @@
-# Getting Started with Create React App
+# 1. APRESENTAÇÃO E CONTEXTO DO CASE
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Esse desafio foi proposto pela ACCENTURE durante sua Academia Front-end realizada em Janeiro/2022 no intuito de melhorarmos nossas habilidades voltadas para desenvolvimento front-end com utilização da ferramenta React. O resultado final foi uma plataforma de marketplace com a temática da famosa franquia Pokémon e pode ser conhecida e explorada aqui.
 
-## Available Scripts
+# Requisitos técnicos
+- Front-End em React;
+- Back-End em NodeJS.
 
-In the project directory, you can run:
+# Funcionalidades
+- Efetuação de cadastro;
+- Acesso através da página de login;
+- Possibilidade de alteração de senha;
+- Visualização do perfil do usuário; 
+- Visualização de listagem de Pokémons (com paginação):
+- Visualização de detalhes do Pokémon;
+- Visulaização do carrinho de compras (com incremento e decremento de quantidades e valores unitários e total da compra).
 
-### `npm start`
+# Utilizando a plataforma
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Após cada um dos passos a seguir, haverá um exemplo de como cada página pode ser usada.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Primeiro contato com a plataforma:
 
-### `npm test`
+Acessando a plataforma, você irá encontrar a tela de Login, onde você deverá se autenticar para ter acesso à página Home. Sem a autenticação você não terá acesso a Home.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Realizando a mudança de senha na plataforma:
 
-### `npm run build`
+Clicando em "Forgot password" você será redirecionado para a tela de alteração da sua senha.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Realizando o cadastro na plataforma:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Clicando em "Register now" você poderá efetuar seu cadastro preenchendo o formulário.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Alterando o perfil:
 
-### `npm run eject`
+Após você estar devidamente autenticado e logado poderá atualizar os dados do seu perfil nesta página.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Realizando compras dos Pokemons:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Clicando em "Add to cart" será possível adicionar o Pokémon ao carrinho de compras, e neste visualizar os Pokémons selecionados e modificar as quantidades que deseja adquirir. É mostrado também os preços unitários de cada item e o valor total da compra.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Interação com a Home e seleção de Pokemons:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Nesta página é possível navegar pelos cards de cada Pokémon, visulaizando-se a imagem, o nome, o tipo e o preço unitário de um deles. Clicando-se sobre "Previous" ou "Next" pode-se retornar ou avançar respectivamente entre páginas.
 
-## Learn More
+## Realizando logout e gerando erro:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+E finalmente, clicando-se sobre o ícone de Logout você encerrará sua navegação sendo redirecionado para a página de Login. Nesta imagem podemos ver também que o acesso através do endpoint não é permitido mostrando uma imagem de erro na aplicação.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+# 2. CLONE DO REPOSITÓRIO
 
-### Code Splitting
+## 2.1. Abra o terminal e crie um diretório no local de sua preferência:
+mkdir pokemon-marketplace-accenture
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## 2.2. Entre no diretório que acabou de criar e depois clone o projeto:
+cd pokemon-marketplace-accenture
+git clone https://github.com/dudawiltiner/pokemon-marketplace-accenture
 
-### Analyzing the Bundle Size
+# 3. INSTALAÇÃO DAS DEPENDÊNCIAS
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## 3.1. Entre no diretório criado após a clonagem do repositório:
+cd pokemon-marketplace-accenture
 
-### Making a Progressive Web App
+## 3.2. Instale todas as dependências usando o CLI npm:
+npm install
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+# 4. INICIE A APLICAÇÃO
+npm start
 
-### Advanced Configuration
+# 5. UTILIZAÇÃO ABRINDO SEU BROWSER
+http://localhost:3000
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+# 6. DOCUMENTAÇÃO REACT
+https://reactjs.org/
+https://facebook.github.io/create-react-app/docs/getting-started

@@ -14,7 +14,6 @@ function* authUser(action) {
 function* updateUser(action) {
   try {
     const res = yield call(fetchUpdateUser, action.body);
-    console.log(res);
     yield put(updateUserAction(res));
   } catch (e) {
     console.log(e);
@@ -23,7 +22,6 @@ function* updateUser(action) {
 }
 
 export function* funcTake() {
-  console.log('funcTake');
   yield takeLatest('CALL_SAGA_AUTH', authUser);
   yield takeLatest('CALL_SAGA_UPDATE', updateUser);
 }

@@ -1,6 +1,5 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-// import storage from 'redux-persist/lib/storage';
 import { removePokemonCartAction } from '../redux/actions';
 import * as S from '../styles/ShoppingCartCSS';
 

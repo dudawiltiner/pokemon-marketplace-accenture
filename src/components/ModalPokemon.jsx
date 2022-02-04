@@ -27,16 +27,13 @@ export default function ModalPokemon({ pokemonList,
 
   async function getPokemonDetails() {
     try {
-      console.log(pokemonList.name);
       const res = await fetchPokemonsDetails(pokemonList.name);
-      console.log(res);
       setHabitat(res.habitat.name);
       setColor(res.color.name);
       setShape(res.shape.name);
       setGen(res.generation.name);
       setId(res.id);
       setRegion(res.pokedex_numbers[1].pokedex.name);
-      console.log(res.id);
     } catch (e) {
       console.log(e);
     }
@@ -71,7 +68,7 @@ export default function ModalPokemon({ pokemonList,
         </S.Paragraph>
 
         <S.PriceCart>
-          <S.PriceText>{`R$ ${pokemonList.price}`}</S.PriceText>
+          <S.PriceText>{`US$ ${pokemonList.price}`}</S.PriceText>
           <S.AddCartButton
             onClick={ () => addPokemon(`https://img.pokemondb.net/artwork/large/${pokemonList.name}.jpg`,
               pokemonList.name,

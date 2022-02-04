@@ -31,9 +31,7 @@ export default function useLogin() {
     const { res } = storage.reducerUser;
 
     if (Object.keys(res).length > 0) {
-      console.log('here2');
       if (res.message) {
-        console.log('here1');
         setShow(true);
         dispatch(changePasswordAction({}));
       } else {
@@ -61,7 +59,6 @@ export default function useLogin() {
     },
     validationSchema: schema,
     onSubmit: (values) => {
-      console.log('SUBMIT', values);
       authUser(values);
     },
   });

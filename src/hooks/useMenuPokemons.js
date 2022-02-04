@@ -12,11 +12,9 @@ export default function useLogin() {
   const [page, setPage] = useState([]);
 
   async function loadingPokemons(URL) {
-    console.log(URL);
     if (URL !== null) {
       try {
         const list = await fetchPokemons(URL);
-        console.log(list.previous, list.next);
         setPage([list.previous, list.next]);
         return list.results;
       } catch (e) {
@@ -38,8 +36,6 @@ export default function useLogin() {
         typePokemon: pokemonsDetails.types[0].type.name,
       });
     }
-    console.log(listPokemons);
-    console.log(listPokemons[0].typePokemon);
     setPokemons(listPokemons);
   }
 
@@ -50,8 +46,6 @@ export default function useLogin() {
       price,
       count: 1,
     };
-
-    // console.log(pokemonBought);
 
     dispatch(addPokemonCartAction(pokemonBought));
   }

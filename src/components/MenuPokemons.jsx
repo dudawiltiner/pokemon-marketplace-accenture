@@ -33,7 +33,6 @@ export default function MenuPokemon() {
   }
 
   function saveDetailPokemon(name, type, price) {
-    console.log(name, type, price);
     const pokemonDetail = {
       name,
       type,
