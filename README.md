@@ -49,7 +49,7 @@ Nesta página é possível navegar pelos cards de cada Pokémon, visulaizando-se
 
 ![parte6](https://user-images.githubusercontent.com/74082153/152455606-d7a4da09-44d1-4057-a43e-1e554daeef61.gif)
 
-## Realizando compras dos Pokemons:
+## Realizando compras dos Pokémons:
 
 Clicando em "Add to cart" será possível adicionar o Pokémon ao carrinho de compras, e neste visualizar os Pokémons selecionados e modificar as quantidades que deseja adquirir. É mostrado também os preços unitários de cada item e o valor total da compra.
 
@@ -61,29 +61,29 @@ E finalmente, clicando-se sobre o ícone de Logout você encerrará sua navegaç
 
 ![parte7](https://user-images.githubusercontent.com/74082153/152455641-8ba23f3b-b4c6-47c7-9a1c-5d753c6ab320.gif)
 
-# 2. CLONE DO REPOSITÓRIO
+## 2. CLONE DO REPOSITÓRIO
 
-## 2.1. Abra o terminal e crie um diretório no local de sua preferência:
+### 2.1. Abra o terminal e crie um diretório no local de sua preferência:
 mkdir pokemon-marketplace-accenture
 
-## 2.2. Entre no diretório que acabou de criar e depois clone o projeto:
+### 2.2. Entre no diretório que acabou de criar e depois clone o projeto:
 cd pokemon-marketplace-accenture
 git clone https://github.com/dudawiltiner/pokemon-marketplace-accenture
 
-# 3. INSTALAÇÃO DAS DEPENDÊNCIAS
+## 3. INSTALAÇÃO DAS DEPENDÊNCIAS
 
-## 3.1. Entre no diretório criado após a clonagem do repositório:
+### 3.1. Entre no diretório criado após a clonagem do repositório:
 cd pokemon-marketplace-accenture
 
-## 3.2. Instale todas as dependências usando o CLI npm:
+### 3.2. Instale todas as dependências usando o CLI npm:
 npm install
 
-# 4. INICIE A APLICAÇÃO
+## 4. INICIE A APLICAÇÃO
 npm start
 
-# 5. UTILIZAÇÃO ABRINDO SEU BROWSER
+## 5. UTILIZAÇÃO ABRINDO SEU BROWSER
 http://localhost:3000
 
-# 6. DOCUMENTAÇÃO REACT
+## 6. DOCUMENTAÇÃO REACT
 https://reactjs.org/
 https://facebook.github.io/create-react-app/docs/getting-started
