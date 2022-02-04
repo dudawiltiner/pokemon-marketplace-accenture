@@ -110,7 +110,7 @@ Após cada um dos passos a seguir, haverá um exemplo do comando a ser digitado 
 ```
 -> Uma janela irá abrir no seu navegador
 
-**OBS**: **Certifique-se** de usar umas dessas **urls("http://localhost:3000", "http://localhost:3001", "http://localhost:8080")** ara poder ter acesso a API de autenticação durante o uso da aplicação, fazendo com que tudo ocorra bem.
+**OBS**: **Certifique-se** de usar umas dessas **urls("http://localhost:3000", "http://localhost:3001", "http://localhost:8080")** para poder ter acesso a API de autenticação durante o uso da aplicação, fazendo com que tudo ocorra bem.
 
 ## Usando a plataforma: 
 
@@ -118,7 +118,7 @@ Logo abaixo, se encontra uma breve explicação da experiência do usuário com 
 
 ### Primeiro Contato com a Plataforma: 
 
-Ao rodar a aplicação pela primeira vez e acessar o Pokemon Marketplace, você será redirecionado para a tela de Login. E se não tiver o cadastro, você pode acessar a página de Registro para salvar o seu usuário pela API de Autenticação.
+Ao rodar a aplicação pela primeira vez e acessar o Pokémon Marketplace, você será redirecionado para a tela de Login. E se não tiver o cadastro, você pode acessar a página de Registro para salvar o seu usuário pela API de Autenticação.
 
 <div align="center">
   <img src="./gifs/parte1.gif" margin="10px" width="700" alt="parte1"/>
@@ -126,7 +126,7 @@ Ao rodar a aplicação pela primeira vez e acessar o Pokemon Marketplace, você 
 
 ### Registro: 
 
-Na Página Register você poderá realizar o seu cadastro  e ser redirecionado logo em seguida para a tela de Login.  Você pode ter que esperar alguns segundos para salvar o usuário pois no ato você pode estar acordando a API hospedada no Heroku para então ela receber as requisições.
+Na página Register você poderá realizar o seu cadastro  e ser redirecionado logo em seguida para a tela de Login.  Você pode ter que esperar alguns segundos para salvar o usuário pois no ato você pode estar acordando a API hospedada no Heroku para então ela receber as requisições.
 
 <div align="center">
   <img src="./gifs/parte3.gif" margin="10px" width="700" alt="parte2"/>
@@ -142,7 +142,7 @@ Se esqueceu da senha, não tem problema! Você pode registra-lá novamente no fo
 
 ### Interação com a Home:
 
-Na Home é onde se encontram todos os Pokemons com os seus respectivos preços, tipos e detalhes. Você pode adicionar um Pokemon ao carrinho e perceber que ele está sendo contabilizado no contadador logo acima do ícone de carrinho no navbar. Se tentar colcar mais um pokemon igual ele não irá somar a quantidade colocada na lista de compras. A quantidade pode ser alterada no shopping cart ao clicar no carrinho.
+Na Home é onde se encontram todos os Pokémons com os seus respectivos preços, tipos e detalhes. Você pode adicionar um Pokémon ao carrinho e perceber que ele está sendo contabilizado no contadador logo acima do ícone de carrinho no navbar. Se tentar colcar mais um Pokémon igual ele não irá somar a quantidade colocada na lista de compras. A quantidade pode ser alterada no shopping cart ao clicar no carrinho.
 
 <div align="center">
   <img src="./gifs/parte6.gif" margin="10px" width="700" alt="parte4"/>
@@ -150,7 +150,7 @@ Na Home é onde se encontram todos os Pokemons com os seus respectivos preços, 
 
 ### Compra do Pokemon:
 
-Ao clicar no carrinho você encontrará uma página com todos os pokemons escolhidos sem duplicidade e com seus respectivos preços e subtotais. Nesta mesma página, você poderá finzalizar a compra. Finalizando a compra, o carrinho ficará vazio novamente e aparecerá uma mensagem no lugar da lista de compras confirmando que não há Pokemons escolhidos.
+Ao clicar no carrinho você encontrará uma página com todos os Pokémons escolhidos sem duplicidade e com seus respectivos preços e subtotais. Nesta mesma página, você poderá finzalizar a compra. Finalizando a compra, o carrinho ficará vazio novamente e aparecerá uma mensagem no lugar da lista de compras confirmando que não há Pokémons escolhidos.
 
 <div align="center">
   <img src="./gifs/parte5.gif" margin="10px" width="700" alt="parte5"/>
@@ -174,7 +174,4 @@ Por fim, quando não precisar mais estar logado(a) você pode sair da plataforma
 
 ## Link para o deploy da Plataforma:
 https://pokemon-marketplace-accenture.herokuapp.com/
-
-
-
 
