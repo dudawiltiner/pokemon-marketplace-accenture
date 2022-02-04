@@ -12,11 +12,11 @@ import BackAndBuyButtonsContainer from '../components/BackHomeAndBuyButtons';
 import ModalShopping from '../components/ModalShopping';
 // eslint-disable-next-line max-len
 
-import useVerifyAuth from '../hooks/useVerifyAuth';
+// import useVerifyAuth from '../hooks/useVerifyAuth';
 import NoPokemonsCart from '../components/NoPokemonsCart';
 
 export default function ShoppingCart() {
-  useVerifyAuth();
+  // useVerifyAuth();
   const [modalOpen, setModalOpen] = useState(false);
   const [list, setList] = useState([]);
   const storage = useSelector((state) => state);
@@ -34,7 +34,7 @@ export default function ShoppingCart() {
 
     <S.Container>
       <NavBar />
-      <S.CartMain>
+      <S.CartMain data-aos="fade-up">
         <CartInfoBar />
         <S.ListProducts>
           {list.length === 0
@@ -42,7 +42,6 @@ export default function ShoppingCart() {
             : list.map((item, index) => (
               <CartProductInfo
                 key={ index }
-                number={ index }
                 pokemonBought={ item }
               />
             ))}
