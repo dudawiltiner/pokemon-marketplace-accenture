@@ -63,45 +63,47 @@ A parte de autenticação do usuário, registro e atualização da senha, era um
 
 Após cada um dos passos a seguir, haverá um exemplo do comando a ser digitado para fazer o que está sendo pedido.
 
-### 1.1. Abra o terminal e crie um diretório no local de sua preferência:
+1.1. Abra o terminal e crie um diretório no local de sua preferência:
 **mkdir** pokemon-project:
 
 ```javascript
   mkdir pokemon-project
 ```
 
-### 2.2. Entre no diretório que acabou de criar e depois clone o projeto:
+1.2. Entre no diretório que acabou de criar e depois clone o projeto:
 
 ```javascript
   cd pokemon-project
   git clone https://github.com/dudawiltiner/desafio-frontend-ebytr.git
 ```
-## 3. Instalação da Dependências
+### 2. Instalação da Dependências
 
-### 3.1. Entre no diretório criado após a clonagem do repositório.
+2.1. Entre no diretório criado após a clonagem do repositório.
 
 ```javascript
   cd pokemon-marketplace-accenture
 ```
 
-### 3.2. Instale todas as dependências usando o CLI npm:
+2.2. Instale todas as dependências usando o CLI npm:
 
 ```javascript
   npm install
 ```
 
-## 4. Inicie a aplicação
+### 4. Inicie a aplicação
 
-5. Abra no ambiente de desenvolvimento de sua preferência. No caso de uso do VSC, digite o comando **code .** na raiz do diretório clonado.
+4.1. Abra no ambiente de desenvolvimento de sua preferência. No caso de uso do VSC, digite o comando **code .** na raiz do diretório clonado.
 
 ```javascript
   code .
 ```
-4. Rode a aplicação com o node.js, usando o CLI **npm**.
+4.2. Rode a aplicação com o node.js, usando o CLI **npm**.
 
 ```javascript
   npm start
 ```
+-> Uma janela irá abrir no seu navegador
+
 **OBS**: **Certifique-se** de usar umas dessas **urls("http://localhost:3000", "http://localhost:3001", "http://localhost:8080")** ara poder ter acesso a API de autenticação durante o uso da aplicação, fazendo com que tudo ocorra bem.
 
 ## Usando a plataforma: 
