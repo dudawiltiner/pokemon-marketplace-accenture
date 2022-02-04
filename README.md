@@ -13,7 +13,7 @@ Esse desafio foi proposto pela ACCENTURE durante sua Academia Front-end realizad
 - Visualização do perfil do usuário; 
 - Visualização de listagem de Pokémons (com paginação):
 - Visualização de detalhes do Pokémon;
-- Visulaização do carrinho de compras (com incremento e decremento de quantidades e valores unitários e total da compra).
+- Visualização do carrinho de compras (com incremento e decremento de quantidades e valores unitários e total da compra).
 
 # Utilizando a plataforma
 
