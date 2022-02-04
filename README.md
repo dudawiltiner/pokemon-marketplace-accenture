@@ -1,8 +1,8 @@
-# *Projeto - Pokemon Marketplace*
+# *Projeto - Pokémon Marketplace*
 
-## Boas-vidas ao repositório do Pokemon Marketplace Accenture
+## Boas-vidas ao repositório do Pokémon Marketplace Accenture
 
-Esse desafio foi proposto pela Accenture durante sua Academia Front-end realizada em Janeiro/2022 no intuito de melhorarmos nossas habilidades voltadas para desenvolvimento front-end com utilização da ferramenta React. Este repositório armazena o projeto final com o desafio resolvido. A proposta do projeto era criar uma plataforma que sirva de marketplace para treinadores de Pokemon, de forma fictícia, em que tivesse todo o processo de autenticação de um usuário, edição do perfil e compra de Pokemons. O objetivo do case era termos contato e experiência de trabalho na simulação de um entregável na empresa com base nas ferramentas apresentadas durante a capacitação. Foi entregue um [Mock-Up](https://www.figma.com/file/xfU3xbCtLc5ZROkBO8EHXO/Pokemon-Marketplace?node-id=0%3A1) para servir de guia na programação da aplicação. A aplicação Pokemon Marketplace hospedada pode ser acessada a partir desse [link](https://pokemon-marketplace-accenture.herokuapp.com/), só atentando para acessar em um computador pois a plataforma não é responsiva. Se desejar ver a aplicação funcionando em um breve vídeo, você pode fazer o download dele [aqui](https://github.com/dudawiltiner/pokemon-marketplace-accenture/blob/main/gifs/video_final.mp4), mas logo abaixo disponibilizamos alguns gifs para mostrar a aplicação rodando.
+Esse desafio foi proposto pela Accenture durante sua Academia Front-end realizada em Janeiro/2022 no intuito de melhorarmos nossas habilidades voltadas para desenvolvimento front-end com utilização da ferramenta React. Este repositório armazena o projeto final com o desafio resolvido. A proposta do projeto era criar uma plataforma que sirva de marketplace para treinadores de Pokémon, de forma fictícia, em que tivesse todo o processo de autenticação de um usuário, edição do perfil e compra de Pokémons. O objetivo do case era termos contato e experiência de trabalho na simulação de um entregável na empresa com base nas ferramentas apresentadas durante a capacitação. Foi entregue um [Mock-Up](https://www.figma.com/file/xfU3xbCtLc5ZROkBO8EHXO/Pokemon-Marketplace?node-id=0%3A1) para servir de guia na programação da aplicação. A aplicação Pokemon Marketplace hospedada pode ser acessada a partir desse [link](https://pokemon-marketplace-accenture.herokuapp.com/), só atentando para acessar em um computador pois a plataforma não é responsiva. Se desejar ver a aplicação funcionando em um breve vídeo, você pode fazer o download dele [aqui](https://github.com/dudawiltiner/pokemon-marketplace-accenture/blob/main/gifs/video_final.mp4), mas logo abaixo disponibilizamos alguns gifs para mostrar a aplicação rodando.
 
 ### As ferramentas principais utilizadas no front-end foram:
 
@@ -49,7 +49,7 @@ Esse desafio foi proposto pela Accenture durante sua Academia Front-end realizad
 
 ---
 
-## Organização do Projeto:
+## Organização do projeto:
 
 O projeto foi feito seguindo o Kanban, que pode ser visto como um processo ágil e transparente na organização dos projetos de desenvolvimento e foi muito útil para o time no fluxo de trabalho e na divisão de tarefas. Você pode visualizar o Kanban que a equipe utilizou no Trello neste [link](https://trello.com/b/7hDBdAaz).
 
@@ -65,7 +65,7 @@ A parte de autenticação do usuário, registro e atualização da senha, era um
 
 ## Como Instalar e rodar a aplicação localmente:
 
-### 1. Clone do Repositório
+### 1. Clone do repositório
 
 Após cada um dos passos a seguir, haverá um exemplo do comando a ser digitado para fazer o que está sendo pedido.
 
@@ -82,7 +82,7 @@ Após cada um dos passos a seguir, haverá um exemplo do comando a ser digitado 
   cd pokemon-project
   git clone https://github.com/dudawiltiner/desafio-frontend-ebytr.git
 ```
-### 2. Instalação da Dependências
+### 2. Instalação da dependências
 
 2.1. Entre no diretório criado após a clonagem do repositório.
 
@@ -116,7 +116,7 @@ Após cada um dos passos a seguir, haverá um exemplo do comando a ser digitado 
 
 Logo abaixo, se encontra uma breve explicação da experiência do usuário com a plataforma e suas diferentes interações e geração de eventos em cada página. 
 
-### Primeiro Contato com a Plataforma: 
+### Primeiro contato com a plataforma: 
 
 Ao rodar a aplicação pela primeira vez e acessar o Pokémon Marketplace, você será redirecionado para a tela de Login. E se não tiver o cadastro, você pode acessar a página de Registro para salvar o seu usuário pela API de Autenticação.
 
@@ -132,7 +132,7 @@ Na página Register você poderá realizar o seu cadastro  e ser redirecionado l
   <img src="./gifs/parte3.gif" margin="10px" width="700" alt="parte2"/>
 </div>
 
-### Mudança de Senha:
+### Mudança de senha:
 
 Se esqueceu da senha, não tem problema! Você pode registra-lá novamente no formulário de Mudança de Senha.
 
@@ -148,7 +148,7 @@ Na Home é onde se encontram todos os Pokémons com os seus respectivos preços,
   <img src="./gifs/parte6.gif" margin="10px" width="700" alt="parte4"/>
 </div>
 
-### Compra do Pokemon:
+### Compra dos Pokémons:
 
 Ao clicar no carrinho você encontrará uma página com todos os Pokémons escolhidos sem duplicidade e com seus respectivos preços e subtotais. Nesta mesma página, você poderá finzalizar a compra. Finalizando a compra, o carrinho ficará vazio novamente e aparecerá uma mensagem no lugar da lista de compras confirmando que não há Pokémons escolhidos.
 
@@ -156,7 +156,7 @@ Ao clicar no carrinho você encontrará uma página com todos os Pokémons escol
   <img src="./gifs/parte5.gif" margin="10px" width="700" alt="parte5"/>
 </div>
 
-### Mudando o Perfil:
+### Mudando o perfil:
 
 Não gostou da foto que ficou no seu perfil? Vai lá no navbar e clica no ícone de usuário para mudar! Você encontrará uma página onde você pode alterar qualquer informação que não seja senha e email registrada durante o cadastro do seu perfil.
 
@@ -164,7 +164,7 @@ Não gostou da foto que ficou no seu perfil? Vai lá no navbar e clica no ícone
   <img src="./gifs/parte4.gif" margin="10px" width="700" alt="parte6"/>
 </div>
 
-### Realizando o Logout e Gerando erro 404:
+### Realizando o Logout e gerando erro 404:
 
 Por fim, quando não precisar mais estar logado(a) você pode sair da plataforma, clicando no ícone de saída no navbar. Lembre-se que ao sair você não terá mais acesso a Home, ShoppingCart e Profile pois não estará autenticado(a) no sistema. E é claro que sempre pode surgir aquela curiosidade de mexer na url na sua barra de pesquisa do navegador para escrever alguma rota nova ou até mesmo digitar o nome errado para acessar uma página existente, mas sempre que surgir um desses casos será gerado um erro 404, informando que a página não existe e você poderá navegar para home novamente. 
 
@@ -172,6 +172,6 @@ Por fim, quando não precisar mais estar logado(a) você pode sair da plataforma
   <img src="./gifs/parte7.gif" margin="10px" width="700" alt="parte7"/>
 </div>
 
-## Link para o deploy da Plataforma:
+## Link para o deploy da plataforma:
 https://pokemon-marketplace-accenture.herokuapp.com/
 
