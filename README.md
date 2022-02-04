@@ -43,7 +43,7 @@ Após você estar devidamente autenticado e logado poderá atualizar os dados do
 
 ![parte4](https://user-images.githubusercontent.com/74082153/152455574-7ef0300f-c63f-42da-8568-f34750c2175d.gif)
 
-## Interação com a Home e seleção de Pokemons:
+## Interação com a Home e seleção de Pokémons:
 
 Nesta página é possível navegar pelos cards de cada Pokémon, visulaizando-se a imagem, o nome, o tipo e o preço unitário de um deles. Clicando-se sobre "Previous" ou "Next" pode-se retornar ou avançar respectivamente entre páginas.
 
