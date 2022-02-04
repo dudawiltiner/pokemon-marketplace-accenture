@@ -1,4 +1,4 @@
-# *Projeto Pokémon Marketplace*
+# *Projeto - Pokemon Marketplace*
 
 ## Boas-vidas ao repositório do Pokemon Marketplace Accenture
 
@@ -30,6 +30,24 @@ Esse desafio foi proposto pela Accenture durante sua Academia Front-end realizad
 
 ---
 
+## Sumário
+
+- [Organização do Projeto](#organização-do-projeto)
+- [Desenvolvimento do Back-End](#desenvolvimento-do-back-end)
+- [Como Instalar e rodar a aplicação localmente](#como-instalar-e-rodar-a-aplicação-localmente)
+- [Usando a plataforma](#usando-a-plataforma)
+  - [Primeiro Contato com a Plataforma](#primeiro-contato-com-a-plataforma)
+  - [Registro](#registro)
+  - [Mudança de Senha](#mudança-de-senha)
+  - [Interação com a Home](#interação-com-a-home)
+  - [Compra do Pokemon](#compra-do-pokemon)
+  - [Mudando o Perfil](#mudando-o-perfil)
+  - [Realizando o Logout e Gerando erro 404](#realizando-o-logout-e-gerando-erro-404)
+- [Link para o deploy da Plataforma](#link-para-o-deploy-da-plataforma)
+
+
+---
+
 
 ## Organização do Projeto:
 
@@ -37,7 +55,7 @@ O projeto foi feito seguindo o Kanban, que pode ser visto como um processo ágil
 
 ## Desenvolvimento do Back-End:
 
-A parte de autenticação do usuário, registro e atualização da senha, era uma parte opcional do projeto. Mas a equipe optou por criar uma API do zero. Ficou responsável por uma única pessoa, a Eduarda Wiltiner, já que ela demonstrou interesse em demonstrar as habilidades full-stack. O respositório e as ferramentas utilizadas para a criação do processo autenticação do usuário através de uma API Java está registrado no repositório [API Auth Java](https://github.com/dudawiltiner/api-auth-java). A documentação da API tbm pode ser acessada [aqui](https://api-auth-java.herokuapp.com/swagger-ui.html).
+A parte de autenticação do usuário, registro e atualização da senha, era uma parte opcional do projeto. A equipe optou por criar uma API do zero feita em Java. Ficou responsável por uma única pessoa, a Eduarda Wiltiner, já que ela demonstrou interesse em demonstrar as habilidades full-stack. O respositório e as ferramentas utilizadas para a criação do processo de autenticação do usuário através de uma API Java está registrado no repositório [API Auth Java](https://github.com/dudawiltiner/api-auth-java). A documentação da API tbm pode ser acessada [aqui](https://api-auth-java.herokuapp.com/swagger-ui.html) para mais detalhes.
 
 ## Como Instalar e rodar a aplicação localmente:
 
@@ -86,7 +104,7 @@ Após cada um dos passos a seguir, haverá um exemplo do comando a ser digitado 
 ```
 **OBS**: **Certifique-se** de usar umas dessas **urls("http://localhost:3000", "http://localhost:3001", "http://localhost:8080")** ara poder ter acesso a API de autenticação durante o uso da aplicação, fazendo com que tudo ocorra bem.
 
-## Ultilizando a plataforma: 
+## Usando a plataforma: 
 
 Logo abaixo, se encontra uma breve explicação da experiência do usuário com a plataforma e suas diferentes interações e geração de eventos em cada página. 
 
@@ -103,7 +121,7 @@ Ao rodar a aplicação pela primeira vez e acessar o Pokemon Marketplace, você 
 Na Página Register você poderá realizar o seu cadastro  e ser redirecionado logo em seguida para a tela de Login.  Você pode ter que esperar alguns segundos para salvar o usuário pois no ato você pode estar acordando a API hospedada no Heroku para então ela receber as requisições.
 
 <div align="center">
-  <img src="./gifs/parte2.gif" margin="10px" width="700" alt="parte2"/>
+  <img src="./gifs/parte3.gif" margin="10px" width="700" alt="parte2"/>
 </div>
 
 ### Mudança de Senha:
@@ -111,7 +129,7 @@ Na Página Register você poderá realizar o seu cadastro  e ser redirecionado l
 Se esqueceu da senha, não tem problema! Você pode registra-lá novamente no formulário de Mudança de Senha.
 
 <div align="center">
-  <img src="./gifs/parte3.gif" margin="10px" width="700" alt="parte3"/>
+  <img src="./gifs/parte2.gif" margin="10px" width="700" alt="parte3"/>
 </div>
 
 ### Interação com a Home:
@@ -119,7 +137,7 @@ Se esqueceu da senha, não tem problema! Você pode registra-lá novamente no fo
 Na Home é onde se encontram todos os Pokemons com os seus respectivos preços, tipos e detalhes. Você pode adicionar um Pokemon ao carrinho e perceber que ele está sendo contabilizado no contadador logo acima do ícone de carrinho no navbar. Se tentar colcar mais um pokemon igual ele não irá somar a quantidade colocada na lista de compras. A quantidade pode ser alterada no shopping cart ao clicar no carrinho.
 
 <div align="center">
-  <img src="./gifs/parte4.gif" margin="10px" width="700" alt="parte4"/>
+  <img src="./gifs/parte6.gif" margin="10px" width="700" alt="parte4"/>
 </div>
 
 ### Compra do Pokemon:
@@ -135,7 +153,7 @@ Ao clicar no carrinho você encontrará uma página com todos os pokemons escolh
 Não gostou da foto que ficou no seu perfil? Vai lá no navbar e clica no ícone de usuário para mudar! Você encontrará uma página onde você pode alterar qualquer informação que não seja senha e email registrada durante o cadastro do seu perfil.
 
 <div align="center">
-  <img src="./gifs/parte6.gif" margin="10px" width="700" alt="parte6"/>
+  <img src="./gifs/parte4.gif" margin="10px" width="700" alt="parte6"/>
 </div>
 
 ### Realizando o Logout e Gerando erro 404:
