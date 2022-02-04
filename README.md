@@ -1,12 +1,25 @@
-# 1. APRESENTAÇÃO E CONTEXTO DO CASE
+# *Projeto Pokémon Marketplace*
 
-Esse desafio foi proposto pela ACCENTURE durante sua Academia Front-end realizada em Janeiro/2022 no intuito de melhorarmos nossas habilidades voltadas para desenvolvimento front-end com utilização da ferramenta React. O resultado final foi uma plataforma de marketplace com a temática da famosa franquia Pokémon e pode ser conhecida e explorada aqui.
+## Boas-vidas ao repositório do Pokemon Marketplace Accenture
 
-# Requisitos técnicos
+Esse desafio foi proposto pela Accenture durante sua Academia Front-end realizada em Janeiro/2022 no intuito de melhorarmos nossas habilidades voltadas para desenvolvimento front-end com utilização da ferramenta React. Este repositório armazena o projeto final com o desafio resolvido. A proposta do projeto era criar uma plataforma que sirva de marketplace para treinadores de Pokemon, de forma fictícia, em que tivesse todo o processo de autenticação de um usuário, edição do perfil e compra de Pokemons. O objetivo do case era termos contato e experiência de trabalho na simulação de um entregável na empresa com base nas ferramentas apresentadas durante a capacitação. Foi entregue um [Mock-Up](https://www.figma.com/file/xfU3xbCtLc5ZROkBO8EHXO/Pokemon-Marketplace?node-id=0%3A1) para servir de guia na programação da aplicação. A aplicação Pokemon Marketplace pode ser acessada a partir desse [link](https://pokemon-marketplace-accenture.herokuapp.com/).
+
+### As ferramentas principais utilizadas no front-end foram:
+
+[React](https://reactjs.org/)<br>
+[Formik](https://formik.org/)<br>
+[Git](https://git-scm.com/)<br>
+[ESLint](https://eslint.org/)<br>
+[Tailwind.css](https://tailwindcss.com/)<br>
+[Styled Components](https://www.styled-components.com/)<br>
+[Redux](https://redux.js.org/)<br>
+
+### Requisitos técnicos
 - Front-End em React;
-- Back-End em NodeJS.
+- Back-End simulado ou criado para autenticação;
+- Uso da API Pokedex;
 
-# Funcionalidades
+### Funcionalidades
 - Efetuação de cadastro;
 - Acesso através da página de login;
 - Possibilidade de alteração de senha;
@@ -15,75 +28,127 @@ Esse desafio foi proposto pela ACCENTURE durante sua Academia Front-end realizad
 - Visualização de detalhes do Pokémon;
 - Visualização do carrinho de compras (com incremento e decremento de quantidades e valores unitários e total da compra).
 
-# Utilizando a plataforma
+---
 
-Após cada um dos passos a seguir, haverá um exemplo de como cada página pode ser usada.
 
-## Primeiro contato com a plataforma:
+## Organização do Projeto:
 
-Acessando a plataforma, você irá encontrar a tela de Login, onde você deverá se autenticar para ter acesso à página Home. Sem a autenticação você não terá acesso a Home.
+O projeto foi feito seguindo o Kanban, que pode ser visto como um processo ágil e transparente na organização dos projetos de desenvolvimento e foi muito útil para o time no fluxo de trabalho e na divisão de tarefas. Você pode visualizar o Kanban que a equipe utilizou no Trello neste [link](https://trello.com/b/7hDBdAaz).
 
-![parte1](https://user-images.githubusercontent.com/74082153/152455205-ed3ab1d1-2574-421e-93dd-1fa0ebe45da9.gif)
+## Desenvolvimento do Back-End:
 
-## Realizando a mudança de senha na plataforma:
+A parte de autenticação do usuário, registro e atualização da senha, era uma parte opcional do projeto. Mas a equipe optou por criar uma API do zero. Ficou responsável por uma única pessoa, a Eduarda Wiltiner, já que ela demonstrou interesse em demonstrar as habilidades full-stack. O respositório e as ferramentas utilizadas para a criação do processo autenticação do usuário através de uma API Java está registrado no repositório [API Auth Java](https://github.com/dudawiltiner/api-auth-java). A documentação da API tbm pode ser acessada [aqui](https://api-auth-java.herokuapp.com/swagger-ui.html).
 
-Clicando em "Forgot password" você será redirecionado para a tela de alteração da sua senha.
+## Como Instalar e rodar a aplicação localmente:
 
-![parte2](https://user-images.githubusercontent.com/74082153/152455544-b100d5fc-1446-4d0a-8d03-60a41b7b0fec.gif)
+### 1. Clone do Repositório
 
-## Realizando o cadastro na plataforma:
+Após cada um dos passos a seguir, haverá um exemplo do comando a ser digitado para fazer o que está sendo pedido.
 
-Clicando em "Register now" você poderá efetuar seu cadastro preenchendo o formulário.
+### 1.1. Abra o terminal e crie um diretório no local de sua preferência:
+**mkdir** pokemon-project:
 
-![parte3](https://user-images.githubusercontent.com/74082153/152455560-360e1ca0-185e-45e0-b2d3-63ae701fb578.gif)
-
-## Alterando o perfil:
-
-Após você estar devidamente autenticado e logado poderá atualizar os dados do seu perfil nesta página.
-
-![parte4](https://user-images.githubusercontent.com/74082153/152455574-7ef0300f-c63f-42da-8568-f34750c2175d.gif)
-
-## Interação com a Home e seleção de Pokémons:
-
-Nesta página é possível navegar pelos cards de cada Pokémon, visulaizando-se a imagem, o nome, o tipo e o preço unitário de um deles. Clicando-se sobre "Previous" ou "Next" pode-se retornar ou avançar respectivamente entre páginas.
-
-![parte6](https://user-images.githubusercontent.com/74082153/152455606-d7a4da09-44d1-4057-a43e-1e554daeef61.gif)
-
-## Realizando compras dos Pokémons:
-
-Clicando em "Add to cart" será possível adicionar o Pokémon ao carrinho de compras, e neste visualizar os Pokémons selecionados e modificar as quantidades que deseja adquirir. É mostrado também os preços unitários de cada item e o valor total da compra.
-
-![parte5](https://user-images.githubusercontent.com/74082153/152455593-534397ff-3a89-47da-8a3a-5335be1d2087.gif)
-
-## Realizando logout e gerando erro:
-
-E finalmente, clicando-se sobre o ícone de Logout você encerrará sua navegação sendo redirecionado para a página de Login. Nesta imagem podemos ver também que o acesso através do endpoint não é permitido mostrando uma imagem de erro na aplicação.
-
-![parte7](https://user-images.githubusercontent.com/74082153/152455641-8ba23f3b-b4c6-47c7-9a1c-5d753c6ab320.gif)
-
-## 2. CLONE DO REPOSITÓRIO
-
-### 2.1. Abra o terminal e crie um diretório no local de sua preferência:
-mkdir pokemon-marketplace-accenture
+```javascript
+  mkdir pokemon-project
+```
 
 ### 2.2. Entre no diretório que acabou de criar e depois clone o projeto:
-cd pokemon-marketplace-accenture
-git clone https://github.com/dudawiltiner/pokemon-marketplace-accenture
 
-## 3. INSTALAÇÃO DAS DEPENDÊNCIAS
+```javascript
+  cd pokemon-project
+  git clone https://github.com/dudawiltiner/desafio-frontend-ebytr.git
+```
+## 3. Instalação da Dependências
 
-### 3.1. Entre no diretório criado após a clonagem do repositório:
-cd pokemon-marketplace-accenture
+### 3.1. Entre no diretório criado após a clonagem do repositório.
+
+```javascript
+  cd pokemon-marketplace-accenture
+```
 
 ### 3.2. Instale todas as dependências usando o CLI npm:
-npm install
 
-## 4. INICIE A APLICAÇÃO
-npm start
+```javascript
+  npm install
+```
 
-## 5. UTILIZAÇÃO ABRINDO SEU BROWSER
-http://localhost:3000
+## 4. Inicie a aplicação
 
-## 6. DOCUMENTAÇÃO REACT
-https://reactjs.org/
-https://facebook.github.io/create-react-app/docs/getting-started
+5. Abra no ambiente de desenvolvimento de sua preferência. No caso de uso do VSC, digite o comando **code .** na raiz do diretório clonado.
+
+```javascript
+  code .
+```
+4. Rode a aplicação com o node.js, usando o CLI **npm**.
+
+```javascript
+  npm start
+```
+**OBS**: **Certifique-se** de usar umas dessas **urls("http://localhost:3000", "http://localhost:3001", "http://localhost:8080")** ara poder ter acesso a API de autenticação durante o uso da aplicação, fazendo com que tudo ocorra bem.
+
+## Ultilizando a plataforma: 
+
+Logo abaixo, se encontra uma breve explicação da experiência do usuário com a plataforma e suas diferentes interações e geração de eventos em cada página. 
+
+### Primeiro Contato com a Plataforma: 
+
+Ao rodar a aplicação pela primeira vez e acessar o Pokemon Marketplace, você será redirecionado para a tela de Login. E se não tiver o cadastro, você pode acessar a página de Registro para salvar o seu usuário pela API de Autenticação.
+
+<div align="center">
+  <img src="./gifs/parte1.gif" margin="10px" width="700" alt="parte1"/>
+</div>
+
+### Registro: 
+
+Na Página Register você poderá realizar o seu cadastro  e ser redirecionado logo em seguida para a tela de Login.  Você pode ter que esperar alguns segundos para salvar o usuário pois no ato você pode estar acordando a API hospedada no Heroku para então ela receber as requisições.
+
+<div align="center">
+  <img src="./gifs/parte2.gif" margin="10px" width="700" alt="parte2"/>
+</div>
+
+### Mudança de Senha:
+
+Se esqueceu da senha, não tem problema! Você pode registra-lá novamente no formulário de Mudança de Senha.
+
+<div align="center">
+  <img src="./gifs/parte3.gif" margin="10px" width="700" alt="parte3"/>
+</div>
+
+### Interação com a Home:
+
+Na Home é onde se encontram todos os Pokemons com os seus respectivos preços, tipos e detalhes. Você pode adicionar um Pokemon ao carrinho e perceber que ele está sendo contabilizado no contadador logo acima do ícone de carrinho no navbar. Se tentar colcar mais um pokemon igual ele não irá somar a quantidade colocada na lista de compras. A quantidade pode ser alterada no shopping cart ao clicar no carrinho.
+
+<div align="center">
+  <img src="./gifs/parte4.gif" margin="10px" width="700" alt="parte4"/>
+</div>
+
+### Compra do Pokemon:
+
+Ao clicar no carrinho você encontrará uma página com todos os pokemons escolhidos sem duplicidade e com seus respectivos preços e subtotais. Nesta mesma página, você poderá finzalizar a compra. Finalizando a compra, o carrinho ficará vazio novamente e aparecerá uma mensagem no lugar da lista de compras confirmando que não há Pokemons escolhidos.
+
+<div align="center">
+  <img src="./gifs/parte5.gif" margin="10px" width="700" alt="parte5"/>
+</div>
+
+### Mudando o Perfil:
+
+Não gostou da foto que ficou no seu perfil? Vai lá no navbar e clica no ícone de usuário para mudar! Você encontrará uma página onde você pode alterar qualquer informação que não seja senha e email registrada durante o cadastro do seu perfil.
+
+<div align="center">
+  <img src="./gifs/parte6.gif" margin="10px" width="700" alt="parte6"/>
+</div>
+
+### Realizando o Logout e Gerando erro 404:
+
+Por fim, quando não precisar mais estar logado(a) você pode sair da plataforma, clicando no ícone de saída no navbar. Lembre-se que ao sair você não terá mais acesso a Home, ShoppingCart e Profile pois não estará autenticado(a) no sistema. E é claro que sempre pode surgir aquela curiosidade de mexer na url na sua barra de pesquisa do navegador para escrever alguma rota nova ou até mesmo digitar o nome errado para acessar uma página existente, mas sempre que surgir um desses casos será gerado um erro 404, informando que a página não existe e você poderá navegar para home novamente. 
+
+<div align="center">
+  <img src="./gifs/parte7.gif" margin="10px" width="700" alt="parte7"/>
+</div>
+
+## Link para o deploy da Plataforma:
+https://pokemon-marketplace-accenture.herokuapp.com/
+
+
+
+
