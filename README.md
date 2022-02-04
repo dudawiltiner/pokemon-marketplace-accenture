@@ -97,12 +97,12 @@ Após cada um dos passos a seguir, haverá um exemplo do comando a ser digitado 
 
 ### 4. Inicie a aplicação
 
-4.1. Abra no ambiente de desenvolvimento de sua preferência. No caso de uso do VSC, digite o comando **code .** na raiz do diretório clonado.
+3.1. Abra no ambiente de desenvolvimento de sua preferência. No caso de uso do VSC, digite o comando **code .** na raiz do diretório clonado.
 
 ```javascript
   code .
 ```
-4.2. Rode a aplicação com o node.js, usando o CLI **npm**.
+3.2. Rode a aplicação com o node.js, usando o CLI **npm**.
 
 ```javascript
   npm start
