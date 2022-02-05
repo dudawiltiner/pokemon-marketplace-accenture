@@ -1,9 +1,9 @@
-import PropTypes from 'prop-types';
-import React from 'react';
-import { useDispatch } from 'react-redux';
-import { Link } from 'react-router-dom';
-import { clearPokemonCartAction } from '../redux/actions';
-import * as S from '../styles/ShoppingCartCSS';
+import PropTypes from "prop-types";
+import React from "react";
+import { useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
+import { clearPokemonCartAction } from "../redux/actions";
+import * as S from "../styles/ShoppingCartCSS";
 
 export default function CartTotal({ funcModalOpen }) {
   const dispatch = useDispatch();
@@ -16,17 +16,13 @@ export default function CartTotal({ funcModalOpen }) {
   return (
     <S.BackAndBuyButtonsContainer>
       <Link to="/">
-        <S.BackHomeCartButton
-          type="button"
-          className="backHomeCartButton"
-        >
+        <S.BackHomeCartButton type="button" className="backHomeCartButton">
           Keep buying
-
         </S.BackHomeCartButton>
       </Link>
 
       <S.BuyCartButton
-        onClick={ () => endShopping() }
+        onClick={() => endShopping()}
         type="button"
         className="buyCartButton"
       >

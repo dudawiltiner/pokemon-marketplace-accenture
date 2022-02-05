@@ -1,11 +1,10 @@
-import  styled  from 'styled-components'; 
-
+import styled from "styled-components";
 
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: #E5E5E5;
+  background: #e5e5e5;
   height: 100vh;
 `;
 
@@ -15,33 +14,33 @@ export const ListProducts = styled.div`
   scroll-behavior: smooth;
 
   &::-webkit-scrollbar {
-  width: 12px;
+    width: 12px;
   }
   &::-webkit-scrollbar-track {
     background: white;
-    border-radius: 22px;       
+    border-radius: 22px;
   }
   &::-webkit-scrollbar-thumb {
-    background-color: #717171;   
+    background-color: #717171;
     border-radius: 20px;
     border: 3px solid white;
   }
 `;
 
 export const CartMain = styled.div`
-  width:900px;
+  width: 900px;
   height: 450px;
   margin-top: 200px;
   margin-left: auto;
   margin-right: auto;
-  background: #FFFFFF;
+  background: #ffffff;
   position: relative;
   border-radius: 15px;
 `;
 
 export const CartInfo = styled.div`
   display: flex;
-  background:#FFFFFF ;
+  background: #ffffff;
   width: 800px;
   height: 19px;
   padding-left: 6px;
@@ -61,7 +60,6 @@ export const Produto = styled.span`
   align-items: center;
   text-align: center;
   color: #717171;
-
 `;
 
 export const Quantidade = styled.span`
@@ -115,9 +113,9 @@ export const ProductInfo = styled.div`
   flex-wrap: wrap;
   box-sizing: border-box;
   align-items: center;
-  margin: 40px 0 0 40px;  
+  margin: 40px 0 0 40px;
   padding: 0;
-`
+`;
 
 export const ImageProduct = styled.img`
   display: flex;
@@ -135,46 +133,39 @@ export const CartPokemonName = styled.span`
   font-size: 18px;
   line-height: 125.2%;
   text-transform: capitalize;
-  /* identical to box height, or 23px */
   color: #292929;
-
-`
+`;
 export const CartCounter = styled.div`
-  display: inline-flex  ;
+  display: inline-flex;
   margin-left: 90px;
   align-items: center;
   justify-content: space-between;
   padding: 0;
-`
+`;
 
 export const SubProduct = styled.button`
-  appearance:none;
+  appearance: none;
   border: none;
   outline: none;
   background: none;
-
   color: #292929;
-
   font-size: 25px;
-  padding:0;
+  padding: 0;
   cursor: pointer;
   transition: 0.4s;
-`
-
+`;
 
 export const AddProduct = styled.button`
-  appearance:none;
+  appearance: none;
   border: none;
   outline: none;
   background: none;
-
   color: #292929;
-
   font-size: 20px;
-  padding:0;
+  padding: 0;
   cursor: pointer;
   transition: 0.4s;
-`
+`;
 
 export const ProductAmount = styled.span`
   display: flex;
@@ -182,14 +173,12 @@ export const ProductAmount = styled.span`
   height: 36px;
   font-size: 15px;
   margin: 0 10px;
-
   align-items: center;
   justify-content: space-around;
-
   border: 1px solid #292929;
   box-sizing: border-box;
   border-radius: 6px;
-`
+`;
 
 export const ProductPrice = styled.span`
   width: 96px;
@@ -200,49 +189,40 @@ export const ProductPrice = styled.span`
   font-weight: bold;
   font-size: 16px;
   line-height: 125.2%;
-/* identical to box height, or 20px */
-
-
-color: #292929;
-`
+  color: #292929;
+`;
 
 export const ProductSubtotal = styled.span`
   width: 96px;
   height: 20px;
   margin-left: 35px;
-
   font-family: Lato;
   font-style: normal;
   font-weight: bold;
   font-size: 16px;
   line-height: 125.2%;
-
   color: #292929;
-`
+`;
 export const RemoveProduct = styled.button`
-  appearance:none;
+  appearance: none;
   border: none;
   outline: none;
   background: none;
-
   margin-left: 45px;
-
-  color: #E5E5E5;
-
+  color: #e5e5e5;
   font-size: 20px;
-  padding:0;
+  padding: 0;
   cursor: pointer;
   transition: 0.4s;
-`
+`;
 
 export const HorizontalRow = styled.hr`
   width: 750px;
   height: 0px;
   margin-left: 20px;
   margin-top: 20px;
-
-  border: 1px solid #E5E5E5;
-`
+  border: 1px solid #e5e5e5;
+`;
 
 export const TotalContainer = styled.div`
   height: 25px;
@@ -250,34 +230,27 @@ export const TotalContainer = styled.div`
   margin-top: 10px;
   display: flex;
   align-items: center;
-
-`
+`;
 export const CartTotal = styled.span`
   width: 174px;
   height: 25px;
-
   margin-right: 60px;
-
   font-family: Lato;
   font-style: normal;
   font-weight: bold;
   font-size: 18px;
   line-height: 125.2%;
-  /* identical to box height, or 25px */
-
   display: flex;
   align-items: center;
-
   color: #292929;
-`
+`;
 
 export const BackAndBuyButtonsContainer = styled.div`
   justify-content: space-between;
   margin-top: 15px;
   display: flex;
   align-items: center;
-
-`
+`;
 export const BackHomeCartButton = styled.button`
   display: flex;
   width: 210px;
@@ -290,20 +263,16 @@ export const BackHomeCartButton = styled.button`
   line-height: 19px;
   align-items: center;
   justify-content: center;
-
   border: 1px solid #292929;
   box-sizing: border-box;
   border-radius: 6px;
-
   color: #717171;
-
-`
+`;
 export const BuyCartButton = styled.button`
   display: flex;
   width: 210px;
   height: 46px;
   margin-right: 40px;
-
   font-family: Lato;
   font-style: normal;
   font-weight: normal;
@@ -312,12 +281,7 @@ export const BuyCartButton = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
-
-  /* border: 1px solid #292929;
-  box-sizing: border-box;
-   */
   border-radius: 6px;
   background-color: #717171;
-  color: #FFFFFF;
-
-`
+  color: #ffffff;
+`;

@@ -1,5 +1,5 @@
-import React from 'react';
-import * as S from '../styles/ShoppingCartCSS';
+import React from "react";
+import * as S from "../styles/ShoppingCartCSS";
 
 export default function CartInfoBar() {
   return (
