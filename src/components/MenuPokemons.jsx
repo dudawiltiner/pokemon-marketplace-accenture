@@ -4,6 +4,7 @@ import pricesList from '../data/prices';
 import ModalPokemon from './ModalPokemon';
 import Loading from './Loading';
 import useMenuPokemons from '../hooks/useMenuPokemons';
+import ChangePage from './ChangePage';
 
 const AOS_ANIMATION_DELAY = 100;
 
@@ -28,27 +29,7 @@ export default function MenuPokemon() {
         funcModalOpen={ setModalOpen }
         addPokemon={ addPokemonToCart }
       />}
-      <div className="flex items-center justify-between w-full mb-6 -mt-10">
-        <S.Button
-          color="#717171"
-          font="18px"
-          onClick={ () => detailsPokemons(page[0]) }
-          type="button"
-        >
-          <S.Icon1 />
-          <p>PREVIUS</p>
-        </S.Button>
-        <S.Title>POKEMONS</S.Title>
-        <S.Button
-          color="#717171"
-          font="18px"
-          onClick={ () => detailsPokemons(page[1]) }
-          type="button"
-        >
-          <p>NEXT</p>
-          <S.Icon2 />
-        </S.Button>
-      </div>
+      <ChangePage page={ page } funcDetailsPokemon={ detailsPokemons } />
       { show
         ? <Loading />
         : (
