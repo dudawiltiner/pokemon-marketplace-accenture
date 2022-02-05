@@ -1,18 +1,21 @@
 /* eslint-disable no-restricted-syntax */
 /* eslint-disable no-await-in-loop */
-/* eslint-disable prefer-template */
-/* eslint-disable no-unused-vars */
 import { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { addPokemonCartAction } from '../redux/actions';
+import { fetchPokemons } from '../service/pokemonsAPI';
 
 export default function useLogin() {
   const dispatch = useDispatch();
   const [pokemons, setPokemons] = useState([]);
+  const [show, setShow] = useState(true);
   const [page, setPage] = useState([]);
+  const [modalOpen, setModalOpen] = useState(false);
+  const [pokemonList, setPokemonList] = useState([]);
 
   async function loadingPokemons(URL) {
     if (URL !== null) {
+      setShow(true);
       try {
         const list = await fetchPokemons(URL);
         setPage([list.previous, list.next]);
@@ -23,11 +26,22 @@ export default function useLogin() {
     }
   }
 
+  function saveDetailPokemon(name, type, price) {
+    const pokemonDetail = {
+      name,
+      type,
+      price,
+    };
+
+    setPokemonList(pokemonDetail);
+    setModalOpen(true);
+  }
+
   async function detailsPokemons(URL) {
     const pokemonsResult = await loadingPokemons(URL);
     const listPokemons = [];
     for (const poke of pokemonsResult) {
-      const pokemonsDetails = await fetch('https://pokeapi.co/api/v2/pokemon/' + poke.name)
+      const pokemonsDetails = await fetch(`https://pokeapi.co/api/v2/pokemon/${poke.name}`)
         .then((response) => response.json())
         .then((data) => data)
         .catch((error) => error);
@@ -36,7 +50,9 @@ export default function useLogin() {
         typePokemon: pokemonsDetails.types[0].type.name,
       });
     }
+
     setPokemons(listPokemons);
+    setShow(false);
   }
 
   function addPokemonToCart(img, name, price) {
@@ -56,5 +72,14 @@ export default function useLogin() {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  return { pokemons, addPokemonToCart, page, detailsPokemons };
+  return {
+    pokemons,
+    show,
+    modalOpen,
+    setModalOpen,
+    pokemonList,
+    addPokemonToCart,
+    page,
+    saveDetailPokemon,
+    detailsPokemons };
 }

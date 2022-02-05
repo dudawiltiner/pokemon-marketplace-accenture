@@ -10,7 +10,7 @@ export default function Home() {
   useVerifyAuth();
 
   useEffect(() => {
-    Aos.init({ duration: 1000, once: true });
+    Aos.init({ duration: 500, once: true });
   }, []);
   return (
     <div>
