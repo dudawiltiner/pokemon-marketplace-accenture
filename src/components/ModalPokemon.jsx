@@ -30,7 +30,6 @@ export default function ModalPokemon({ pokemonList,
 
       <S.Text>
         <S.NamePokemon>{pokemonList.name}</S.NamePokemon>
-
         <S.CloseButton
           onClick={ () => handleCloseModal() }
         >
@@ -56,7 +55,6 @@ export default function ModalPokemon({ pokemonList,
             Add to cart
           </S.AddCartButton>
         </S.PriceCart>
-
       </S.Text>
     </S.ModalContainer>
   );

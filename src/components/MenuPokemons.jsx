@@ -1,12 +1,10 @@
 import React from 'react';
 import * as S from '../styles/MenuPokemonsCSS';
-import pricesList from '../data/prices';
 import ModalPokemon from './ModalPokemon';
 import Loading from './Loading';
 import useMenuPokemons from '../hooks/useMenuPokemons';
 import ChangePage from './ChangePage';
-
-const AOS_ANIMATION_DELAY = 100;
+import CardPokemon from './CardPokemon';
 
 export default function MenuPokemon() {
   const {
@@ -35,35 +33,13 @@ export default function MenuPokemon() {
         : (
           <ul>
             { pokemons.map((item, index) => (
-              <S.CardPokemon
-                data-aos="fade-up"
-                data-aos-delay={ index * AOS_ANIMATION_DELAY }
+              <CardPokemon
+                item={ item }
+                index={ index }
                 key={ index }
-              >
-                <S.Picture src={ `https://img.pokemondb.net/artwork/large/${item.namePokemon}.jpg` } />
-                <S.Name>{ item.namePokemon }</S.Name>
-                <S.Type>{`Pokemon Type ${item.typePokemon}`}</S.Type>
-                <S.Detail
-                  onClick={ () => saveDetailPokemon(
-                    item.namePokemon,
-                    item.typePokemon,
-                    pricesList[index],
-                  ) }
-                >
-                  + details
-                </S.Detail>
-                <S.Price>{ `US$ ${pricesList[index]}` }</S.Price>
-                <S.Button
-                  bgcolor="#717171"
-                  onClick={ () => addPokemonToCart(
-                    `https://img.pokemondb.net/artwork/large/${item.namePokemon}.jpg`,
-                    item.namePokemon,
-                    pricesList[index],
-                  ) }
-                >
-                  Add to cart
-                </S.Button>
-              </S.CardPokemon>
+                funcSaveDetailPokemon={ saveDetailPokemon }
+                funcAddPokemonToCart={ addPokemonToCart }
+              />
             ))}
           </ul>) }
     </S.ContainerPokemon>
