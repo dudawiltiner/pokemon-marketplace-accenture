@@ -5,7 +5,7 @@ import { useDispatch } from 'react-redux';
 import { addPokemonCartAction } from '../redux/actions';
 import { fetchPokemons } from '../service/pokemonsAPI';
 
-export default function useLogin() {
+export default function useMenuPokemons() {
   const dispatch = useDispatch();
   const [pokemons, setPokemons] = useState([]);
   const [show, setShow] = useState(true);
